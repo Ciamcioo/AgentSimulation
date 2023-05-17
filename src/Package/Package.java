@@ -1,8 +1,8 @@
 package Package;
 
-public abstract class Package {
-    private int coordinateX;
-    private int coordinateY;
+import Core.ObjectOfMap;
+
+public abstract class Package extends ObjectOfMap {
     private double chanceOfSpawn;
     private boolean isEmpty;
 }

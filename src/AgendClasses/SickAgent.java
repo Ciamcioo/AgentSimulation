@@ -11,17 +11,19 @@ public class SickAgent extends Agent{
         return this.dayTillEndOfIllness;
     }
     public void setDayTillEndOfIllness(int dayOfIllness){
-        this.dayTillEndOfIllness = dayOfIllness;        //+ dopisać kontrole błedów przed wprowadzeniem zlej wartości
+        // TODO dopisać kontrole błędów przed wprowadzaniem złej watości
+        this.dayTillEndOfIllness = dayOfIllness;
     }
     public double getChanceOfDeath(){
         return this.chanceOfDeath;
     }
     public void setChanceOfDeath(double chanceOfDeath){
-        this.chanceOfDeath = chanceOfDeath;             //+ dopisać kontrole błędów przed wprowadzeniem złej wartości
+        // TODO dopisać kontrole błędów przed wprowadzeniem złej wartości
+        this.chanceOfDeath = chanceOfDeath;
     }
     @Override
     public void chengingStatusOfAgent(Agent agent){
-        // zmiana statusu obiektu poprzez tworzenie nowego obiektu, który zastąpi ten w tym momencie zmieniany
+        // TODO zmiana statusu obiektu poprzez tworzenie nowego obiektu, który zastąpi ten w tym momencie zmienany
     }
 
 }

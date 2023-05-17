@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="" />
+    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Wszystko na ten moment przekopiowane">
+      <change afterPath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/PackageMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/PackageMethods.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2Pt3zQ09Gx19yAG4PxNi2rTp3NS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -33,6 +61,41 @@
       <option name="presentableId" value="Default" />
       <updated>1684262814054</updated>
     </task>
+    <task id="LOCAL-00001" summary="Wszystko na ten moment przekopiowane">
+      <created>1684263100564</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684263100564</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Wszystko na ten moment przekopiowane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wszystko na ten moment przekopiowane" />
   </component>
 </project>
