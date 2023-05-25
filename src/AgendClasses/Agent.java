@@ -1,14 +1,29 @@
 package AgendClasses;
 
 import Core.ObjectOfMap;
+import Map.Map;
+import java.util.Random;
 
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
     public Agent(){
         //....
     }
-    @Override
-    public void move(){
-        //...
+    public void move(Agent agent){
+        boolean isMovePossible = false;
+        do {
+            int directionOfMove = new Random().nextInt(8) + 1;
+            switch (directionOfMove){
+                case 1:{
+                    int coordinateXToCheck = agent.getCoordinateX() - 1, coordinateYToCheck = agent.getCoordinateY() + 1;
+                    agent.checkPosition(coordinateXToCheck, coordinateYToCheck);
+                    break;
+                }
+                case 2:{
+
+                }
+            }
+
+        }while(isMovePossible);
     }
 //    @Override
 //    public int getCoordinateX(){
@@ -29,8 +44,8 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
 //
 //    }
     @Override
-    public void checkPosition(){
-        // tutaj może stworzymy klase która będzie transferować pozycje poszczególnych agentów i będzie to pole klasy abstrakcyjnej agent
+    public void checkPosition(int X, int Y){
+
     }
 
 

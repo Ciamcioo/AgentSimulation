@@ -10,4 +10,10 @@ public class AgentAfterIllness extends Agent{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'chengingStatusOfAgent'");
     }
+    @Override
+    public String toString(){
+        return "AI";
+    }
+
+
 }

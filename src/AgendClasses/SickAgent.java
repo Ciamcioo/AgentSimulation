@@ -24,6 +24,9 @@ public class SickAgent extends Agent{
     @Override
     public void chengingStatusOfAgent(Agent agent){
         // TODO zmiana statusu obiektu poprzez tworzenie nowego obiektu, który zastąpi ten w tym momencie zmienany
+    } @Override
+    public String toString(){
+        return "S";
     }
 
 }

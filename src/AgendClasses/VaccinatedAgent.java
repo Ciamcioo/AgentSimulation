@@ -10,4 +10,10 @@ public class VaccinatedAgent extends Agent {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'chengingStatusOfAgent'");
     }
+    @Override
+    public String toString(){
+        return "VA";
+    }
+    public void move(){
+    }
 }

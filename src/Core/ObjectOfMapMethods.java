@@ -5,5 +5,5 @@ public interface ObjectOfMapMethods {
     void setCoordinateX(int newCoordinateX);
     int getCoordinateY();
     void setCoordinateY(int newCoordinateY);
-    
+    String toString();
 }
