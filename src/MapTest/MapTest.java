@@ -16,6 +16,6 @@ class MapTest {
 
     @Test
     void setSize() {
-        int size = -1;
+
     }
 }

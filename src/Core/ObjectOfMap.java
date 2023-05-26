@@ -1,8 +1,15 @@
 package Core;
-
+import Map.Map;
 public abstract class ObjectOfMap implements ObjectOfMapMethods{
+
     private int coordinateX;
     private int coordinateY;
+    private Map mapPartOf;
+    public ObjectOfMap(int coordinateX, int coordinateY, Map mapPartOf){
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+        this.mapPartOf = mapPartOf;
+    }
     @Override
     public int getCoordinateX(){
         return this.coordinateX;
@@ -19,6 +26,13 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
         // TODO kontrola błęów przy ustawianiu kordynatów Y
         this.coordinateY = newCoordinateY;
     }
+    public Map getMapPartOf(){
+        return this.mapPartOf;
+    }
+    public void setMapPartOf(Map map){
+        this.mapPartOf = map;
+    }
+
 
 
 }

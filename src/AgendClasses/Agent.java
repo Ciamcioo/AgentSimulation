@@ -5,8 +5,8 @@ import Map.Map;
 import java.util.Random;
 
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
-    public Agent(){
-        //....
+    public Agent(int coordinateX, int coordinateY, Map mapPartOf){
+        super(coordinateX, coordinateY, mapPartOf);
     }
     public void move(Agent agent){
         boolean isMovePossible = false;
@@ -15,7 +15,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
             switch (directionOfMove){
                 case 1:{
                     int coordinateXToCheck = agent.getCoordinateX() - 1, coordinateYToCheck = agent.getCoordinateY() + 1;
-                    agent.checkPosition(coordinateXToCheck, coordinateYToCheck);
+
                     break;
                 }
                 case 2:{
@@ -43,11 +43,6 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
 //        // musimy sprawdzić czy wartość taka Y znajduje się w mapie jeśli tak to dokonujemy zmiany
 //
 //    }
-    @Override
-    public void checkPosition(int X, int Y){
-
-    }
-
 
 
 }

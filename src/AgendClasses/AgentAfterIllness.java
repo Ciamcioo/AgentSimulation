@@ -1,10 +1,16 @@
 package AgendClasses;
-
+import Map.Map;
 public class AgentAfterIllness extends Agent{
-    public AgentAfterIllness(){
-        super();
-        // TODO skończyć konstruktor
+    public AgentAfterIllness(int coordinateX, int coordinateY, Map mapPartOf){
+        super(coordinateX, coordinateY, mapPartOf);
+
     }
+
+    @Override
+    public void checkPosition(int X, int Y) {
+
+    }
+
     @Override
     public void chengingStatusOfAgent(Agent agent) {
         // TODO Auto-generated method stub
