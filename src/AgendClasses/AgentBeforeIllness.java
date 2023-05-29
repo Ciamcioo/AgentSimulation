@@ -17,6 +17,6 @@ public class AgentBeforeIllness extends Agent {
     }
     @Override
     public String toString(){
-        return "BI";
-    }
+        return "B";
+    } // dwie litery sie rozjeżdzają na printMap
 }

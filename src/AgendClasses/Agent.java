@@ -25,6 +25,26 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
 
         }while(isMovePossible);
     }
+
+public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) {
+    ObjectOfMap[][] mapArray = map.getMapArray();
+    int size = map.getSize();
+    int x = agent.getCoordinateX();
+    int y = agent.getCoordinateY();
+    for (int dx = -1; dx <= 1; dx++) {
+        for (int dy = -1; dy <= 1; dy++) {
+            int nx = x + dx;
+            int ny = y + dy;
+            if (nx >= 0 && nx < size && ny >= 0 && ny < size) {
+                if (neighborType.isInstance(mapArray[nx][ny])) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
 //    @Override
 //    public int getCoordinateX(){
 //        return
