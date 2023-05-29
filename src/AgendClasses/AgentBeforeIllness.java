@@ -5,10 +5,10 @@ public class AgentBeforeIllness extends Agent {
         super(coordinateX, coordinateY, partMapOf);
     }
 
-    @Override
+    /*@Override
     public void checkPosition(int X, int Y) {
 
-    }
+    }*/
 
     @Override
     public void chengingStatusOfAgent(Agent agent) {

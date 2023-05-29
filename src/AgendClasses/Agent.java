@@ -30,7 +30,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
         }while(isMovePossible);
     }
 
-public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) {
+/*public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) {
     ObjectOfMap[][] mapArray = map.getMapArray();
     int size = map.getSize();
     int x = agent.getCoordinateX();
@@ -47,7 +47,7 @@ public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType
         }
     }
     return false;
-}
+}*/
 
 //    @Override
 //    public void setCoordinateX(int newValueForX){
@@ -71,6 +71,5 @@ public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType
     public void move(int X, int Y){
         this.getMapPartOf().changePositionOfAgent(this, X, Y);
     }
-    public void
 
 }

@@ -67,7 +67,7 @@ public class Map implements MapMethods {
         }
     }
     public int getSize(){
-        return this.getSize();
+        return this.size;
     }
     public boolean checkPosition(int coordinateX, int coordinateY){
         return this.arrayOfObjects[coordinateX][coordinateY] instanceof EmptyField;
