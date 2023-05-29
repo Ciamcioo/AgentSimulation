@@ -91,20 +91,6 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
         }while(!(isMovePossible));
     }
 
-<<<<<<< HEAD
-/*public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) {
-    ObjectOfMap[][] mapArray = map.getMapArray();
-    int size = map.getSize();
-    int x = agent.getCoordinateX();
-    int y = agent.getCoordinateY();
-    for (int dx = -1; dx <= 1; dx++) {
-        for (int dy = -1; dy <= 1; dy++) {
-            int nx = x + dx;
-            int ny = y + dy;
-            if (nx >= 0 && nx < size && ny >= 0 && ny < size) {
-                if (neighborType.isInstance(mapArray[nx][ny])) {
-                    return true;
-=======
     public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) { //  Sprawdza sąsiedztwo obiektu mapy
         ObjectOfMap[][] mapArray = map.getArrayOfObjects();
         int size = map.getSize();
@@ -118,12 +104,11 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                     if (neighborType.isInstance(mapArray[nx][ny])) {
                         return true;
                     }
->>>>>>> d8fccfd (Coś tam zacząłem pracować nad pakietami. Uzupełniłem parę rzeczy z listy TODO. Uporządkowałem, dodałem komentarze do funkcji.)
                 }
             }
         }
     return false;
-}*/
+}
 
     @Override
     public void move(int X, int Y){   // Zmienia pozycje agenta

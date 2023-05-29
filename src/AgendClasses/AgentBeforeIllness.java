@@ -5,14 +5,6 @@ public class AgentBeforeIllness extends Agent {
         super(coordinateX, coordinateY, partMapOf);
     }
 
-<<<<<<< HEAD
-    /*@Override
-    public void checkPosition(int X, int Y) {
-
-    }*/
-
-=======
->>>>>>> d8fccfd (Coś tam zacząłem pracować nad pakietami. Uzupełniłem parę rzeczy z listy TODO. Uporządkowałem, dodałem komentarze do funkcji.)
     @Override
     public void chengingStatusOfAgent(Agent agent) {
         // TODO Auto-generated method stub

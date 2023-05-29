@@ -67,14 +67,9 @@ public class Map implements MapMethods {
             System.out.print(" __");
         }
     }
-<<<<<<< HEAD
-    public int getSize(){
-        return this.size;
-=======
 
     public int getSize() {
-        return this.getSize();
->>>>>>> d8fccfd (Coś tam zacząłem pracować nad pakietami. Uzupełniłem parę rzeczy z listy TODO. Uporządkowałem, dodałem komentarze do funkcji.)
+        return this.size;
     }
 
     public boolean checkPosition(int coordinateX, int coordinateY) {
