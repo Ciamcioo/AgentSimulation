@@ -9,7 +9,6 @@ public class Simulation {
         for (int i = 1; i <= mapOfSimulation.getSize(); i++) {
             for (int j = 1; j <= mapOfSimulation.getSize(); j++) {
                 if(!(mapOfSimulation.checkPosition(i,j))) {
-                    ObjectOfMap object = mapOfSimulation.getAgent(i, j);
                 }
             }
         }

@@ -3,12 +3,12 @@ import Map.Map;
 
 public interface ObjectOfMapMethods {
     int getCoordinateX();
-    void setCoordinateX(int newCoordinateX);
+    void setCoordinateX(int newCoordinateX, Map mapPartOf);
     int getCoordinateY();
     void setCoordinateY(int newCoordinateY);
-    String toString();
     Map getMapPartOf();
     void setMapPartOf(Map map);
+    String toString();
 
 
 }

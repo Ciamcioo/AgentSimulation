@@ -15,6 +15,4 @@ public class VaccinatedAgent extends Agent {
     public String toString(){
         return "V";
     }
-    public void move(){
-    }
 }

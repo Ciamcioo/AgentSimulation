@@ -15,15 +15,15 @@ public class SickAgent extends Agent{
         return this.dayTillEndOfIllness;
     }
     public void setDayTillEndOfIllness(int dayTillEndOfIllness){
-        // TODO dopisać kontrole błędów przed wprowadzaniem złej watości
-        this.dayTillEndOfIllness = dayTillEndOfIllness ;
+        if(dayTillEndOfIllness > 0)
+            this.dayTillEndOfIllness = dayTillEndOfIllness ;
     }
     public double getChanceOfDeath(){
         return this.chanceOfDeath;
     }
     public void setChanceOfDeath(double chanceOfDeath){
-        // TODO dopisać kontrole błędów przed wprowadzeniem złej wartości
-        this.chanceOfDeath = chanceOfDeath;
+        if(chanceOfDeath > 0 && chanceOfDeath < 1)
+         this.chanceOfDeath = chanceOfDeath;
     }
 
 

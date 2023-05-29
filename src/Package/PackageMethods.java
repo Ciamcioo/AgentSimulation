@@ -3,11 +3,11 @@ package Package;
 import AgendClasses.Agent;
 
 public interface PackageMethods {
-//    int getCoordinateX();
-//    void setCoordinateX(int newCoordinateX);
-//    int getCoordinateY();
-//    void setCoordinateY(int newCoordinateY);
     void beingPickedUp(Agent agentToBeInfluence);
+    double getChanceOfSpawn();
+    void setChanceOfSpawn(double chanceOfSpawn);
+    boolean isEmpty();
+    void setEmpty();
 
 }
 

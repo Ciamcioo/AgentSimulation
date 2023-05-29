@@ -10,25 +10,26 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
         this.coordinateY = coordinateY;
         this.mapPartOf = mapPartOf;
     }
-    @Override
+
     public int getCoordinateX(){
         return this.coordinateX;
     }
-    @Override
-    public void setCoordinateX(int newCoordinateX){
-        // TODO kontrola błędów przy ustawianiu kordynatów X
-        this.coordinateX = newCoordinateX;
+
+    public void setCoordinateX(int newCoordinateX, Map mapPartOf){
+        if(newCoordinateX > 0 && newCoordinateX < mapPartOf.getSize())
+            this.coordinateX = newCoordinateX;
     }
     public int getCoordinateY(){
         return this.coordinateY;
     }
     public void setCoordinateY(int newCoordinateY){
-        // TODO kontrola błęów przy ustawianiu kordynatów Y
-        this.coordinateY = newCoordinateY;
+        if(newCoordinateY > 0 || newCoordinateY < mapPartOf.getSize())
+            this.coordinateY = newCoordinateY;
     }
     public Map getMapPartOf(){
         return this.mapPartOf;
     }
+
     public void setMapPartOf(Map map){
         this.mapPartOf = map;
     }

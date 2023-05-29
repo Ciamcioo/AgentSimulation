@@ -5,31 +5,93 @@ import Map.Map;
 import java.util.Random;
 
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
-    public Agent(int coordinateX, int coordinateY, Map mapPartOf){
+    public Agent(int coordinateX, int coordinateY, Map mapPartOf){      //  Konstruktor Agenta, który wywołuje konstruktor ObjectOfMap
         super(coordinateX, coordinateY, mapPartOf);
     }
     public void move(Agent agent){
-        boolean isMovePossible = false;
+        boolean isMovePossible = true;
         do {
-//            int directionOfMove = new Random().nextInt(8) + 1;
-            int directionOfMove = 1;
+            int directionOfMove = new Random().nextInt(8) + 1;
             switch (directionOfMove){
                 case 1:{
                     int coordinateXToCheck = agent.getCoordinateX() - 1, coordinateYToCheck = agent.getCoordinateY() + 1;
-                    if(agent.checkPositionToMove(coordinateXToCheck, coordinateYToCheck))
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
                         agent.move(coordinateXToCheck, coordinateYToCheck);
                     else
-                        System.out.println("Przeniesienie nie udane");
+                        isMovePossible = false;
                     break;
                 }
                 case 2:{
+                    int coordinateXToCheck = agent.getCoordinateX() , coordinateYToCheck = agent.getCoordinateY() + 1;
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        isMovePossible = false;
 
+                    break;
+                }
+                case 3:{
+                    int coordinateXToCheck = agent.getCoordinateX() + 1, coordinateYToCheck = agent.getCoordinateY() + 1;
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        isMovePossible = false;
+                    break;
+                }
+                case 4:{
+                    int coordinateXToCheck = agent.getCoordinateX() - 1, coordinateYToCheck = agent.getCoordinateY();
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        isMovePossible = false;
+
+                    break;
+                }
+                case 5:{
+                    int coordinateXToCheck = agent.getCoordinateX() + 1, coordinateYToCheck = agent.getCoordinateY();
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        isMovePossible = false;
+
+                    break;
+                }
+                case 6:{
+                    int coordinateXToCheck = agent.getCoordinateX() - 1, coordinateYToCheck = agent.getCoordinateY() - 1;
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        isMovePossible = false;
+
+                    break;
+                }
+                case 7:{
+                    int coordinateXToCheck = agent.getCoordinateX(), coordinateYToCheck = agent.getCoordinateY() - 1;
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        isMovePossible = false;
+
+                    break;
+                }
+                case 8:{
+                    int coordinateXToCheck = agent.getCoordinateX() + 1, coordinateYToCheck = agent.getCoordinateY() - 1;
+                    if(agent.getMapPartOf().checkIsAgent(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        isMovePossible = false;
+
+                    break;
+                }
+                default:{
+                    isMovePossible = false;
                 }
             }
 
-        }while(isMovePossible);
+        }while(!(isMovePossible));
     }
 
+<<<<<<< HEAD
 /*public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) {
     ObjectOfMap[][] mapArray = map.getMapArray();
     int size = map.getSize();
@@ -42,33 +104,29 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
             if (nx >= 0 && nx < size && ny >= 0 && ny < size) {
                 if (neighborType.isInstance(mapArray[nx][ny])) {
                     return true;
+=======
+    public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) { //  Sprawdza sąsiedztwo obiektu mapy
+        ObjectOfMap[][] mapArray = map.getArrayOfObjects();
+        int size = map.getSize();
+        int x = agent.getCoordinateX();
+        int y = agent.getCoordinateY();
+        for (int dx = -1; dx <= 1; dx++) {
+            for (int dy = -1; dy <= 1; dy++) {
+                int nx = x + dx;
+                int ny = y + dy;
+                if (nx >= 0 && nx < size && ny >= 0 && ny < size) {
+                    if (neighborType.isInstance(mapArray[nx][ny])) {
+                        return true;
+                    }
+>>>>>>> d8fccfd (Coś tam zacząłem pracować nad pakietami. Uzupełniłem parę rzeczy z listy TODO. Uporządkowałem, dodałem komentarze do funkcji.)
                 }
             }
         }
-    }
     return false;
 }*/
 
-//    @Override
-//    public void setCoordinateX(int newValueForX){
-//        // musimy sprawdzić czy wartość taka X znajduje się w mapie jeśli tak to dokonujemy zmiany
-//    }
-//
-//    @Override
-//    public int getCoordinateY(){
-//        return this.coordinateY;
-//    }
-//    @Override
-//    public void setCoordinateY(int newValueForY){
-//        // musimy sprawdzić czy wartość taka Y znajduje się w mapie jeśli tak to dokonujemy zmiany
-//
-//    }
     @Override
-    public boolean checkPositionToMove(int X, int Y){
-        return this.getMapPartOf().checkPosition(X, Y);
-    }
-    @Override
-    public void move(int X, int Y){
+    public void move(int X, int Y){   // Zmienia pozycje agenta
         this.getMapPartOf().changePositionOfAgent(this, X, Y);
     }
 
