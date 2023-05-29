@@ -1,7 +1,7 @@
 package AgendClasses;
 
 public interface AgentMethods {
-    void move(Agent agent);
+    void move(int X, int Y);
     /*   void
         getPosition();
         void setPosition();
@@ -13,7 +13,7 @@ public interface AgentMethods {
 //    int getCoordinateY();
 //    void setCoordinateX(int newValueForX);
 //    void setCoordinateY(int newValueForY);
-    void checkPosition(int X, int Y);
+    boolean checkPositionToMove(int X, int Y);
     void chengingStatusOfAgent(Agent agent);
 }
 

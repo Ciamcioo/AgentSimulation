@@ -26,10 +26,6 @@ public class SickAgent extends Agent{
         this.chanceOfDeath = chanceOfDeath;
     }
 
-    @Override
-    public void checkPosition(int X, int Y) {
-
-    }
 
     @Override
     public void chengingStatusOfAgent(Agent agent){

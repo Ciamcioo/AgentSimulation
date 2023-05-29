@@ -5,19 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/Map/EmptyField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Map/MapMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClassesTest/AgentTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapTest/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapTest/MapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/MapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/MapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapTest/MapTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/Isolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Isolation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Package.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/VaccineKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/VaccineKit.java" afterDir="false" />
@@ -155,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685040295246</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update">
+      <created>1685136514263</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685136514263</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

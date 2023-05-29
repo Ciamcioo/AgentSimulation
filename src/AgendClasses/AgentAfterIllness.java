@@ -6,10 +6,6 @@ public class AgentAfterIllness extends Agent{
 
     }
 
-    @Override
-    public void checkPosition(int X, int Y) {
-
-    }
 
     @Override
     public void chengingStatusOfAgent(Agent agent) {
@@ -18,7 +14,7 @@ public class AgentAfterIllness extends Agent{
     }
     @Override
     public String toString(){
-        return "AI";
+        return "A";
     }
 
 

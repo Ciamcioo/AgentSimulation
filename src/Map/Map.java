@@ -1,6 +1,7 @@
 package Map;
 
 
+import AgendClasses.Agent;
 import AgendClasses.AgentBeforeIllness;
 import AgendClasses.SickAgent;
 import Core.ObjectOfMap;
@@ -66,10 +67,22 @@ public class Map implements MapMethods {
         }
     }
     public int getSize(){
-        return this.size;
+        return this.getSize();
     }
     public boolean checkPosition(int coordinateX, int coordinateY){
         return this.arrayOfObjects[coordinateX][coordinateY] instanceof EmptyField;
     }
-    public ObjectOfMap[][] getMapArray() { return arrayOfObjects; }
+
+    @Override
+    public void changePositionOfAgent(Agent agent, int X, int Y) {
+        this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()] = new EmptyField(agent.getCoordinateX(), agent.getCoordinateY(), this);
+        this.arrayOfObjects[X][Y] = agent;
+    }
+    public boolean checkIsAgent(int X, int Y){
+        return this.arrayOfObjects[X][Y] instanceof Agent;
+    }
+    public ObjectOfMap getAgent(int X, int Y){
+        return this.arrayOfObjects[X][Y];
+    }
+
 }

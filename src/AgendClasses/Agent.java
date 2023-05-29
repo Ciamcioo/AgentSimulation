@@ -11,11 +11,15 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
     public void move(Agent agent){
         boolean isMovePossible = false;
         do {
-            int directionOfMove = new Random().nextInt(8) + 1;
+//            int directionOfMove = new Random().nextInt(8) + 1;
+            int directionOfMove = 1;
             switch (directionOfMove){
                 case 1:{
                     int coordinateXToCheck = agent.getCoordinateX() - 1, coordinateYToCheck = agent.getCoordinateY() + 1;
-
+                    if(agent.checkPositionToMove(coordinateXToCheck, coordinateYToCheck))
+                        agent.move(coordinateXToCheck, coordinateYToCheck);
+                    else
+                        System.out.println("Przeniesienie nie udane");
                     break;
                 }
                 case 2:{
@@ -46,10 +50,6 @@ public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType
 }
 
 //    @Override
-//    public int getCoordinateX(){
-//        return
-//    }
-//    @Override
 //    public void setCoordinateX(int newValueForX){
 //        // musimy sprawdzić czy wartość taka X znajduje się w mapie jeśli tak to dokonujemy zmiany
 //    }
@@ -63,6 +63,14 @@ public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType
 //        // musimy sprawdzić czy wartość taka Y znajduje się w mapie jeśli tak to dokonujemy zmiany
 //
 //    }
-
+    @Override
+    public boolean checkPositionToMove(int X, int Y){
+        return this.getMapPartOf().checkPosition(X, Y);
+    }
+    @Override
+    public void move(int X, int Y){
+        this.getMapPartOf().changePositionOfAgent(this, X, Y);
+    }
+    public void
 
 }

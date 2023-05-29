@@ -1,5 +1,6 @@
 package Map;
 
+import AgendClasses.Agent;
 import Core.ObjectOfMap;
 
 public interface MapMethods {
@@ -7,4 +8,7 @@ public interface MapMethods {
     void printMap();
     int getSize();
     boolean checkPosition(int coordinateX, int coordinateY);
+    void changePositionOfAgent(Agent agent,int X,int Y);
+
+
 }
