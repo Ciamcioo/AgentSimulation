@@ -16,13 +16,13 @@ public class Map implements MapMethods {
     private int size;
     private int numberOfAgents;
 
-    public Map(int size, int numberOfHealthyAgents, int numberOfSickAgents) {
+    public Map(int size, int numberOfHealthyAgents, int numberOfSickAgents) { // Konstruktor klasy Map
         this.size = size;
         this.numberOfAgents = numberOfAgents;
         this.arrayOfObjects = this.agentInitializationAndMap(numberOfHealthyAgents, numberOfSickAgents);
     }
 
-    public ObjectOfMap[][] agentInitializationAndMap(int numberOfHealthyAgents, int numberOfSickAgents) {
+    public ObjectOfMap[][] agentInitializationAndMap(int numberOfHealthyAgents, int numberOfSickAgents) {   // Metoda inicjalizuje mape w postaci tablicy dwuwymiarowerj oraz podstawową liczbe agentów na mapie
         ObjectOfMap[][] map = new ObjectOfMap[this.getSize() + border][this.getSize() + border];
         int numOfHealthyAgents = numberOfHealthyAgents, numOfSickAgents = numberOfSickAgents;
         ArrayList<Integer> agent = new ArrayList<Integer>();
@@ -50,7 +50,7 @@ public class Map implements MapMethods {
     }
 
 
-    public void printMap() {
+    public void printMap() {        // Metoda odpowiedzialna za wypisywanie struktury mapy w konsoli
         for (int i = 1; i <= size; i++) {
             System.out.print(" __");
         }
@@ -68,29 +68,29 @@ public class Map implements MapMethods {
         }
     }
 
-    public int getSize() {
+    public int getSize() {  // Metoda zwraca wielkość mapy
         return this.size;
     }
 
-    public boolean checkPosition(int coordinateX, int coordinateY) {
+    public boolean checkPosition(int coordinateX, int coordinateY) {    // TODO usunac duplikaty tego sprawdzania
         return this.arrayOfObjects[coordinateX][coordinateY] instanceof EmptyField;
     }
 
     @Override
-    public void changePositionOfAgent(Agent agent, int X, int Y) {
+    public void changePositionOfAgent(Agent agent, int X, int Y) {  // Metoda zamienia pozycje agenta dla którego została wywołana
         this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()] = new EmptyField(agent.getCoordinateX(), agent.getCoordinateY(), this);
         this.arrayOfObjects[X][Y] = agent;
     }
 
-    public boolean checkIsAgent(int X, int Y) {
+    public boolean checkIsAgent(int X, int Y) {     // TODO sprawdzic z ktorej motedy mamy korzystac przy sprawdzaniu czy pozycja jest zajeta w mapie
         return this.arrayOfObjects[X][Y] instanceof Agent;
     }
 
-    public ObjectOfMap[][] getArrayOfObjects() {
+    public ObjectOfMap[][] getArrayOfObjects() {    // Zwraca naszą mape w postaci tablicy
         return this.arrayOfObjects;
     }
-    @Override
-    public void packageInitialization(Package kit) {
+
+    public void packageInitialization(Package kit) {    // Metoda inicjalizuje pojawienie się pakietu w tablicy dwuwymiarowej odpowiadającej mapie dla nowo stworzonego obiektu typu Package
         boolean successOfOperation = true;
         do {
             if ((kit.getChanceOfSpawn() * 10) <= new Random().nextInt(10)) {

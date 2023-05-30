@@ -5,19 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Coś tam zacząłem pracować nad pakietami. Uzupełniłem parę rzeczy z listy TODO. Uporządkowałem, dodałem komentarze do funkcji.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/EmptyField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/EmptyField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/MapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/MapMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/Isolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Isolation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Package/PackageMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/PackageMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/VaccineKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/VaccineKit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +82,7 @@
       <recent name="AgendClassesTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MapTest.map_initialization">
+  <component name="RunManager">
     <configuration name="MapTest.map_initialization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
