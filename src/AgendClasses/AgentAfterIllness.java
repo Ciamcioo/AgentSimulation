@@ -6,12 +6,6 @@ public class AgentAfterIllness extends Agent{
 
     }
 
-
-    @Override
-    public void chengingStatusOfAgent(Agent agent) {
-        // TODO zmiana statusu obiektu typu AgentAfterIllness poprzez tworzenie nowego obiektu, który zastąpi ten w tym momencie zmienany
-        throw new UnsupportedOperationException("Unimplemented method 'chengingStatusOfAgent'");
-    }
     @Override
     public String toString(){ // Reprezentacja agenta w konsoli
         return "A";

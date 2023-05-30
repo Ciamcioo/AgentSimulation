@@ -1,5 +1,6 @@
 package AgendClasses;
 import Map.Map;
+import Map.EmptyField;
 
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public class SickAgent extends Agent{
         return this.dayTillEndOfIllness;
     }
     public void setDayTillEndOfIllness(int dayTillEndOfIllness){    // Ustawia wartość liczby dni po jakich minie choroba
-        if(dayTillEndOfIllness > 0)
+        if(dayTillEndOfIllness >= 0)
             this.dayTillEndOfIllness = dayTillEndOfIllness ;
     }
     public double getChanceOfDeath(){ // Zwraca procentową szanse śmierci agenta
@@ -28,8 +29,15 @@ public class SickAgent extends Agent{
 
 
     @Override
-    public void chengingStatusOfAgent(Agent agent){
-        // TODO zmiana statusu obiektu typu SickAgent poprzez tworzenie nowego obiektu, który zastąpi ten w tym momencie zmienany
+    public void chengingStatusOfAgent(){
+        if(this.dayTillEndOfIllness == 0){
+            AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
+            this.getMapPartOf().swapAgent(this.getCoordinateX(), this.getCoordinateY(), newAgent);
+        }
+        else{
+            EmptyField newField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
+            this.getMapPartOf().swapAgent(this.getCoordinateX(), this.getCoordinateY(), newField);
+        }
     } @Override
     public String toString(){ // Reprezentacja agenta w konsoli
         return "S";

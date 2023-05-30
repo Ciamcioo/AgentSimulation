@@ -22,7 +22,7 @@ public class Map implements MapMethods {
         this.arrayOfObjects = this.agentInitializationAndMap(numberOfHealthyAgents, numberOfSickAgents);
     }
 
-    public ObjectOfMap[][] agentInitializationAndMap(int numberOfHealthyAgents, int numberOfSickAgents) {   // Metoda inicjalizuje mape w postaci tablicy dwuwymiarowerj oraz podstawową liczbe agentów na mapie
+    public ObjectOfMap[][] agentInitializationAndMap(int numberOfHealthyAgents, int numberOfSickAgents) {
         ObjectOfMap[][] map = new ObjectOfMap[this.getSize() + border][this.getSize() + border];
         int numOfHealthyAgents = numberOfHealthyAgents, numOfSickAgents = numberOfSickAgents;
         ArrayList<Integer> agent = new ArrayList<Integer>();
@@ -50,7 +50,7 @@ public class Map implements MapMethods {
     }
 
 
-    public void printMap() {        // Metoda odpowiedzialna za wypisywanie struktury mapy w konsoli
+    public void printMap() {
         for (int i = 1; i <= size; i++) {
             System.out.print(" __");
         }
@@ -68,34 +68,31 @@ public class Map implements MapMethods {
         }
     }
 
-    public int getSize() {  // Metoda zwraca wielkość mapy
+    public int getSize(){
         return this.size;
     }
 
-    public boolean checkPosition(int coordinateX, int coordinateY) {    // TODO usunac duplikaty tego sprawdzania
-        return this.arrayOfObjects[coordinateX][coordinateY] instanceof EmptyField;
-    }
 
     @Override
-    public void changePositionOfAgent(Agent agent, int X, int Y) {  // Metoda zamienia pozycje agenta dla którego została wywołana
+    public void changePositionOfAgent(Agent agent, int X, int Y) {
         this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()] = new EmptyField(agent.getCoordinateX(), agent.getCoordinateY(), this);
         this.arrayOfObjects[X][Y] = agent;
     }
 
-    public boolean checkIsAgent(int X, int Y) {     // TODO sprawdzic z ktorej motedy mamy korzystac przy sprawdzaniu czy pozycja jest zajeta w mapie
-        return this.arrayOfObjects[X][Y] instanceof Agent;
+    public boolean checkField(int x, int y, Class<?> searchingType) {
+        return searchingType.isInstance(this.arrayOfObjects[x][y]);
     }
 
     public ObjectOfMap[][] getArrayOfObjects() {    // Zwraca naszą mape w postaci tablicy
         return this.arrayOfObjects;
     }
 
-    public void packageInitialization(Package kit) {    // Metoda inicjalizuje pojawienie się pakietu w tablicy dwuwymiarowej odpowiadającej mapie dla nowo stworzonego obiektu typu Package
+    public void packageInitialization(Package kit) {
         boolean successOfOperation = true;
         do {
             if ((kit.getChanceOfSpawn() * 10) <= new Random().nextInt(10)) {
                 int coordinateX = new Random().nextInt(kit.getMapPartOf().size) - 1, coordinateY = new Random().nextInt(kit.getMapPartOf().getSize());
-                if (kit.getMapPartOf().checkPosition(coordinateX, coordinateY))
+                if (kit.getMapPartOf().checkField(coordinateX, coordinateY, EmptyField.class))
                     kit.getMapPartOf().arrayOfObjects[coordinateX][coordinateY] = kit;
 
                 else
@@ -103,5 +100,14 @@ public class Map implements MapMethods {
             } else
                 successOfOperation = false;
         } while (!(successOfOperation));
+    }
+    public ObjectOfMap getOneObjectOfMap(int coordinateX, int coordinateY){
+        return this.arrayOfObjects[coordinateX][coordinateY];
+    }
+
+
+    public void swapAgent(int coordinateX, int coordinateY, ObjectOfMap newAgent) {
+        this.arrayOfObjects[coordinateX][coordinateY] = newAgent;
+
     }
 }
