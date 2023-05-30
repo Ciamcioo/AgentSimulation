@@ -91,11 +91,11 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
         }while(!(isMovePossible));
     }
 
-    public boolean checkIfNeighbor(Map map, ObjectOfMap agent, Class<?> neighborType) { //  Sprawdza sąsiedztwo obiektu określonej klasy w około wybranego agenta/obiektu
+    public boolean checkIfNeighbor(Map map, Class<?> neighborType) { //  Sprawdza sąsiedztwo obiektu określonej klasy w około wybranego agenta/obiektu
         ObjectOfMap[][] mapArray = map.getArrayOfObjects();
         int size = map.getSize();
-        int x = agent.getCoordinateX();
-        int y = agent.getCoordinateY();
+        int x = this.getCoordinateX();
+        int y = this.getCoordinateY();
         for (int dx = -1; dx <= 1; dx++) {
             for (int dy = -1; dy <= 1; dy++) {
                 int nx = x + dx;

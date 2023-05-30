@@ -12,7 +12,7 @@ public class AgentBeforeIllness extends Agent {
         throw new UnsupportedOperationException("Unimplemented method 'chengingStatusOfAgent'");
     }
     public void checkingForVaccine(){         // Metoda poszukująca szczepionki w okolicy
-        if(this.checkIfNeighbor(this.getMapPartOf(), this, VaccineKit.class)){
+        if(this.checkIfNeighbor(this.getMapPartOf(), VaccineKit.class)){
             // TODO dopisać jakieś zwracanie pozycji tego obiektu, którego będziemy poszukiwać
         }
     }
