@@ -8,6 +8,12 @@ public class VaccineKit extends Package{
         super(coordinateX, coordinateY, mapPartOf, chanceOfSpawn);
         this.numberOfVaccineInside = numberOfVaccineInside;
     }
+    public int getNumberOfVaccineInside(){
+        return this.numberOfVaccineInside;
+    }
+    public void setNumberOfVaccineInside(int newNumberOfVaccineInside){
+        this.numberOfVaccineInside = newNumberOfVaccineInside;
+    }
     @Override
     public String toString(){ // Reprezentacja VaccinKit w konsoli
         return "K";

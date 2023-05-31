@@ -35,5 +35,22 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
     }
 
 
-
+    public ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType) {
+        ObjectOfMap[][] mapArray = map.getArrayOfObjects();
+        int size = map.getSize();
+        int x = this.getCoordinateX();
+        int y = this.getCoordinateY();
+        for (int dx = -1; dx <= 1; dx++) {
+            for (int dy = -1; dy <= 1; dy++) {
+                int nx = x + dx;
+                int ny = y + dy;
+                if (nx >= 0 && nx < size && ny >= 0 && ny < size) {
+                    if (neighborType.isInstance(mapArray[nx][ny])) {
+                        return map.getOneObjectOfMap(nx, ny);
+                    }
+                }
+            }
+        }
+    return null;
+}
 }

@@ -7,7 +7,9 @@ public interface ObjectOfMapMethods {
     int getCoordinateY();
     void setCoordinateY(int newCoordinateY);
     Map getMapPartOf();
+    ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType);
     void setMapPartOf(Map map);
+    void searching();
     String toString();
 
 

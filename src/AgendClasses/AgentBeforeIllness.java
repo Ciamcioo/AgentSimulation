@@ -1,6 +1,11 @@
 package AgendClasses;
+import Core.ObjectOfMap;
 import Map.Map;
 import Package.VaccineKit;
+
+import java.io.Console;
+import java.lang.reflect.Constructor;
+
 public class AgentBeforeIllness extends Agent {
     private boolean isVaccinated = false;
     public AgentBeforeIllness(int coordinateX, int coordinateY, Map partMapOf){ //  Konstruktor AgentaBeforeIllness, który wywołuje konstruktor Agent
@@ -19,9 +24,16 @@ public class AgentBeforeIllness extends Agent {
             this.getMapPartOf().swapAgent(this.getCoordinateX(), this.getCoordinateY(), newAgent);
         }
     }
-    public void checkingForVaccine(){         // Metoda poszukująca szczepionki w okolicy
-        if(this.checkIfNeighbor(this.getMapPartOf(), VaccineKit.class)){
-            // TODO dopisać jakieś zwracanie pozycji tego obiektu, którego będziemy poszukiwać
+    @Override
+    public void searching(){
+        ObjectOfMap foundObject = this.checkIfNeighbor(this.getMapPartOf(), VaccineKit.class);
+        if(foundObject != null){
+            VaccineKit foundKit = (VaccineKit) foundObject;
+            if(foundKit.getNumberOfVaccineInside() != 0) {
+                this.setVaccinated(true);
+                this.chengingStatusOfAgent();
+                foundKit.setNumberOfVaccineInside(foundKit.getNumberOfVaccineInside()-1);
+            }
         }
     }
     @Override

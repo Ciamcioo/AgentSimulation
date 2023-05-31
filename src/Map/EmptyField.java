@@ -13,4 +13,7 @@ public class EmptyField extends ObjectOfMap {
     public String toString(){ // Reprezentacja EmptyField w konsoli
         return " ";
     }
+    public void searching(){
+
+    }
 }

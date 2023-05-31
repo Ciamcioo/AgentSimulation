@@ -30,4 +30,7 @@ public abstract class Package extends ObjectOfMap implements PackageMethods {
     public void beingPickedUp(Agent agentToBeInfluence) {
         // TODO napisać metode odpowiedzialna za interakcje typu pakie agent
     }
+    public void searching(){
+        // TODO dopisać do klas które nie potrzebują metody searching jakiś wyjątek w przypadku gdyby została wywołana to ułatwi szukanie błedów, a dla klas które tego potrzebują to nadpisujemy
+    }
 }
