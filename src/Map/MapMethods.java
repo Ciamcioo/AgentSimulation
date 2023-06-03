@@ -6,7 +6,7 @@ import Package.Package;
 
 public interface MapMethods {
     ObjectOfMap[][] getArrayOfObjects();    // Metoda zwraca mape w postaci tablicy dwuwymiarowej
-    ObjectOfMap[][] agentInitializationAndMap(int numberOfHealthyAgents, int numberOfSickAgents); // Metoda inicjalizuje mape w postaci tablicy dwuwymiarowerj oraz podstawową liczbe agentów na mapie
+//    ObjectOfMap[][] agentInitializationAndMap(int numberOfHealthyAgents, int numberOfSickAgents); // Metoda inicjalizuje mape w postaci tablicy dwuwymiarowerj oraz podstawową liczbe agentów na mapie
     void printMap(); // Metoda odpowiedzialna za wypisywanie struktury mapy w konsoli
     int getSize(); // Metoda zwraca wielkość mapy
     boolean checkField(int coordinateX, int coordinateY, Class<?> searchType);

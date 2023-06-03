@@ -1,4 +1,5 @@
 package AgendClasses;
+import Core.ObjectOfMap;
 import Map.Map;
 import Map.EmptyField;
 
@@ -25,6 +26,15 @@ public class SickAgent extends Agent{
     public void setChanceOfDeath(double chanceOfDeath){ // Ustawia procentową szanse śmierci agenta
         if(chanceOfDeath > 0 && chanceOfDeath < 1)
          this.chanceOfDeath = chanceOfDeath;
+    }
+    @Override
+    public void searching(){
+        ObjectOfMap foundObject = this.checkIfNeighbor(this.getMapPartOf(), AgentBeforeIllness.class);
+        if(foundObject != null){
+            AgentBeforeIllness agentFound = (AgentBeforeIllness) foundObject;
+            agentFound.chengingStatusOfAgent();
+        }
+
     }
 
 

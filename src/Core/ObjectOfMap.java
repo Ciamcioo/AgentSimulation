@@ -6,9 +6,10 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
     private int coordinateY;
     private Map mapPartOf;
     public ObjectOfMap(int coordinateX, int coordinateY, Map mapPartOf){
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
-        this.mapPartOf = mapPartOf;
+            this.coordinateX = coordinateX;
+            this.coordinateY = coordinateY;
+            this.mapPartOf = mapPartOf;
+
     }
 
     public int getCoordinateX(){ // Zwraca współrzedną X obiektu typu ObjectOfMap

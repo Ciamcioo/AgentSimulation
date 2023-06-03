@@ -7,6 +7,7 @@ import Map.EmptyField;
 
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
     public Agent(int coordinateX, int coordinateY, Map mapPartOf){      //  Konstruktor Agenta, który wywołuje konstruktor ObjectOfMap
+
         super(coordinateX, coordinateY, mapPartOf);
     }
     public void move(){

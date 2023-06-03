@@ -5,6 +5,7 @@ import Map.Map;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import AgendClasses.VaccinatedAgent;
 
 public class AgentBeforeIllnessTest {
     Map map = new Map(5,1 ,1);
@@ -15,13 +16,14 @@ public class AgentBeforeIllnessTest {
         ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
         mapAsArray[3][3] = agent;
         agent.chengingStatusOfAgent();
-        assertEquals("V", map.getOneObjectOfMap(3,3).toString());
+        assertTrue(map.getOneObjectOfMap(3,3) instanceof VaccinatedAgent);
+        map.printMap();
     }
     @Test
     public void changingStatusOfAgentToSick(){
         ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
         mapAsArray[3][3] = agent;
         agent.chengingStatusOfAgent();
-        assertEquals("S", map.getOneObjectOfMap(3,3).toString());
+        assertTrue(map.getOneObjectOfMap(3,3) instanceof SickAgent);
     }
 }
