@@ -16,14 +16,14 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
         return this.coordinateX;
     }
 
-    public void setCoordinateX(int newCoordinateX){ // Ustawia współrzedną X obiektu typu ObjectOfMap
+    public void setCoordinateX(int newCoordinateX){
         if(newCoordinateX >= 0 && newCoordinateX < this.getMapPartOf().getSize())
             this.coordinateX = newCoordinateX;
     }
     public int getCoordinateY(){ // Zwraca współrzedną Y obiektu typu ObjectOfMap
         return this.coordinateY;
     }
-    public void setCoordinateY(int newCoordinateY){ // Ustawianie współrzedną Y obiektu typu ObjectOfMap
+    public void setCoordinateY(int newCoordinateY){
         if(newCoordinateY >= 0 || newCoordinateY < mapPartOf.getSize())
             this.coordinateY = newCoordinateY;
     }
@@ -35,7 +35,7 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
         this.mapPartOf = map;
     }
 
-
+    // TODO dopisać test dla tej metody
     public ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType) {
         ObjectOfMap[][] mapArray = map.getArrayOfObjects();
         int size = map.getSize();

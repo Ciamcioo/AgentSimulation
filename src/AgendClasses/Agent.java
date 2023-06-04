@@ -8,17 +8,16 @@ import Map.EmptyField;
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
     private boolean iterationMove = false;
     public Agent(int coordinateX, int coordinateY, Map mapPartOf){
-
         super(coordinateX, coordinateY, mapPartOf);
     }
     public boolean getIterationMove(){
         return this.iterationMove;
     }
-    public void setIterationMove(boolean changingStatus){
-        this.iterationMove = changingStatus;
+    public void setIterationMove(boolean didMoved){
+        this.iterationMove = didMoved;
     }
 
-    public void move() { // ruch wszystkich obiektów
+    public void move() {
         int[] directionOfX = {-1,-1,-1,0,0,1,1,1};
         int[] directionOfY = {-1,0,1,-1,1,-1,0,1};;
         do {
@@ -43,6 +42,10 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
         }
     }
     public void searching(){
-
+        try {
+            throw new Exception("Error this object cannot search");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

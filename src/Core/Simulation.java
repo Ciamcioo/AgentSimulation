@@ -18,6 +18,7 @@ public class Simulation {
                     ((Agent) mapOfSimulation.getOneObjectOfMap(j,i)).move();
             }
         }
+        // TODO dopisać jakaś funckje która ustawa po przejściu całego koła przez procesu zmiany pozycji przez kolejnych agentów na false czy coś takiego
 
         mapOfSimulation.printMap();
 

@@ -5,11 +5,17 @@ import Package.VaccineKit;
 
 public class AgentBeforeIllness extends Agent {
     private boolean isVaccinated = false;
-    public AgentBeforeIllness(int coordinateX, int coordinateY, Map partMapOf){ //  Konstruktor AgentaBeforeIllness, który wywołuje konstruktor Agent
+    public AgentBeforeIllness(int coordinateX, int coordinateY, Map partMapOf){
         super(coordinateX, coordinateY, partMapOf);
 
     }
+    public boolean getVaccinated(){ // TODO dopisać test dla tej metody
+        return this.isVaccinated;
+    }
 
+    public void setVaccinated(boolean isVaccinated){
+        this.isVaccinated = isVaccinated;
+    }
     @Override
     public void chengingStatusOfAgent() {
         if(isVaccinated){
@@ -22,7 +28,7 @@ public class AgentBeforeIllness extends Agent {
         }
     }
     @Override
-    public void searching(){
+    public void searching(){    // TODO dopisać test dla tej metody
         ObjectOfMap foundObject = this.checkIfNeighbor(this.getMapPartOf(), VaccineKit.class);
         if(foundObject != null){
             VaccineKit foundKit = (VaccineKit) foundObject;
@@ -36,8 +42,5 @@ public class AgentBeforeIllness extends Agent {
     @Override
     public String toString(){  // Reprezentacja agenta w konsoli
         return "B";
-    }
-    public void setVaccinated(boolean isVaccinated){
-        this.isVaccinated = isVaccinated;
     }
 }
