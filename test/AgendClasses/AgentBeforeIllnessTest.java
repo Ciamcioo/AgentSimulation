@@ -2,7 +2,7 @@ package AgendClasses;
 
 import Core.ObjectOfMap;
 import Map.Map;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import AgendClasses.VaccinatedAgent;
