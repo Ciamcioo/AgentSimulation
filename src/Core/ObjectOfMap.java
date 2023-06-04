@@ -17,14 +17,14 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
     }
 
     public void setCoordinateX(int newCoordinateX){ // Ustawia współrzedną X obiektu typu ObjectOfMap
-        if(newCoordinateX > 0 && newCoordinateX < this.getMapPartOf().getSize())
+        if(newCoordinateX >= 0 && newCoordinateX < this.getMapPartOf().getSize())
             this.coordinateX = newCoordinateX;
     }
     public int getCoordinateY(){ // Zwraca współrzedną Y obiektu typu ObjectOfMap
         return this.coordinateY;
     }
     public void setCoordinateY(int newCoordinateY){ // Ustawianie współrzedną Y obiektu typu ObjectOfMap
-        if(newCoordinateY > 0 || newCoordinateY < mapPartOf.getSize())
+        if(newCoordinateY >= 0 || newCoordinateY < mapPartOf.getSize())
             this.coordinateY = newCoordinateY;
     }
     public Map getMapPartOf(){ // Zwraca mapę do której należy obiekty typu ObjectOfMap

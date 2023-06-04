@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MapTest {
-    Map map = new Map(20,21,2);
+    Map map = new Map(6,2,3);
     @Test
     void testForSetSizeCorrectly(){
         map.setSize(7);
@@ -109,5 +109,16 @@ class MapTest {
     void testForMapInitialization(){
         Map newMap = new Map(50, 15, 15);
         newMap.printMap();
+    }
+    @Test
+    void testForMovingAgent(){
+        map.setOneObjectOfMap(3,3, new AgentBeforeIllness(3,3, map));
+        Agent agent = (Agent) map.getOneObjectOfMap(3,3);
+        map.printMap();
+        map.changePositionOfAgent(agent, 2, 4);
+        map.printMap();
+        assertEquals(2, agent.getCoordinateX());
+        assertEquals(4,agent.getCoordinateY());
+        assertTrue(agent.getIterationMove());
     }
 }

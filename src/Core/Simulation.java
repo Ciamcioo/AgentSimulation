@@ -12,12 +12,10 @@ public class Simulation {
         mapOfSimulation.printMap();
         System.out.println();
 
-        ObjectOfMap[][] array = mapOfSimulation.getArrayOfObjects();
-
         for(int i = 0; i < mapOfSimulation.getSize(); i++) {
             for(int j = 0; j < mapOfSimulation.getSize(); j++) {
                 if(mapOfSimulation.getOneObjectOfMap(j,i) instanceof Agent && !(((Agent) mapOfSimulation.getOneObjectOfMap(j,i)).getIterationMove()))
-                    ((Agent) mapOfSimulation.getOneObjectOfMap(j,i)).moveObjects();
+                    ((Agent) mapOfSimulation.getOneObjectOfMap(j,i)).move();
             }
         }
 

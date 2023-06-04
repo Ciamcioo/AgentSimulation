@@ -114,13 +114,16 @@ public class Map implements MapMethods {
         for (int i = 0; i < size; i++) {
             System.out.print(" __");
         }
+        System.out.println();
     }
     @Override
     public void changePositionOfAgent(Agent agent, int newX, int newY) {
-        this.arrayOfObjects[newX][newY] = this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()];
+        int oldCoordinateX = agent.getCoordinateX(), oldCoordinateY = agent.getCoordinateY();
+        this.arrayOfObjects[newX][newY] = this.arrayOfObjects[oldCoordinateX][oldCoordinateY];
         this.arrayOfObjects[newX][newY].setCoordinateX(newX);
         this.arrayOfObjects[newX][newY].setCoordinateY(newY);
-        this.arrayOfObjects[newX][newY] = new EmptyField(newX, newY, agent.getMapPartOf());
+        this.arrayOfObjects[oldCoordinateX][oldCoordinateY] = new EmptyField(oldCoordinateX, oldCoordinateY, this);
+        agent.setIterationMove(true);
     }
 
     public boolean checkField(int x, int y, Class<?> searchingType) {
