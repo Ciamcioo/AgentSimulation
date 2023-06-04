@@ -6,32 +6,31 @@ import AgendClasses.AgentBeforeIllness;
 import AgendClasses.SickAgent;
 import Core.ObjectOfMap;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 
 public class Map implements MapMethods {
 
-    static final int border = 2;
     private ObjectOfMap[][] arrayOfObjects;
     private int size;
     private int numberOfAgents;
 
     public Map(int size, int numberOfHealthyAgents, int numberOfSickAgents) { // Konstruktor klasy Map
         this.size = size;
-        this.numberOfAgents = numberOfAgents;
+        this.numberOfAgents = numberOfHealthyAgents+numberOfSickAgents;
         this.arrayOfObjects = this.agentInitializationAndMap(numberOfHealthyAgents, numberOfSickAgents);
     }
 
     public ObjectOfMap[][] agentInitializationAndMap(int numberOfHealthyAgents, int numberOfSickAgents) {
-        ObjectOfMap[][] map = new ObjectOfMap[this.getSize() + border][this.getSize() + border];
-        int numOfHealthyAgents = numberOfHealthyAgents, numOfSickAgents = numberOfSickAgents;
+        ObjectOfMap[][] map = new ObjectOfMap[this.getSize()][this.getSize()];
+        //int numOfHealthyAgents = numberOfHealthyAgents;
+        //int numOfSickAgents = numberOfSickAgents;
         ArrayList<Integer> agent = new ArrayList<Integer>();
 
         for (int i = 0; i < numberOfHealthyAgents + numberOfSickAgents; i++)
             agent.add(1);
 
-        for (int i = 1; i <= this.getSize(); i++) {
-            for (int j = 1; j <= this.getSize(); j++) {
+        /*for (int i = 0; i < this.getSize(); i++) {
+            for (int j = 0; j < this.getSize(); j++) {
                 if (agent.indexOf(1) == new Random().nextInt(agent.size())) {
                     if (new Random().nextInt(2) == 0 && numOfHealthyAgents > 0) {
                         map[i][j] = new AgentBeforeIllness(i, j, this);
@@ -45,25 +44,47 @@ public class Map implements MapMethods {
                     map[i][j] = new EmptyField(i, j, this);
                 }
             }
+        }*/
+
+        for(int i = 0; i < size; i++) {
+            for(int j = 0; j < size; j++) {
+                map[i][j] = new EmptyField(i,j,this);
+            }
         }
+
+        Random random = new Random();
+        for(int i = 0; i < numberOfHealthyAgents; i++) {
+            int x, y;
+            do {
+                x = random.nextInt(size);
+                y = random.nextInt(size);
+            } while(map[x][y].getClass() != EmptyField.class); // szukanie pustego miejsca
+            map[x][y] = new AgentBeforeIllness(x, y, this);
+        }
+
+        for(int i = 0; i < numberOfSickAgents; i++) {
+            int x, y;
+            do {
+                x = random.nextInt(size);
+                y = random.nextInt(size);
+            } while(map[x][y].getClass() != EmptyField.class);
+            int dayOfSickness = new Random().nextInt(40);
+            map[x][y] = new SickAgent(x, y, this, dayOfSickness, 0.4);
+        }
+
         return map;
     }
 
 
     public void printMap() {
-        for (int i = 1; i <= size; i++) {
-            System.out.print(" __");
-        }
         System.out.println();
-        for (int i = 1; i <= size; i++) {
-            System.out.print("|");
-            for (int j = 1; j <= size; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 System.out.print("  " + this.arrayOfObjects[i][j].toString());
             }
-            System.out.print("|");
             System.out.println();
         }
-        for (int i = 1; i <= size; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print(" __");
         }
     }

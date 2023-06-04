@@ -16,6 +16,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
             switch (directionOfMove){
                 case 1:{
                     int coordinateXToCheck = this.getCoordinateX() - 1, coordinateYToCheck = this.getCoordinateY() + 1;
+                    // tu jeszcze chyba trzeba sprawdzać czy koordynaty nie są mniejsze od 0 i większe od rozmiaru
                     if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
