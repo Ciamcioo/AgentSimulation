@@ -6,32 +6,33 @@ import java.util.Random;
 import Map.EmptyField;
 
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
+    private boolean iterationMove = false;
     public Agent(int coordinateX, int coordinateY, Map mapPartOf){
 
         super(coordinateX, coordinateY, mapPartOf);
+    }
+    public boolean getIterationMove(){
+        return this.iterationMove;
+    }
+    public void setIterationMove(boolean changingStatus){
+        this.iterationMove = changingStatus;
     }
 
     public void moveObjects() { // ruch wszystkich obiektów
         int[] directionOfX = {-1,-1,-1,0,0,1,1,1};
         int[] directionOfY = {-1,0,1,-1,1,-1,0,1};
-
         ObjectOfMap[][] arrayOfObjects = this.getMapPartOf().getArrayOfObjects();
-        int size = this.getMapPartOf().getSize();
 
-        for(int i = 0; i < size; i++) {
-            for(int j = 0; j < size; j++) {
+        for(int i = 0; i < this.getMapPartOf().getSize(); i++) {
+            for(int j = 0; j < this.getMapPartOf().getSize(); j++) {
 
                 int index = new Random().nextInt(8);
                 int newX = j + directionOfX[index];
                 int newY = i + directionOfY[index];
 
-                if(newX>=0 && newX<size && newY>=0 && newY<size && arrayOfObjects[newX][newY] instanceof EmptyField) {
-                    //this.getMapPartOf().changePositionOfAgent(this,newX,newY);
-                    // chyba dalej changePositionOfAgent niekoniecznie dobrze działa, bo wygląda jakby mniej ruszał tymi agentami? xD nwm
-                    arrayOfObjects[newX][newY] = arrayOfObjects[j][i];
-                    arrayOfObjects[newX][newY].setCoordinateX(newX,this.getMapPartOf());
-                    arrayOfObjects[newX][newY].setCoordinateY(newY);
-                    arrayOfObjects[j][i] = new EmptyField(j, i, this.getMapPartOf());
+                if(newX>=0 && newX<this.getMapPartOf().getSize() && newY>=0 && newY<this.getMapPartOf().getSize() && arrayOfObjects[newX][newY] instanceof EmptyField && !(this.getIterationMove())) {
+                    this.getMapPartOf().changePositionOfAgent(this,newX,newY);
+                    this.setIterationMove(true);
                 }
 
             }

@@ -52,7 +52,7 @@ public class Map implements MapMethods {
     }
 
     public ObjectOfMap getOneObjectOfMap(int coordinateX, int coordinateY){
-        return this.arrayOfObjects[coordinateY][coordinateX];
+        return this.arrayOfObjects[coordinateX][coordinateY];
     }
 
     public void setOneObjectOfMap(int coordinateX, int coordinateY, ObjectOfMap newAgent) {
@@ -64,7 +64,7 @@ public class Map implements MapMethods {
         ObjectOfMap[][] map = new ObjectOfMap[this.getSize()][this.getSize()];
         for(int i = 0; i < this.getSize(); i++){
             for(int j =0; j < this.getSize(); j++)
-                map[i][j] = new EmptyField(j, i, this);
+                map[i][j] = new EmptyField(i,j, this);
         }
         return map;
     }
@@ -79,7 +79,7 @@ public class Map implements MapMethods {
             int coordinateX = new Random().nextInt(this.getSize());
             int coordinateY = new Random().nextInt(this.getSize());
             if(this.getOneObjectOfMap(coordinateX, coordinateY) instanceof EmptyField) {
-                this.arrayOfObjects[coordinateY][coordinateX] = new AgentBeforeIllness(coordinateX, coordinateY, this);
+                this.arrayOfObjects[coordinateX][coordinateY] = new AgentBeforeIllness(coordinateX, coordinateY, this);
                 i++;
             }
         }
@@ -91,7 +91,7 @@ public class Map implements MapMethods {
             int coordinateX = new Random().nextInt(this.getSize());
             int coordinateY = new Random().nextInt(this.getSize());
             if (this.getOneObjectOfMap(coordinateX, coordinateY) instanceof EmptyField) {
-                this.arrayOfObjects[coordinateY][coordinateX] = new SickAgent(coordinateX, coordinateY, this, new Random().nextInt(40) + 1, new Random().nextDouble(1));
+                this.arrayOfObjects[coordinateX][coordinateY] = new SickAgent(coordinateX, coordinateY, this, new Random().nextInt(40) + 1, new Random().nextDouble(1));
                 i++;
             }
         }
@@ -117,10 +117,10 @@ public class Map implements MapMethods {
     }
     @Override
     public void changePositionOfAgent(Agent agent, int newX, int newY) {
-        this.arrayOfObjects[newY][newX] = this.arrayOfObjects[agent.getCoordinateY()][agent.getCoordinateX()];
+        this.arrayOfObjects[newX][newY] = this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()];
+        this.arrayOfObjects[newX][newY].setCoordinateX(newX);
+        this.arrayOfObjects[newX][newY].setCoordinateY(newY);
         this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()] = new EmptyField(agent.getCoordinateX(), agent.getCoordinateY(), this);
-        arrayOfObjects[newY][newX].setCoordinateY(newY);
-        arrayOfObjects[newY][newX].setCoordinateX(newX);
     }
 
     public boolean checkField(int x, int y, Class<?> searchingType) {
