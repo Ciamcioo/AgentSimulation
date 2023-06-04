@@ -30,8 +30,13 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 int newX = j + directionOfX[index];
                 int newY = i + directionOfY[index];
 
-                if(newX>=0 && newX<this.getMapPartOf().getSize() && newY>=0 && newY<this.getMapPartOf().getSize() && arrayOfObjects[newX][newY] instanceof EmptyField && !(this.getIterationMove())) {
-                    this.getMapPartOf().changePositionOfAgent(this,newX,newY);
+                if(newX>=0 && newX<this.getMapPartOf().getSize() && newY>=0 && newY<this.getMapPartOf().getSize() && arrayOfObjects[newX][newY] instanceof EmptyField) {
+//                    this.getMapPartOf().changePositionOfAgent(this,newX,newY);
+                    // chyba dalej changePositionOfAgent niekoniecznie dobrze działa, bo wygląda jakby mniej ruszał tymi agentami? xD nwm
+                    arrayOfObjects[newX][newY] = arrayOfObjects[j][i];
+                    arrayOfObjects[newX][newY].setCoordinateX(newX);
+                    arrayOfObjects[newX][newY].setCoordinateY(newY);
+                    arrayOfObjects[j][i] = new EmptyField(j, i, this.getMapPartOf());
                     this.setIterationMove(true);
                 }
 

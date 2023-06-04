@@ -16,7 +16,8 @@ public class Simulation {
 
         for(int i = 0; i < mapOfSimulation.getSize(); i++) {
             for(int j = 0; j < mapOfSimulation.getSize(); j++) {
-                if(!EmptyField.class.isInstance(array[j][i]) && !Package.class.isInstance(array[j][i])) ((Agent)array[j][i]).moveObjects();
+                if(mapOfSimulation.getOneObjectOfMap(j,i) instanceof Agent && !(((Agent) mapOfSimulation.getOneObjectOfMap(j,i)).getIterationMove()))
+                    ((Agent) mapOfSimulation.getOneObjectOfMap(j,i)).moveObjects();
             }
         }
 

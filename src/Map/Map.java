@@ -120,7 +120,7 @@ public class Map implements MapMethods {
         this.arrayOfObjects[newX][newY] = this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()];
         this.arrayOfObjects[newX][newY].setCoordinateX(newX);
         this.arrayOfObjects[newX][newY].setCoordinateY(newY);
-        this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()] = new EmptyField(agent.getCoordinateX(), agent.getCoordinateY(), this);
+        this.arrayOfObjects[newX][newY] = new EmptyField(newX, newY, agent.getMapPartOf());
     }
 
     public boolean checkField(int x, int y, Class<?> searchingType) {

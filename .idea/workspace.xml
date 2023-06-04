@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Czyszczenie jakiś funkcji przekładanie itd...">
+    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="dopisanie zmiennej odpowiadającej za jedno poruszenie się agenta na ture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685913058727</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="dopisanie zmiennej odpowiadającej za jedno poruszenie się agenta na ture">
+      <created>1685914188200</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685914188200</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,6 +297,7 @@
     <MESSAGE value="Naprawiłem Map" />
     <MESSAGE value="Nowa inicializacja mapy wydaje mi się że wszystko już śmiga" />
     <MESSAGE value="Czyszczenie jakiś funkcji przekładanie itd..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Czyszczenie jakiś funkcji przekładanie itd..." />
+    <MESSAGE value="dopisanie zmiennej odpowiadającej za jedno poruszenie się agenta na ture" />
+    <option name="LAST_COMMIT_MESSAGE" value="dopisanie zmiennej odpowiadającej za jedno poruszenie się agenta na ture" />
   </component>
 </project>

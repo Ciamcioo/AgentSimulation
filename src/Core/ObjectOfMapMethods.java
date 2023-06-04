@@ -3,7 +3,7 @@ import Map.Map;
 
 public interface ObjectOfMapMethods {
     int getCoordinateX();
-    void setCoordinateX(int newCoordinateX, Map mapPartOf);
+    void setCoordinateX(int newCoordinateX);
     int getCoordinateY();
     void setCoordinateY(int newCoordinateY);
     Map getMapPartOf();
