@@ -105,7 +105,8 @@ public class Map implements MapMethods {
     public void changePositionOfAgent(Agent agent, int X, int Y) {
         this.arrayOfObjects[X][Y] = this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()];
         this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()] = new EmptyField(agent.getCoordinateX(), agent.getCoordinateY(), this);
-
+        arrayOfObjects[X][Y].setCoordinateX(X,this);
+        arrayOfObjects[X][Y].setCoordinateY(Y);
     }
 
     public boolean checkField(int x, int y, Class<?> searchingType) {

@@ -26,6 +26,8 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 int newY = i + directionOfY[index];
 
                 if(newX>=0 && newX<size && newY>=0 && newY<size && EmptyField.class.isInstance(arrayOfObjects[newX][newY])) {
+                    //this.getMapPartOf().changePositionOfAgent(this,newX,newY);
+                    // chyba dalej changePositionOfAgent niekoniecznie dobrze działa, bo wygląda jakby mniej ruszał tymi agentami? xD nwm
                     arrayOfObjects[newX][newY] = arrayOfObjects[j][i];
                     arrayOfObjects[newX][newY].setCoordinateX(newX,this.getMapPartOf());
                     arrayOfObjects[newX][newY].setCoordinateY(newY);
@@ -39,7 +41,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
     public void move(){
         boolean isMovePossible = true;
         do {
-            int directionOfMove = new Random().nextInt(8);
+            int directionOfMove = new Random().nextInt(8) + 1;
             switch (directionOfMove){
                 case 1:{
                     int coordinateXToCheck = this.getCoordinateX() - 1, coordinateYToCheck = this.getCoordinateY() + 1;
