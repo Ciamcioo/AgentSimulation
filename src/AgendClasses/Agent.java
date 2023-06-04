@@ -16,8 +16,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
             switch (directionOfMove){
                 case 1:{
                     int coordinateXToCheck = this.getCoordinateX() - 1, coordinateYToCheck = this.getCoordinateY() + 1;
-                    // tu jeszcze chyba trzeba sprawdzać czy koordynaty nie są mniejsze od 0 i większe od rozmiaru
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
@@ -25,7 +24,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 }
                 case 2:{
                     int coordinateXToCheck = this.getCoordinateX() , coordinateYToCheck = this.getCoordinateY() + 1;
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
@@ -34,7 +33,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 }
                 case 3:{
                     int coordinateXToCheck = this.getCoordinateX() + 1, coordinateYToCheck = this.getCoordinateY() + 1;
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
@@ -42,7 +41,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 }
                 case 4:{
                     int coordinateXToCheck = this.getCoordinateX() - 1, coordinateYToCheck = this.getCoordinateY();
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
@@ -50,7 +49,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 }
                 case 5:{
                     int coordinateXToCheck = this.getCoordinateX() + 1, coordinateYToCheck = this.getCoordinateY();
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
@@ -58,7 +57,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 }
                 case 6:{
                     int coordinateXToCheck = this.getCoordinateX() - 1, coordinateYToCheck = this.getCoordinateY() - 1;
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
@@ -66,7 +65,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 }
                 case 7:{
                     int coordinateXToCheck = this.getCoordinateX(), coordinateYToCheck = this.getCoordinateY() - 1;
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
@@ -74,7 +73,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 }
                 case 8:{
                     int coordinateXToCheck = this.getCoordinateX() + 1, coordinateYToCheck = this.getCoordinateY() - 1;
-                    if(this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
+                    if(coordinateXToCheck >= 0 && coordinateXToCheck < this.getMapPartOf().getSize() && coordinateYToCheck >= 0 && coordinateYToCheck < this.getMapPartOf().getSize() && this.getMapPartOf().checkField(coordinateXToCheck, coordinateYToCheck, EmptyField.class))
                         this.getMapPartOf().changePositionOfAgent(this, coordinateXToCheck, coordinateYToCheck);
                     else
                         isMovePossible = false;
