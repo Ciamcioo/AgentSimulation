@@ -10,8 +10,8 @@ public class SickAgent extends Agent{
     private double chanceOfDeath;
     public SickAgent(int coordinateX, int coordinateY, Map partMapOf, int dayTillEndOfIllness, double chanceOfDeath){ // Konstruktor SickAgent, który wywołuje konstruktor Agent
         super(coordinateX, coordinateY, partMapOf);
-        this.chanceOfDeath = chanceOfDeath;
-        this.dayTillEndOfIllness = dayTillEndOfIllness;
+        this.setChanceOfDeath(chanceOfDeath);
+        this.setDayTillEndOfIllness(dayTillEndOfIllness);
     }
     public int getDayTillEndOfIllness(){    // Zwraca liczbe dni do końca zarażenia chorego agenta
         return this.dayTillEndOfIllness;

@@ -21,9 +21,9 @@ public class Map implements MapMethods {
 
     public Map(int size, int numberOfHealthyAgents, int numberOfSickAgents) { // Konstruktor klasy Map
         this.setSize(size);
-        this.arrayOfObjects = this.mapInitialization(size);
         this.setSickAgents(numberOfSickAgents);
         this.setHealthyAgents(numberOfHealthyAgents);
+        this.arrayOfObjects = this.emptyMapInitialization();
         this.agentInitializationOnMap();
     }
     public int getSize(){
@@ -46,31 +46,41 @@ public class Map implements MapMethods {
         this.healthyAgents = (healthyAgents > 0) ? healthyAgents : -3;
     }
 
-    public ObjectOfMap[][] mapInitialization(int size){
-        return new ObjectOfMap[size][size];
+    public ObjectOfMap[][] emptyMapInitialization(){
+        ObjectOfMap[][] map = new ObjectOfMap[this.getSize()][this.getSize()];
+        for(int i = 0; i < this.getSize(); i++){
+            for(int j =0; j < this.getSize(); j++)
+                map[i][j] = new EmptyField(j, i, this);
+        }
+        return map;
+    }
+    public void agentInitializationOnMap(){
+        this.arrayOfObjects = this.initializationOfHealthyAgents();
+        this.arrayOfObjects = this.initializationOfSickAgents();
     }
 
-    public void agentInitializationOnMap() {
-        ArrayList<Integer> listAgents = this.createAndFillArrayRepresentingAgents();
-        int counterHealthy = 0, counterOfSick = 0;
-
-            for (int i = 0; i < this.getSize(); i++) {
-                for (int j = 0; j < this.getSize(); j++) {
-                    if (listAgents.indexOf(1) == new Random().nextInt(listAgents.size()) && this.healthyAgents + this.sickAgents != counterOfSick + counterHealthy) {
-                        if (new Random().nextInt(2) == 0 && this.healthyAgents != counterHealthy) {
-                            this.arrayOfObjects[i][j] = new AgentBeforeIllness(i, j, this);
-                            counterHealthy++;
-                        }
-                        else if (this.sickAgents != counterOfSick) {
-                            this.arrayOfObjects[i][j] = new SickAgent(i, j, this, (int) new Random().nextInt(40), 0.4);
-                            counterOfSick++;
-                        }
-                    }
-                    else
-                        this.arrayOfObjects[i][j] = new EmptyField(i, j, this);
-                }
-            }
-    }
+//    public void agentInitializationOnMap() {
+//        ArrayList<Agent> listAgents = this.createAndFillArrayRepresentingAgents();
+//        int counterHealthy = this.healthyAgents, counterOfSick = this.sickAgents;
+//        this. arrayOfObjects = initializationOfHealthyAgents();
+//
+//        do {
+//            for (int i = 0; i < this.getSize(); i++) {
+//                for (int j = 0; j < this.getSize(); j++) {
+//                    if (listAgents.indexOf(1) == new Random().nextInt(listAgents.size())) {
+//                        if (new Random().nextInt(2) == 0 && counterHealthy != 0) {
+//                            this.arrayOfObjects[i][j] = new AgentBeforeIllness(i, j, this);
+//                            counterHealthy--;
+//                        } else if (counterOfSick != 0) {
+//                            this.arrayOfObjects[i][j] = new SickAgent(i, j, this, (int) new Random().nextInt(40), 0.4);
+//                            counterOfSick--;
+//                        }
+//                    } else
+//                        this.arrayOfObjects[i][j] = new EmptyField(i, j, this);
+//                }
+//            }
+//        }while(counterHealthy != 0 && counterOfSick != 0);
+//    }
 
     public void printMap() {
         for (int i = 0; i < size; i++) {
@@ -120,7 +130,7 @@ public class Map implements MapMethods {
         } while (!(successOfOperation));
     }
     public ObjectOfMap getOneObjectOfMap(int coordinateX, int coordinateY){
-        return this.arrayOfObjects[coordinateX][coordinateY];
+        return this.arrayOfObjects[coordinateY][coordinateX];
     }
     public void showMap(){
         ObjectOfMap[][] array = this.getArrayOfObjects();
@@ -128,7 +138,7 @@ public class Map implements MapMethods {
         for(int i = 0; i < 20; i++){
             for(int j = 0; j < 20; j++){
                 if(array[i][j] instanceof Agent)
-                    System.out.println(m + ". "+ array.toString());
+                    System.out.println(m + ". "+ this.getOneObjectOfMap(i,j).toString());
                 m++;
             }
         }
@@ -139,10 +149,34 @@ public class Map implements MapMethods {
         this.arrayOfObjects[coordinateX][coordinateY] = newAgent;
 
     }
-    public ArrayList<Integer> createAndFillArrayRepresentingAgents(){
-        ArrayList<Integer> arrayListOfAgent = new ArrayList<>();
-        for(int i = 0; i < this.healthyAgents + this.sickAgents; i++)
-            arrayListOfAgent.add(1);
-        return arrayListOfAgent;
+//    public ArrayList<Agent> createAndFillArrayRepresentingAgents(){
+//        ArrayList<Integer> arrayListOfAgent = new ArrayList<>();
+//        int numHealthy = 0, int numSick = 0;
+//        for(int i = 0; i < this.healthyAgents + this.sickAgents; i++)
+//            if(new Random().nextInt(2) == 0 && numHealthy != this.healthyAgents)
+//                arrayListOfAgent.add(new AgentBeforeIllness(0,0, ));
+//        return this.arrayListOfAgent;
+//    }
+    public ObjectOfMap[][] initializationOfHealthyAgents(){
+        for(int i =0; i < this.healthyAgents;){
+            int coordinateX = new Random().nextInt(this.getSize());
+            int coordinateY = new Random().nextInt(this.getSize());
+            if(this.getOneObjectOfMap(coordinateX, coordinateY) instanceof EmptyField) {
+                this.arrayOfObjects[coordinateY][coordinateX] = new AgentBeforeIllness(coordinateX, coordinateY, this);
+                i++;
+            }
+        }
+        return this.arrayOfObjects;
+    }
+    public ObjectOfMap[][] initializationOfSickAgents(){
+        for (int i = 0; i < this.sickAgents;) {
+            int coordinateX = new Random().nextInt(this.getSize());
+            int coordinateY = new Random().nextInt(this.getSize());
+            if (this.getOneObjectOfMap(coordinateX, coordinateY) instanceof EmptyField) {
+                this.arrayOfObjects[coordinateY][coordinateX] = new SickAgent(coordinateX, coordinateY, this, new Random().nextInt(40) + 1, new Random().nextDouble(1));
+                i++;
+            }
+        }
+        return this.arrayOfObjects;
     }
 }
