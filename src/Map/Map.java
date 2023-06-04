@@ -103,8 +103,9 @@ public class Map implements MapMethods {
 
     @Override
     public void changePositionOfAgent(Agent agent, int X, int Y) {
+        this.arrayOfObjects[X][Y] = this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()];
         this.arrayOfObjects[agent.getCoordinateX()][agent.getCoordinateY()] = new EmptyField(agent.getCoordinateX(), agent.getCoordinateY(), this);
-        this.arrayOfObjects[X][Y] = agent;
+
     }
 
     public boolean checkField(int x, int y, Class<?> searchingType) {
@@ -180,24 +181,5 @@ public class Map implements MapMethods {
         return this.arrayOfObjects;
     }
 
-    public void moveObjects() { // ruch wszystkich obiektów
-        int[] directionOfX = {-1,-1,-1,0,0,1,1,1};
-        int[] directionOfY = {-1,0,1,-1,1,-1,0,1};
 
-        for(int i = 0; i < size; i++) {
-            for(int j = 0; j < size; j++) {
-
-                if(!EmptyField.class.isInstance(arrayOfObjects[j][i])) {
-                    int index = new Random().nextInt(8);
-                    int newX = j + directionOfX[index];
-                    int newY = i + directionOfY[index];
-
-                    if(newX>=0 && newX<size && newY>=0 && newY<size && EmptyField.class.isInstance(arrayOfObjects[newX][newY])) {
-                        arrayOfObjects[newX][newY] = arrayOfObjects[j][i];
-                        arrayOfObjects[j][i] = new EmptyField(j, i, this);
-                    }
-                }
-            }
-        }
-    }
 }

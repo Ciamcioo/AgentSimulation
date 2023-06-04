@@ -3,6 +3,7 @@ import AgendClasses.Agent;
 import AgendClasses.AgentBeforeIllness;
 import AgendClasses.SickAgent;
 import Map.Map;
+import Map.EmptyField;
 
 public class Simulation {
     public static void main(String[] args) {
@@ -11,7 +12,14 @@ public class Simulation {
         mapOfSimulation.printMap();
         System.out.println();
 
-        mapOfSimulation.moveObjects();
+        ObjectOfMap[][] array = mapOfSimulation.getArrayOfObjects();
+
+        for(int i = 0; i < mapOfSimulation.getSize(); i++) {
+            for(int j = 0; j < mapOfSimulation.getSize(); j++) {
+                if(!EmptyField.class.isInstance(array[j][i]) && !Package.class.isInstance(array[j][i])) ((Agent)array[j][i]).move();
+            }
+        }
+
         mapOfSimulation.printMap();
 
     }
