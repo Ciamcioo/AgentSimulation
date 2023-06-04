@@ -16,8 +16,8 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
         return this.coordinateX;
     }
 
-    public void setCoordinateX(int newCoordinateX, Map mapPartOf){ // Ustawia współrzedną X obiektu typu ObjectOfMap
-        if(newCoordinateX > 0 && newCoordinateX < mapPartOf.getSize())
+    public void setCoordinateX(int newCoordinateX){ // Ustawia współrzedną X obiektu typu ObjectOfMap
+        if(newCoordinateX > 0 && newCoordinateX < this.getMapPartOf().getSize())
             this.coordinateX = newCoordinateX;
     }
     public int getCoordinateY(){ // Zwraca współrzedną Y obiektu typu ObjectOfMap

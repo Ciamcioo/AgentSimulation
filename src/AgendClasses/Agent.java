@@ -6,7 +6,7 @@ import java.util.Random;
 import Map.EmptyField;
 
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
-    public Agent(int coordinateX, int coordinateY, Map mapPartOf){      //  Konstruktor Agenta, który wywołuje konstruktor ObjectOfMap
+    public Agent(int coordinateX, int coordinateY, Map mapPartOf){
 
         super(coordinateX, coordinateY, mapPartOf);
     }
@@ -25,7 +25,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
                 int newX = j + directionOfX[index];
                 int newY = i + directionOfY[index];
 
-                if(newX>=0 && newX<size && newY>=0 && newY<size && EmptyField.class.isInstance(arrayOfObjects[newX][newY])) {
+                if(newX>=0 && newX<size && newY>=0 && newY<size && arrayOfObjects[newX][newY] instanceof EmptyField) {
                     //this.getMapPartOf().changePositionOfAgent(this,newX,newY);
                     // chyba dalej changePositionOfAgent niekoniecznie dobrze działa, bo wygląda jakby mniej ruszał tymi agentami? xD nwm
                     arrayOfObjects[newX][newY] = arrayOfObjects[j][i];

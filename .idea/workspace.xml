@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Naprawiłem Map">
+    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Map/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Map/MapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/MapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/MapMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +81,20 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MapTest.testForMapInitialization">
+  <component name="RunManager" selected="Application.Simulation">
+    <configuration name="Simulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Core.Simulation" />
+      <module name="Pandemic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MapTest.checkAfterEmptyMapInitialization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
@@ -90,22 +106,6 @@
       <option name="PACKAGE_NAME" value="Map" />
       <option name="MAIN_CLASS_NAME" value="Map.MapTest" />
       <option name="METHOD_NAME" value="checkAfterEmptyMapInitialization" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MapTest.checkAfterInitializationIsSomethingNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pandemic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Map.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Map" />
-      <option name="MAIN_CLASS_NAME" value="Map.MapTest" />
-      <option name="METHOD_NAME" value="checkAfterInitializationIsSomethingNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Simulation" />
         <item itemvalue="JUnit.MapTest.testForMapInitialization" />
         <item itemvalue="JUnit.MapTest.checkAfterEmptyMapInitialization" />
         <item itemvalue="JUnit.MapTest.testForSickAgentInitialization" />
         <item itemvalue="JUnit.MapTest.testForHealthyAgentInitialization" />
-        <item itemvalue="JUnit.MapTest.checkAfterInitializationIsSomethingNull" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685828015228</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Nowa inicializacja mapy wydaje mi się że wszystko już śmiga">
+      <created>1685888543971</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685888543973</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +283,7 @@
     <MESSAGE value="Przełożyłem komentarze do interfejsów, wydaje mi się że tak jest lepiej. Napisałem zmiane statusów obiektow i ogarnąłem do tego testy, a do agentów, któryrzy tego nie wykorzystują dorzuciłem wyjątki żeby łatwo można znaleźć gdzie jest błąd." />
     <MESSAGE value="Coś zacząłem pisać to rozpoznawanie obiektów i wyszukiwanie ich na mapie. Pierwsza interakcja pomiędzy Agent nie zaszczepiony, a zaszczepiony ukończona tylko jeszcze do niej test dopisać. No i dorzuciłem dwa nowe testy." />
     <MESSAGE value="Naprawiłem Map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Naprawiłem Map" />
+    <MESSAGE value="Nowa inicializacja mapy wydaje mi się że wszystko już śmiga" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nowa inicializacja mapy wydaje mi się że wszystko już śmiga" />
   </component>
 </project>

@@ -3,8 +3,6 @@ import Core.ObjectOfMap;
 import Map.Map;
 import Map.EmptyField;
 
-import java.util.Random;
-
 public class SickAgent extends Agent{
     private int dayTillEndOfIllness;
     private double chanceOfDeath;
@@ -42,11 +40,11 @@ public class SickAgent extends Agent{
     public void chengingStatusOfAgent(){
         if(this.dayTillEndOfIllness == 0){
             AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
-            this.getMapPartOf().swapAgent(this.getCoordinateX(), this.getCoordinateY(), newAgent);
+            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
         }
         else{
             EmptyField newField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
-            this.getMapPartOf().swapAgent(this.getCoordinateX(), this.getCoordinateY(), newField);
+            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newField);
         }
     } @Override
     public String toString(){ // Reprezentacja agenta w konsoli
