@@ -34,7 +34,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
 
 
     @Override
-    public void chengingStatusOfAgent() {
+    public void changingStatusOfAgent() {
         try {
             throw new Exception("Error not correct agent class");
         } catch (Exception e) {

@@ -22,7 +22,7 @@ public class AgentBeforeIllnessTest {
         agent.setVaccinated(true);
         ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
         mapAsArray[3][3] = agent;
-        agent.chengingStatusOfAgent();
+        agent.changingStatusOfAgent();
         assertTrue(map.getOneObjectOfMap(3,3) instanceof VaccinatedAgent);
         map.printMap();
     }
@@ -30,7 +30,7 @@ public class AgentBeforeIllnessTest {
     public void changingStatusOfAgentToSick(){
         ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
         mapAsArray[3][3] = agent;
-        agent.chengingStatusOfAgent();
+        agent.changingStatusOfAgent();
         assertTrue(map.getOneObjectOfMap(3,3) instanceof SickAgent);
     }
     @Test

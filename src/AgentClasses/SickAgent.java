@@ -27,7 +27,7 @@ public class SickAgent extends Agent{
          this.chanceOfDeath = chanceOfDeath;
     }
     @Override
-    public void chengingStatusOfAgent(){
+    public void changingStatusOfAgent(){ //chenging???
         if(this.dayTillEndOfIllness == 0){
             AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
@@ -42,7 +42,7 @@ public class SickAgent extends Agent{
     public void searching(){
         AgentBeforeIllness foundObject = (AgentBeforeIllness) this.checkIfNeighbor(this.getMapPartOf(), AgentBeforeIllness.class);
         if(foundObject != null)
-            foundObject.chengingStatusOfAgent();
+            foundObject.changingStatusOfAgent();
     }
     @Override
     public String toString(){ // Reprezentacja agenta w konsoli

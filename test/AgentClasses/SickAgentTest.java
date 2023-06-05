@@ -26,7 +26,7 @@ class SickAgentTest {
             sickAgent.setDayTillEndOfIllness(0);
             ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
             mapAsArray[3][3] = sickAgent;
-            sickAgent.chengingStatusOfAgent();
+            sickAgent.changingStatusOfAgent();
             assertTrue(map.getOneObjectOfMap(3,3) instanceof AgentAfterIllness);
 
         }
@@ -34,7 +34,7 @@ class SickAgentTest {
         void chengingStatusOfAgentToEmptyField(){
             ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
             mapAsArray[3][3] = sickAgent;
-            sickAgent.chengingStatusOfAgent();
+            sickAgent.changingStatusOfAgent();
             assertTrue(map.getOneObjectOfMap(3,3) instanceof EmptyField);
         }
         @Test

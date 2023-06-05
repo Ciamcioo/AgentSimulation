@@ -33,7 +33,11 @@ public abstract class Package extends ObjectOfMap implements PackageMethods {
 
 
     public void beingPickedUp(Agent agentToBeInfluence) {
-        // TODO napisać metode odpowiedzialna za interakcje typu pakie agent
+        // TODO napisać metode odpowiedzialna za interakcje typu pakiet agent
+        if(agentToBeInfluence.getCoordinateX()== getCoordinateX() && agentToBeInfluence.getCoordinateY() == getCoordinateY()){
+            //TODO Coś się ma stać z agentem. Co?
+            agentToBeInfluence.changingStatusOfAgent(); //TODO co tu ma się w zasadzie dziać?
+        }
     }
     public void searching(){
         try {

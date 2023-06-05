@@ -10,7 +10,7 @@ public class Isolation extends Package{
     }
     @Override
     public String toString(){ // Reprezentacje Isolation w konsoli
-        return "I";
+        return "Ą";
     }
 
 }

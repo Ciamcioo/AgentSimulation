@@ -17,7 +17,7 @@ public class AgentBeforeIllness extends Agent {
         this.isVaccinated = isVaccinated;
     }
     @Override
-    public void chengingStatusOfAgent() {
+    public void changingStatusOfAgent() {//to chyba zmienia zdrowego w chorego. co nie?
         if(isVaccinated){
             VaccinatedAgent newAgent = new VaccinatedAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
@@ -34,7 +34,7 @@ public class AgentBeforeIllness extends Agent {
             VaccineKit foundKit = (VaccineKit) foundObject;
             if(foundKit.getNumberOfVaccineInside() != 0) {
                 this.setVaccinated(true);
-                this.chengingStatusOfAgent();
+                this.changingStatusOfAgent();
                 foundKit.setNumberOfVaccineInside(foundKit.getNumberOfVaccineInside()-1);
             }
         }
