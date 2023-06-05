@@ -4,15 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Poruszanie agentów działa już w porządku. Poruszają się po jednym polu. Naprawiłem funkcje changingPosition.">
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" afterDir="false" />
+    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Poprawki">
+      <change afterPath="$PROJECT_DIR$/test/Package/PackageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentAfterIllness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentBeforeIllness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/SickAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgendClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/VaccinatedAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/EmptyField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/EmptyField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/MapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/MapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/Isolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Isolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/PackageMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/PackageMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/VaccineKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/VaccineKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AgendClasses/AgentBeforeIllnessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/AgentBeforeIllnessTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AgendClasses/AgentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/AgentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AgendClasses/SickAgentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/SickAgentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Core/ObjectOfMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Core/ObjectOfMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Map/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Map/MapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Package/VaccineKitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Package/VaccineKitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,85 +90,89 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Package" />
       <recent name="AgendClasses" />
       <recent name="Map" />
       <recent name="Core" />
-      <recent name="Package" />
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AgentTest.moveObjects">
-    <configuration name="Simulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Core.Simulation" />
+  <component name="RunManager" selected="JUnit.SickAgentTest.testForDaysTillEndOfIllness">
+    <configuration name="AgentBeforeIllnessTest.searchingForVaccination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Core.*" />
+          <option name="PATTERN" value="AgentClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AgentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pandemic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="AgendClasses.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="AgendClasses" />
-      <option name="MAIN_CLASS_NAME" value="AgendClasses.AgentTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AgentTest.moveObjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pandemic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="AgendClasses.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="AgendClasses" />
-      <option name="MAIN_CLASS_NAME" value="AgendClasses.AgentTest" />
-      <option name="METHOD_NAME" value="moveObjects" />
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
+      <option name="METHOD_NAME" value="searchingForVaccination" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapTest.testForMovingAgent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PackageTest.isEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Map.*" />
+          <option name="PATTERN" value="Package.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Map" />
-      <option name="MAIN_CLASS_NAME" value="Map.MapTest" />
-      <option name="METHOD_NAME" value="testForMovingAgent" />
+      <option name="PACKAGE_NAME" value="Package" />
+      <option name="MAIN_CLASS_NAME" value="Package.PackageTest" />
+      <option name="METHOD_NAME" value="isEmpty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapTest.testForzMovingAgent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PackageTest.setChanceOfSpawn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Map.*" />
+          <option name="PATTERN" value="Package.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Map" />
-      <option name="MAIN_CLASS_NAME" value="Map.MapTest" />
-      <option name="METHOD_NAME" value="testForzMovingAgent" />
+      <option name="PACKAGE_NAME" value="Package" />
+      <option name="MAIN_CLASS_NAME" value="Package.PackageTest" />
+      <option name="METHOD_NAME" value="setChanceOfSpawn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SickAgentTest.testForDaysTillEndOfIllness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pandemic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AgentClasses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.SickAgentTest" />
+      <option name="METHOD_NAME" value="testForDaysTillEndOfIllness" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VaccineKitTest.testNotCorrectlySetNumberOfVaccineInside" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pandemic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Package" />
+      <option name="MAIN_CLASS_NAME" value="Package.VaccineKitTest" />
+      <option name="METHOD_NAME" value="testNotCorrectlySetNumberOfVaccineInside" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AgentTest.moveObjects" />
-        <item itemvalue="JUnit.AgentTest" />
-        <item itemvalue="JUnit.MapTest.testForMovingAgent" />
-        <item itemvalue="Application.Simulation" />
-        <item itemvalue="JUnit.MapTest.testForzMovingAgent" />
+        <item itemvalue="JUnit.SickAgentTest.testForDaysTillEndOfIllness" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest.searchingForVaccination" />
+        <item itemvalue="JUnit.PackageTest.setChanceOfSpawn" />
+        <item itemvalue="JUnit.PackageTest.isEmpty" />
+        <item itemvalue="JUnit.VaccineKitTest.testNotCorrectlySetNumberOfVaccineInside" />
       </list>
     </recent_temporary>
   </component>
@@ -276,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685917752923</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Poprawki">
+      <created>1685918540937</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1685918540937</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -315,6 +341,7 @@
     <MESSAGE value="Czyszczenie jakiś funkcji przekładanie itd..." />
     <MESSAGE value="dopisanie zmiennej odpowiadającej za jedno poruszenie się agenta na ture" />
     <MESSAGE value="Poruszanie agentów działa już w porządku. Poruszają się po jednym polu. Naprawiłem funkcje changingPosition." />
-    <option name="LAST_COMMIT_MESSAGE" value="Poruszanie agentów działa już w porządku. Poruszają się po jednym polu. Naprawiłem funkcje changingPosition." />
+    <MESSAGE value="Poprawki" />
+    <option name="LAST_COMMIT_MESSAGE" value="Poprawki" />
   </component>
 </project>

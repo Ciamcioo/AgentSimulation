@@ -1,12 +1,17 @@
 package Package;
-import AgendClasses.Agent;
+import AgentClasses.Agent;
 import Map.Map;
 import Core.ObjectOfMap;
 
 public abstract class Package extends ObjectOfMap implements PackageMethods {
     private double chanceOfSpawn;
     private boolean isEmpty;
-    public Package(int coordinateX,int coordinateY, Map mapPartOf, double chanceOfSpawn){   // Konstruktor klasy Package, który wywołuje konstruktor klasy ObjectOfMap
+    public Package(Map mapPartOf,double chanceOfSpawn){
+        super(mapPartOf);
+        this.setChanceOfSpawn(chanceOfSpawn);
+        this.isEmpty = false;
+    }
+    public Package(int coordinateX,int coordinateY, Map mapPartOf, double chanceOfSpawn){
 
         super(coordinateX, coordinateY, mapPartOf);
         this.chanceOfSpawn = chanceOfSpawn;
@@ -15,7 +20,7 @@ public abstract class Package extends ObjectOfMap implements PackageMethods {
     public double getChanceOfSpawn(){ // Metoda zwraca szanse pojawienia się pakietu na mapie
         return this.chanceOfSpawn;
     }
-    public void setChanceOfSpawn(double chanceOfSpawn){ // Meotda ustawia szanse pojawienia się pakietu na mapie
+    public void setChanceOfSpawn(double chanceOfSpawn){
         if(chanceOfSpawn > 0 && chanceOfSpawn < 1)
             this.chanceOfSpawn = chanceOfSpawn;
     }
@@ -31,6 +36,10 @@ public abstract class Package extends ObjectOfMap implements PackageMethods {
         // TODO napisać metode odpowiedzialna za interakcje typu pakie agent
     }
     public void searching(){
-        // TODO dopisać do klas które nie potrzebują metody searching jakiś wyjątek w przypadku gdyby została wywołana to ułatwi szukanie błedów, a dla klas które tego potrzebują to nadpisujemy
+        try {
+            throw new Exception("Error this object cannot search");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

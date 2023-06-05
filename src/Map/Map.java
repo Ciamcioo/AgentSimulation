@@ -1,12 +1,11 @@
 package Map;
 
 import Package.Package;
-import AgendClasses.Agent;
-import AgendClasses.AgentBeforeIllness;
-import AgendClasses.SickAgent;
+import AgentClasses.Agent;
+import AgentClasses.AgentBeforeIllness;
+import AgentClasses.SickAgent;
 import Core.ObjectOfMap;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Map implements MapMethods {
@@ -91,11 +90,33 @@ public class Map implements MapMethods {
             int coordinateX = new Random().nextInt(this.getSize());
             int coordinateY = new Random().nextInt(this.getSize());
             if (this.getOneObjectOfMap(coordinateX, coordinateY) instanceof EmptyField) {
-                this.arrayOfObjects[coordinateX][coordinateY] = new SickAgent(coordinateX, coordinateY, this, new Random().nextInt(40) + 1, new Random().nextDouble(1));
+                this.arrayOfObjects[coordinateX][coordinateY] = new SickAgent(coordinateX, coordinateY, this);
                 i++;
             }
         }
         return this.arrayOfObjects;
+    }
+
+    @Override
+    public void changePositionOfAgent(Agent agent, int newX, int newY) {
+        int oldCoordinateX = agent.getCoordinateX(), oldCoordinateY = agent.getCoordinateY();
+        this.arrayOfObjects[newX][newY] = this.arrayOfObjects[oldCoordinateX][oldCoordinateY];
+        this.arrayOfObjects[newX][newY].setCoordinateX(newX);
+        this.arrayOfObjects[newX][newY].setCoordinateY(newY);
+        this.arrayOfObjects[oldCoordinateX][oldCoordinateY] = new EmptyField(oldCoordinateX, oldCoordinateY, this);
+        agent.setIterationMove(true);
+    }
+    public void packageInitialization(Package kit) {
+        boolean inSuccessfullOfOperation = false;
+        do {
+            if ((kit.getChanceOfSpawn() * 10) <= new Random().nextInt(10) + 1) {
+                int coordinateX = new Random().nextInt(kit.getMapPartOf().size), coordinateY = new Random().nextInt(kit.getMapPartOf().getSize());
+                if (kit.getMapPartOf().getOneObjectOfMap(coordinateX,coordinateY) instanceof EmptyField) {
+                    this.setOneObjectOfMap(coordinateX, coordinateY, kit);
+                    inSuccessfullOfOperation = true;
+                }
+            }
+        } while (!(inSuccessfullOfOperation));
     }
 
     public void printMap() {
@@ -115,33 +136,5 @@ public class Map implements MapMethods {
             System.out.print(" __");
         }
         System.out.println();
-    }
-    @Override
-    public void changePositionOfAgent(Agent agent, int newX, int newY) {
-        int oldCoordinateX = agent.getCoordinateX(), oldCoordinateY = agent.getCoordinateY();
-        this.arrayOfObjects[newX][newY] = this.arrayOfObjects[oldCoordinateX][oldCoordinateY];
-        this.arrayOfObjects[newX][newY].setCoordinateX(newX);
-        this.arrayOfObjects[newX][newY].setCoordinateY(newY);
-        this.arrayOfObjects[oldCoordinateX][oldCoordinateY] = new EmptyField(oldCoordinateX, oldCoordinateY, this);
-        agent.setIterationMove(true);
-    }
-
-    public boolean checkField(int x, int y, Class<?> searchingType) {
-        return searchingType.isInstance(this.arrayOfObjects[x][y]);
-    }
-
-    public void packageInitialization(Package kit) {
-        boolean successOfOperation = true;
-        do {
-            if ((kit.getChanceOfSpawn() * 10) <= new Random().nextInt(10) + 1) {
-                int coordinateX = new Random().nextInt(kit.getMapPartOf().size), coordinateY = new Random().nextInt(kit.getMapPartOf().getSize());
-                if (kit.getMapPartOf().checkField(coordinateX, coordinateY, EmptyField.class))
-                    kit.getMapPartOf().arrayOfObjects[coordinateX][coordinateY] = kit;
-
-                else
-                    successOfOperation = false;
-            } else
-                successOfOperation = false;
-        } while (!(successOfOperation));
     }
 }

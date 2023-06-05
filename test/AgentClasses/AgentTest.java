@@ -1,12 +1,23 @@
-package AgendClasses;
+package AgentClasses;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import Map.Map;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AgentTest {
     Map map = new Map(10, 5, 5);
+    @Test
+    void testForIterationMove(){
+        Agent agent = new AgentBeforeIllness(3,3, map);
+        agent.setIterationMove(true);
+        assertTrue(agent.getIterationMove());
+        agent.setIterationMove(false);
+        assertFalse(agent.getIterationMove());
+
+    }
     @Test
     void moveObjects() {
         map.printMap();

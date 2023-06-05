@@ -1,6 +1,6 @@
 package Package;
 
-import AgendClasses.Agent;
+import AgentClasses.Agent;
 
 public interface PackageMethods {
     void beingPickedUp(Agent agentToBeInfluence);

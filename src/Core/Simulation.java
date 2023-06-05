@@ -1,9 +1,6 @@
 package Core;
-import AgendClasses.Agent;
-import AgendClasses.AgentBeforeIllness;
-import AgendClasses.SickAgent;
+import AgentClasses.Agent;
 import Map.Map;
-import Map.EmptyField;
 
 public class Simulation {
     public static void main(String[] args) {

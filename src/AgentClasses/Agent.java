@@ -1,4 +1,4 @@
-package AgendClasses;
+package AgentClasses;
 
 import Core.ObjectOfMap;
 import Map.Map;
@@ -19,7 +19,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
 
     public void move() {
         int[] directionOfX = {-1,-1,-1,0,0,1,1,1};
-        int[] directionOfY = {-1,0,1,-1,1,-1,0,1};;
+        int[] directionOfY = {-1,0,1,-1,1,-1,0,1};
         do {
             int index = new Random().nextInt(8);
             int newX = this.getCoordinateX() + directionOfX[index];

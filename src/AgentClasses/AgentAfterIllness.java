@@ -1,4 +1,4 @@
-package AgendClasses;
+package AgentClasses;
 import Map.Map;
 public class AgentAfterIllness extends Agent{
     public AgentAfterIllness(int coordinateX, int coordinateY, Map mapPartOf){

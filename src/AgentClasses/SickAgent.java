@@ -1,15 +1,16 @@
-package AgendClasses;
-import Core.ObjectOfMap;
+package AgentClasses;
 import Map.Map;
 import Map.EmptyField;
+
+import java.util.Random;
 
 public class SickAgent extends Agent{
     private int dayTillEndOfIllness;
     private double chanceOfDeath;
-    public SickAgent(int coordinateX, int coordinateY, Map partMapOf, int dayTillEndOfIllness, double chanceOfDeath){
+    public SickAgent(int coordinateX, int coordinateY, Map partMapOf){
         super(coordinateX, coordinateY, partMapOf);
-        this.setChanceOfDeath(chanceOfDeath);
-        this.setDayTillEndOfIllness(dayTillEndOfIllness);
+        this.setChanceOfDeath(new Random().nextDouble(1));
+        this.setDayTillEndOfIllness(new Random().nextInt(21)+1);
     }
     public int getDayTillEndOfIllness(){
         return this.dayTillEndOfIllness;
@@ -26,17 +27,6 @@ public class SickAgent extends Agent{
          this.chanceOfDeath = chanceOfDeath;
     }
     @Override
-    public void searching(){ // TODO dopisać test dla tej metody
-        ObjectOfMap foundObject = this.checkIfNeighbor(this.getMapPartOf(), AgentBeforeIllness.class);
-        if(foundObject != null){
-            AgentBeforeIllness agentFound = (AgentBeforeIllness) foundObject;
-            agentFound.chengingStatusOfAgent();
-        }
-
-    }
-
-
-    @Override
     public void chengingStatusOfAgent(){
         if(this.dayTillEndOfIllness == 0){
             AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
@@ -46,7 +36,15 @@ public class SickAgent extends Agent{
             EmptyField newField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newField);
         }
-    } @Override
+    }
+
+    @Override
+    public void searching(){
+        AgentBeforeIllness foundObject = (AgentBeforeIllness) this.checkIfNeighbor(this.getMapPartOf(), AgentBeforeIllness.class);
+        if(foundObject != null)
+            foundObject.chengingStatusOfAgent();
+    }
+    @Override
     public String toString(){ // Reprezentacja agenta w konsoli
         return "S";
     }

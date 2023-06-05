@@ -1,4 +1,4 @@
-package AgendClasses;
+package AgentClasses;
 import Core.ObjectOfMap;
 import Map.Map;
 import Package.VaccineKit;
@@ -9,7 +9,7 @@ public class AgentBeforeIllness extends Agent {
         super(coordinateX, coordinateY, partMapOf);
 
     }
-    public boolean getVaccinated(){ // TODO dopisać test dla tej metody
+    public boolean getVaccinated(){
         return this.isVaccinated;
     }
 
@@ -23,7 +23,7 @@ public class AgentBeforeIllness extends Agent {
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
         }
         else{
-            SickAgent newAgent = new SickAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf(), 40, 0.4);
+            SickAgent newAgent = new SickAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
         }
     }

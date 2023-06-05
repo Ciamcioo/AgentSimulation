@@ -1,13 +1,16 @@
 package Map;
 
-import AgendClasses.AgentBeforeIllness;
-import AgendClasses.SickAgent;
-import AgendClasses.Agent;
+import AgentClasses.Agent;
+import AgentClasses.AgentBeforeIllness;
+import AgentClasses.SickAgent;
+import Core.ObjectOfMap;
+import Package.Package;
+import Package.VaccineKit;
+import Package.Isolation;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MapTest {
     Map map = new Map(6,2,3);
@@ -22,15 +25,6 @@ class MapTest {
         assertEquals(-1, map.getSize());
     }
     @Test
-    void testForSetSickAgentCorrectly(){
-        assertEquals(1, map.getSickAgents());
-    }
-    @Test
-    void testForSetSickNotCorrectly(){
-        map.setSickAgents(-5);
-        assertEquals(-2, map.getSickAgents());
-    }
-    @Test
     void testForSetHealthyAgentCorrectly(){
         assertEquals(1, map.getHealthyAgents());
     }
@@ -40,9 +34,46 @@ class MapTest {
         assertEquals(-3,map.getHealthyAgents());
     }
     @Test
+    void testForSetSickAgentCorrectly(){
+        assertEquals(1, map.getSickAgents());
+    }
+    @Test
+    void testForSetSickNotCorrectly(){
+        map.setSickAgents(-5);
+        assertEquals(-2, map.getSickAgents());
+    }
+    @Test
+    void testForArrayMap(){
+        ObjectOfMap[][] newArray = new ObjectOfMap[7][7];
+        map.setArrayOfObjects(newArray);
+        assertEquals(newArray, map.getArrayOfObjects());
+    }
+    @Test
+    void testForOneObjectOfMap(){
+        AgentBeforeIllness agent = new AgentBeforeIllness(3,4,map);
+        map.setOneObjectOfMap(3,4, agent);
+        assertEquals(agent, map.getOneObjectOfMap(3,4));
+    }
+    @Test
+    void checkAfterEmptyMapInitialization(){
+        boolean isEverythingEmpty = true;
+        for(int i = 0; i < map.getSize(); i++){
+            for (int j =0; j < map.getSize(); j++){
+                if(!(map.getOneObjectOfMap(j,i) instanceof EmptyField))
+                    isEverythingEmpty = false;
+            }
+        }
+        assertTrue(isEverythingEmpty);
+    }
+
+    @Test
+    void testForMapInitialization(){
+        Map newMap = new Map(50, 15, 15);
+        newMap.printMap();
+    }
+    @Test
     void agentInitializationOnMap(){
         int countSick = 0, countHealthy = 0, countEmpty = 0;
-//        map.agentInitializationOnMap();
         for (int i = 0; i < map.getSize(); i++){
             for (int j = 0; j < map.getSize(); j++){
                 if(map.getOneObjectOfMap(i,j) instanceof AgentBeforeIllness)
@@ -57,31 +88,6 @@ class MapTest {
         assertEquals(map.getHealthyAgents(), countHealthy);
         assertEquals(map.getSize()* map.getSize() - map.getSickAgents() - map.getHealthyAgents(), countEmpty);
     }
-
-//    @Test
-//    void correctlySetListOfAgent(){
-//        boolean isEverythingOne = true;
-////        ArrayList<Agent> arrayListOfAgent = map.createAndFillArrayRepresentingAgents();
-//        for(int i = 0; i <  map.getSickAgents() + map.getHealthyAgents(); i++)
-//
-////        assertTrue(isEverythingOne);
-//    }
-
-    @Test
-    void printingMap(){
-        map.printMap();
-    }
-    @Test
-    void checkAfterEmptyMapInitialization(){
-        boolean isEverythingEmpty = true;
-        for(int i = 0; i < map.getSize(); i++){
-            for (int j =0; j < map.getSize(); j++){
-                if(!(map.getOneObjectOfMap(j,i) instanceof EmptyField))
-                    isEverythingEmpty = false;
-            }
-        }
-        assertTrue(isEverythingEmpty);
-    }
     @Test
     void testForHealthyAgentInitialization(){
         int counter = 0;
@@ -93,7 +99,9 @@ class MapTest {
             }
         }
         assertEquals(map.getHealthyAgents(), counter);
-    }   @Test
+    }
+
+    @Test
     void testForSickAgentInitialization(){
         int counter = 0;
         map.initializationOfSickAgents();
@@ -106,9 +114,29 @@ class MapTest {
         assertEquals(map.getSickAgents(), counter);
     }
     @Test
-    void testForMapInitialization(){
-        Map newMap = new Map(50, 15, 15);
-        newMap.printMap();
+    void testForChangingPosition(){
+        AgentBeforeIllness agentBeforeIllness = new AgentBeforeIllness(0,0, map);
+        map.setOneObjectOfMap(0,0,agentBeforeIllness);
+        map.changePositionOfAgent(agentBeforeIllness,4,4);
+        assertEquals(agentBeforeIllness, map.getOneObjectOfMap(4,4));
+    }
+    @Test
+    void testForPackageInitialization(){
+        boolean isThereIsolation = false, isThereKit = false;
+        Package kit = new VaccineKit( map,0.5,2);
+        Package isolation = new Isolation(map,0.5);
+        map.packageInitialization(kit);
+        map.packageInitialization(isolation);
+        for (int i = 0; i < map.getSize(); i++){
+            for (int j =0; j < map.getSize(); j++){
+                if (map.getOneObjectOfMap(j,i) instanceof VaccineKit)
+                    isThereKit = true;
+                else if (map.getOneObjectOfMap(j,i) instanceof Isolation)
+                    isThereIsolation = true;
+            }
+        }
+        assertTrue(isThereIsolation);
+        assertTrue(isThereKit);
     }
     @Test
     void testForMovingAgent(){
@@ -120,5 +148,9 @@ class MapTest {
         assertEquals(2, agent.getCoordinateX());
         assertEquals(4,agent.getCoordinateY());
         assertTrue(agent.getIterationMove());
+    }
+    @Test
+    void printingMap(){
+        map.printMap();
     }
 }

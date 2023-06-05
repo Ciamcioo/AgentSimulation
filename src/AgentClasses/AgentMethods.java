@@ -1,7 +1,5 @@
-package AgendClasses;
+package AgentClasses;
 
-import Core.ObjectOfMap;
-import Map.Map;
 public interface AgentMethods {
     boolean getIterationMove(); // Metoda zwarcająca wartość boolean stwierdzająca czy obiekt poruszył się w tej iteracji
     void  setIterationMove(boolean didMoved); // Metoda ustawiająca wartość boolean stwierdzająca czy obiekt poruszył się w tej iteracji

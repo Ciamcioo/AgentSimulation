@@ -2,6 +2,9 @@ package Package;
 import Map.Map;
 
 public class Isolation extends Package{
+    public Isolation(Map mapPartOf, double chanceOfSpawn){
+        super(mapPartOf, chanceOfSpawn);
+    }
     public Isolation(int coordinateX,int coordinateY, Map mapPartOf, double chanceOfSpawn){ // Konstrukotr klasy Isolation, który wywołuje konstruktor klasy Package
         super(coordinateX, coordinateY, mapPartOf, chanceOfSpawn);
     }

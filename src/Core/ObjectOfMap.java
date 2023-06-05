@@ -5,6 +5,9 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
     private int coordinateX;
     private int coordinateY;
     private Map mapPartOf;
+    public ObjectOfMap(Map mapPartOf){
+        this.setMapPartOf(mapPartOf);
+    }
     public ObjectOfMap(int coordinateX, int coordinateY, Map mapPartOf){
             this.coordinateX = coordinateX;
             this.coordinateY = coordinateY;
@@ -35,7 +38,6 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
         this.mapPartOf = map;
     }
 
-    // TODO dopisać test dla tej metody
     public ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType) {
         ObjectOfMap[][] mapArray = map.getArrayOfObjects();
         int size = map.getSize();
