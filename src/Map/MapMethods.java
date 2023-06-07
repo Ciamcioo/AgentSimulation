@@ -25,5 +25,8 @@ public interface MapMethods {
 
     ObjectOfMap[][] initializationOfHealthyAgents();
 
+    void packageDestruction();
+    void settingValueOfMoveIterationToFalse();
+
 
 }

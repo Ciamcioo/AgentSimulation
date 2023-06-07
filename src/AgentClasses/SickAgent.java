@@ -11,6 +11,7 @@ public class SickAgent extends Agent{
         super(coordinateX, coordinateY, partMapOf);
         this.setChanceOfDeath(new Random().nextDouble(1));
         this.setDayTillEndOfIllness(new Random().nextInt(21)+1);
+        this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
     public int getDayTillEndOfIllness(){
         return this.dayTillEndOfIllness;
@@ -45,7 +46,12 @@ public class SickAgent extends Agent{
             foundObject.changingStatusOfAgent();
     }
     public void responseForCallingOfActionOfObject(){
-        // TODO dopisać kolejne działania obiektu typu SickAgent to będzie move  -> sprawdzenie otoczenia (to będzie w searching, można zmienić to na na przykład infecting czy innaczej) -> zmiana stanów innych agnetów w otoczeniu jeżeli taki będzie -> zmiana statusu agenta, jeżeli to możliwe (śmierć albo wyleczenie)
+        this.move();
+        this.searching();
+        if (this.getDayTillEndOfIllness() == 0)
+            this.changingStatusOfAgent();
+        else if (this.getChanceOfDeath() >= new Random().nextDouble(1))
+            this.changingStatusOfAgent();
         // TODO dopisanie testu do tej metody, ale tak samo to tez ja mogę zrobić
     }
     @Override

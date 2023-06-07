@@ -139,4 +139,26 @@ public class Map implements MapMethods {
         }
         System.out.println();
     }
+    @Override
+    public void packageDestruction(){
+        for (int i = 0; i < this.getSize(); i++){
+            for (int j = 0; j < this.getSize(); j++){
+                if (this.getOneObjectOfMap(j,i) instanceof Package) {
+                    new EmptyField(j,i,this);
+                }
+            }
+        }
+
+    }
+
+    @Override
+    public void settingValueOfMoveIterationToFalse() {
+        for (int i = 0; i < this.getSize(); i++){
+            for (int j =0; j < this.getSize(); j++){
+                if (this.getOneObjectOfMap(j,i) instanceof Agent){
+                    ((Agent) this.getOneObjectOfMap(j,i)).setIterationMove(false);
+                }
+            }
+        }
+    }
 }

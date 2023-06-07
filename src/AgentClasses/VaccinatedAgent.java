@@ -3,6 +3,7 @@ import Map.Map;
 public class VaccinatedAgent extends Agent {
     public VaccinatedAgent(int coordinateX, int coordinateY, Map partMapOf){
         super(coordinateX, coordinateY, partMapOf);
+        this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
 
     @Override

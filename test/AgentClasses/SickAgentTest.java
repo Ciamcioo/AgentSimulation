@@ -44,4 +44,12 @@ class SickAgentTest {
             assertTrue(map.getOneObjectOfMap(2,2).checkIfNeighbor(map, AgentBeforeIllness.class) instanceof AgentBeforeIllness);
 
         }
+        @Test
+        void testOfResponseForCalling(){    // TODO dopisac jakies opcje do sprwadzania smierci i tak dalej
+            map.setOneObjectOfMap(2,2, sickAgent);
+            map.printMap();
+            sickAgent.responseForCallingOfActionOfObject();
+            map.printMap();
+            assertTrue(sickAgent.getCoordinateX() != 2 && sickAgent.getCoordinateY() != 2);
+        }
 }

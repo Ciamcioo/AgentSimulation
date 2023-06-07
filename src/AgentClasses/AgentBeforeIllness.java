@@ -7,7 +7,7 @@ public class AgentBeforeIllness extends Agent {
     private boolean isVaccinated = false;
     public AgentBeforeIllness(int coordinateX, int coordinateY, Map partMapOf){
         super(coordinateX, coordinateY, partMapOf);
-
+        this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
     public boolean getVaccinated(){
         return this.isVaccinated;

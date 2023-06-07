@@ -12,6 +12,7 @@ public class VaccineKit extends Package{
     public VaccineKit(int coordinateX,int coordinateY, Map mapPartOf, double chanceOfSpawn, int numberOfVaccineInside){ // Konstruktor klasy VaccineKit, który wywołuje konstruktor klasy Package
         super(coordinateX, coordinateY, mapPartOf, chanceOfSpawn);
         this.numberOfVaccineInside = numberOfVaccineInside;
+        this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
     public int getNumberOfVaccineInside(){
         return this.numberOfVaccineInside;

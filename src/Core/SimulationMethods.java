@@ -1,10 +1,12 @@
 package Core;
 
+import AgentClasses.Agent;
 import Map.Map;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import Package.Package;
+import Map.EmptyField;
 public interface SimulationMethods {
      static int getSize(){
          // TODO Dopisanie testu dla tej metody
@@ -69,12 +71,20 @@ public interface SimulationMethods {
              }
          }
     }
-    static void respawnOfPackages(){
+    static void respawnOfPackages(Map map){
+
         //TODO Napisanie metody wywołujące respown pakietu
         //TODO Napisanie testu jednostkowego do teog
     }
-    static void packageDestructionAndSettingMovedToFalse(){
-
+    static void packageDestructionAndSettingMovedToFalse(Map map){
+        for (int i = 0; i < map.getSize(); i++){
+            for (int j =0; j < map.getSize(); j++){
+                if (map.getOneObjectOfMap(j,i) instanceof Agent)
+                    ((Agent) map.getOneObjectOfMap(j,i)).setIterationMove(false);
+                else if(map.getOneObjectOfMap(j,i) instanceof Package)
+                    ((Package) map.getOneObjectOfMap(j,i)).destructionOfPackage();
+            }
+        }
     }
-    //TODO Napisanie metody odpowiedzialnej za zniszczenie pakietów oraz ustawienie zmienych ruch na false
+    //TODO Napisanie do tego testu jednostkowego
 }

@@ -21,7 +21,8 @@ public class Simulation implements SimulationMethods {
             SimulationMethods.respawnOfPackages();
             SimulationMethods.agentControlMethod(mapOfSimulation);
             mapOfSimulation.printMap();
-            SimulationMethods.packageDestructionAndSettingMovedToFalse();
+            mapOfSimulation.packageDestruction();
+            mapOfSimulation.settingValueOfMoveIterationToFalse();
             numberOfIterations--;
         }
 

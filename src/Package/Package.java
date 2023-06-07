@@ -2,7 +2,7 @@ package Package;
 import AgentClasses.Agent;
 import Map.Map;
 import Core.ObjectOfMap;
-
+import Map.EmptyField;
 public abstract class Package extends ObjectOfMap implements PackageMethods {
     private  double chanceOfSpawn;
     private boolean isEmpty;
@@ -43,5 +43,8 @@ public abstract class Package extends ObjectOfMap implements PackageMethods {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    public void destructionOfPackage(){
+        EmptyField emptyField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
     }
 }
