@@ -4,20 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Poprawki">
-      <change afterPath="$PROJECT_DIR$/src/Core/pairOfInt.java" afterDir="false" />
+    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Dopisane testy jednostkowe, popoprawiane tak działały jak najlepiej i przechodziły pełne testy.">
+      <change afterPath="$PROJECT_DIR$/src/Core/SimulationMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgentClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentAfterIllness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentBeforeIllness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/SickAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgentClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/VaccinatedAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/pairOfInt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/EmptyField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/EmptyField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/Isolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Isolation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Package/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AgentClasses/AgentBeforeIllnessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/AgentBeforeIllnessTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AgentClasses/SickAgentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/SickAgentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/VaccineKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/VaccineKit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -292,6 +293,17 @@
     <option name="localTasksCounter" value="16" />
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -329,6 +341,7 @@
     <MESSAGE value="dopisanie zmiennej odpowiadającej za jedno poruszenie się agenta na ture" />
     <MESSAGE value="Poruszanie agentów działa już w porządku. Poruszają się po jednym polu. Naprawiłem funkcje changingPosition." />
     <MESSAGE value="Poprawki" />
-    <option name="LAST_COMMIT_MESSAGE" value="Poprawki" />
+    <MESSAGE value="Dopisane testy jednostkowe, popoprawiane tak działały jak najlepiej i przechodziły pełne testy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dopisane testy jednostkowe, popoprawiane tak działały jak najlepiej i przechodziły pełne testy." />
   </component>
 </project>

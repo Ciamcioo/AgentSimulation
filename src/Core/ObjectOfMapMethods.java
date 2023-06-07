@@ -11,6 +11,7 @@ public interface ObjectOfMapMethods {
     void setMapPartOf(Map map);
     void searching();
     String toString();
+    void responseForCallingOfActionOfObject();
 
 
 }

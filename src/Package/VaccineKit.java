@@ -22,6 +22,10 @@ public class VaccineKit extends Package{
         else
             this.numberOfVaccineInside = -5;
     }
+    public void responseForCallingOfActionOfObject(){
+        // TODO napisać dla obiektu typu VaccineKit odpowiednie metody wywoływane w czasie jednej iteracji na obiekcie respown -> otczekanie do końca iteracji -> zniszczenie obiektu
+        // TODO napisać dla tej metody testy jednostkowe
+    }
     @Override
     public String toString(){ // Reprezentacja VaccinKit w konsoli
         return "K";

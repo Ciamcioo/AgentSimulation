@@ -38,7 +38,7 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
         this.mapPartOf = map;
     }
 
-    public ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType) { //co zwraca ta metoda? wtf
+    public ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType) {
         ObjectOfMap[][] mapArray = map.getArrayOfObjects();
         int size = map.getSize();
         int x = this.getCoordinateX();

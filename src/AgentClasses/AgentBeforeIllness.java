@@ -17,7 +17,7 @@ public class AgentBeforeIllness extends Agent {
         this.isVaccinated = isVaccinated;
     }
     @Override
-    public void changingStatusOfAgent() {//to chyba zmienia zdrowego w chorego. co nie?
+    public void changingStatusOfAgent() {
         if(isVaccinated){
             VaccinatedAgent newAgent = new VaccinatedAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
@@ -38,6 +38,10 @@ public class AgentBeforeIllness extends Agent {
                 foundKit.setNumberOfVaccineInside(foundKit.getNumberOfVaccineInside()-1);
             }
         }
+    }
+    public void responseForCallingOfActionOfObject(){
+        // TODO okodowac wszystkie kolejne kroki dla obiektu typu AgentBeforeIllness, czyli to będzie move -> sprawdzenie sąsiedztwa -> podniesienie szczepionki jeżeli to możliwe -> zmiana statusu agenta jeżeli to możliwe
+        // TODO dopisać test dla tej metody jak będzie napisany, ale to ja mogę zrobić
     }
     @Override
     public String toString(){  // Reprezentacja agenta w konsoli

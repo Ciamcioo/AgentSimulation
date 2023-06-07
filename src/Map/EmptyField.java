@@ -10,14 +10,17 @@ public class EmptyField extends ObjectOfMap {
         this.isEmpty = true;
 
     }
-    public String toString(){
-        return " ";
-    }
     public void searching(){
         try {
             throw new Exception("Error this object cannot search");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    public void responseForCallingOfActionOfObject(){
+
+    }
+    public String toString(){
+        return " ";
     }
 }

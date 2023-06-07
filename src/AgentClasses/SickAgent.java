@@ -27,7 +27,7 @@ public class SickAgent extends Agent{
          this.chanceOfDeath = chanceOfDeath;
     }
     @Override
-    public void changingStatusOfAgent(){ //chenging???
+    public void changingStatusOfAgent(){
         if(this.dayTillEndOfIllness == 0){
             AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
@@ -43,6 +43,10 @@ public class SickAgent extends Agent{
         AgentBeforeIllness foundObject = (AgentBeforeIllness) this.checkIfNeighbor(this.getMapPartOf(), AgentBeforeIllness.class);
         if(foundObject != null)
             foundObject.changingStatusOfAgent();
+    }
+    public void responseForCallingOfActionOfObject(){
+        // TODO dopisać kolejne działania obiektu typu SickAgent to będzie move  -> sprawdzenie otoczenia (to będzie w searching, można zmienić to na na przykład infecting czy innaczej) -> zmiana stanów innych agnetów w otoczeniu jeżeli taki będzie -> zmiana statusu agenta, jeżeli to możliwe (śmierć albo wyleczenie)
+        // TODO dopisanie testu do tej metody, ale tak samo to tez ja mogę zrobić
     }
     @Override
     public String toString(){ // Reprezentacja agenta w konsoli
