@@ -48,4 +48,9 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void responseForCallingOfActionOfObject() {
+        this.move();
+    }
 }

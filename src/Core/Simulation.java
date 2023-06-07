@@ -1,7 +1,6 @@
 package Core;
 import Map.Map;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -10,8 +9,6 @@ import static java.lang.Math.abs;
 
 public class Simulation implements SimulationMethods {
     public static Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0;
-    public static Double
-
 
     public static void main(String[] args) throws InterruptedException  {
         SimulationMethods.enteringDateForSimulation();

@@ -28,7 +28,7 @@ public class AgentBeforeIllness extends Agent {
         }
     }
     @Override
-    public void searching(){    // TODO dopisać test dla tej metody
+    public void searching(){
         ObjectOfMap foundObject = this.checkIfNeighbor(this.getMapPartOf(), VaccineKit.class);
         if(foundObject != null){
             VaccineKit foundKit = (VaccineKit) foundObject;
@@ -39,9 +39,10 @@ public class AgentBeforeIllness extends Agent {
             }
         }
     }
+    @Override
     public void responseForCallingOfActionOfObject(){
-        // TODO okodowac wszystkie kolejne kroki dla obiektu typu AgentBeforeIllness, czyli to będzie move -> sprawdzenie sąsiedztwa -> podniesienie szczepionki jeżeli to możliwe -> zmiana statusu agenta jeżeli to możliwe
-        // TODO dopisać test dla tej metody jak będzie napisany, ale to ja mogę zrobić
+        this.move();
+        this.searching();
     }
     @Override
     public String toString(){  // Reprezentacja agenta w konsoli

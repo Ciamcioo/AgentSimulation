@@ -4,7 +4,7 @@ import Map.Map;
 import Core.ObjectOfMap;
 
 public abstract class Package extends ObjectOfMap implements PackageMethods {
-    private double chanceOfSpawn;
+    private  double chanceOfSpawn;
     private boolean isEmpty;
     public Package(Map mapPartOf,double chanceOfSpawn){
         super(mapPartOf);
@@ -12,9 +12,7 @@ public abstract class Package extends ObjectOfMap implements PackageMethods {
         this.isEmpty = false;
     }
     public Package(int coordinateX,int coordinateY, Map mapPartOf, double chanceOfSpawn){
-
         super(coordinateX, coordinateY, mapPartOf);
-        this.chanceOfSpawn = chanceOfSpawn;
         this.isEmpty = false;
     }
     public double getChanceOfSpawn(){ // Metoda zwraca szanse pojawienia się pakietu na mapie

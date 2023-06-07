@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Dopisane testy jednostkowe, popoprawiane tak działały jak najlepiej i przechodziły pełne testy.">
-      <change afterPath="$PROJECT_DIR$/src/Core/SimulationMethods.java" afterDir="false" />
+    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Dodałem kolejne rzeczy do zrobienia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgentClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentAfterIllness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentBeforeIllness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgentClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/SickAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/VaccinatedAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/pairOfInt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/EmptyField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/EmptyField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Package/Isolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Isolation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Package/VaccineKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/VaccineKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AgentClasses/AgentBeforeIllnessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/AgentBeforeIllnessTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,16 +82,35 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Simulation">
-    <configuration name="Simulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Core.Simulation" />
+  <component name="RunManager" selected="JUnit.AgentBeforeIllnessTest.testForResponseOfCallingOut">
+    <configuration name="AgentBeforeIllnessTest.changingStatusOfAgentToSick" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Core.*" />
+          <option name="PATTERN" value="AgentClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
+      <option name="METHOD_NAME" value="changingStatusOfAgentToSick" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AgentBeforeIllnessTest.changingStatusOfAgentToVaccinated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pandemic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AgentClasses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
+      <option name="METHOD_NAME" value="changingStatusOfAgentToVaccinated" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,39 +131,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PackageTest.isEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pandemic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Package.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Package" />
-      <option name="MAIN_CLASS_NAME" value="Package.PackageTest" />
-      <option name="METHOD_NAME" value="isEmpty" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PackageTest.setChanceOfSpawn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pandemic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Package.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Package" />
-      <option name="MAIN_CLASS_NAME" value="Package.PackageTest" />
-      <option name="METHOD_NAME" value="setChanceOfSpawn" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SickAgentTest.testForDaysTillEndOfIllness" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AgentBeforeIllnessTest.testForResponseOfCallingOut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
@@ -159,8 +140,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="AgentClasses" />
-      <option name="MAIN_CLASS_NAME" value="AgentClasses.SickAgentTest" />
-      <option name="METHOD_NAME" value="testForDaysTillEndOfIllness" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
+      <option name="METHOD_NAME" value="testForResponseOfCallingOut" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AgentBeforeIllnessTest.testForVaccination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pandemic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AgentClasses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
+      <option name="METHOD_NAME" value="testForVaccination" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Simulation" />
-        <item itemvalue="JUnit.SickAgentTest.testForDaysTillEndOfIllness" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest.testForResponseOfCallingOut" />
         <item itemvalue="JUnit.AgentBeforeIllnessTest.searchingForVaccination" />
-        <item itemvalue="JUnit.PackageTest.setChanceOfSpawn" />
-        <item itemvalue="JUnit.PackageTest.isEmpty" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest.changingStatusOfAgentToSick" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest.changingStatusOfAgentToVaccinated" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest.testForVaccination" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685918540937</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Dodałem kolejne rzeczy do zrobienia">
+      <created>1686145641686</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686145641686</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -342,6 +346,7 @@
     <MESSAGE value="Poruszanie agentów działa już w porządku. Poruszają się po jednym polu. Naprawiłem funkcje changingPosition." />
     <MESSAGE value="Poprawki" />
     <MESSAGE value="Dopisane testy jednostkowe, popoprawiane tak działały jak najlepiej i przechodziły pełne testy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Dopisane testy jednostkowe, popoprawiane tak działały jak najlepiej i przechodziły pełne testy." />
+    <MESSAGE value="Dodałem kolejne rzeczy do zrobienia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodałem kolejne rzeczy do zrobienia" />
   </component>
 </project>
