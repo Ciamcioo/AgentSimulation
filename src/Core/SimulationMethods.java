@@ -9,41 +9,58 @@ import Package.Package;
 import Map.EmptyField;
 public interface SimulationMethods {
      static int getSize(){
-         // TODO Dopisanie testu dla tej metody
-
         return Simulation.size;
     }
     static void setSize(int size){
-        // TODO Dopisanie testu dla tej metody
         if(size > 0)
             Simulation.size = size;
+        else
+            Simulation.size = 0;
     }
      static int getNumberOfIterations(){
-         // TODO Dopisanie testu dla tej metody
         return Simulation.numberOfIterations;
     }
-
     static void setNumberOfIterations(int numberOfIterations){
-        // TODO Dopisanie testu dla tej metody
         if(numberOfIterations > 0)
             Simulation.numberOfIterations = numberOfIterations;
+        else
+            Simulation.numberOfIterations = 0;
     }
     static int getNumberOfHealthyAgents(){
-        // TODO Dopisanie testu dla tej metody
         return Simulation.numberOfHealthyAgents;
     }
     static void setNumberOfHealthyAgents(int numberOfHealthyAgents){
-        // TODO Dopisanie testu dla tej metody
-        if(numberOfHealthyAgents > 0);
+        if(numberOfHealthyAgents > 0)
             Simulation.numberOfHealthyAgents = numberOfHealthyAgents;
+        else
+            Simulation.numberOfHealthyAgents = 0;
     }
     static int getNumberOfSickAgents(){
         return Simulation.numberOfSickAgents;
     }
     static void setNumberOfSickAgents(int numberOfSickAgents){
-        // TODO Dopisanie testu dla tej metody
         if(numberOfSickAgents > 0)
             Simulation.numberOfSickAgents = numberOfSickAgents;
+        else
+            Simulation.numberOfSickAgents = 0;
+    }
+    static int getNumberOfVaccineKit(){
+         return Simulation.numberOfVaccineKits;
+    }
+    static void setNumberOfVaccineKit(int numberOfVaccineKit){
+         if(numberOfVaccineKit >=0 && numberOfVaccineKit <= Math.floor(getNumberOfHealthyAgents()/4.))
+             Simulation.numberOfVaccineKits = numberOfVaccineKit;
+         else
+             Simulation.numberOfVaccineKits = 0;
+     }
+    static int getNumberOfIsolation(){
+         return Simulation.numberOfIsolation;
+    }
+    static void setNumberOfIsolation(int numberOfIsolation){
+         if(numberOfIsolation >= 0 && numberOfIsolation <= Math.floor(getNumberOfSickAgents()/2.))
+             Simulation.numberOfIsolation = numberOfIsolation;
+         else
+             Simulation.numberOfIsolation = 0;
     }
     static void enteringDateForSimulation(){
          // TODO Dopisanie testu dla tej metody
@@ -58,6 +75,7 @@ public interface SimulationMethods {
             SimulationMethods.setNumberOfHealthyAgents(Integer.parseInt(reader.readLine()));
             System.out.print("Wprowadz liczbe chorych agentow na poczatku symulacji: ");
             SimulationMethods.setNumberOfSickAgents(Integer.parseInt(reader.readLine()));
+            System.out.println("Wprowadz liczbe pakietow szczepionki, ktore moga pojawic sie w czasie iteracji");
         }
         catch (IOException e) {
             throw new RuntimeException("Something went wrong. Application is closing.", e);
@@ -67,24 +85,9 @@ public interface SimulationMethods {
          //TODO Dopsisanie testu dla tej metody
          for(int i = 0; i < map.getSize(); i++){
              for(int j = 0; j < map.getSize(); j++){
-                 map.getOneObjectOfMap(j,i).responseForCallingOfActionOfObject();
+                 if(map.getOneObjectOfMap(j,i) instanceof Agent)
+                    map.getOneObjectOfMap(j,i).responseForCallingOfActionOfObject();
              }
          }
     }
-    static void respawnOfPackages(Map map){
-
-        //TODO Napisanie metody wywołujące respown pakietu
-        //TODO Napisanie testu jednostkowego do teog
-    }
-    static void packageDestructionAndSettingMovedToFalse(Map map){
-        for (int i = 0; i < map.getSize(); i++){
-            for (int j =0; j < map.getSize(); j++){
-                if (map.getOneObjectOfMap(j,i) instanceof Agent)
-                    ((Agent) map.getOneObjectOfMap(j,i)).setIterationMove(false);
-                else if(map.getOneObjectOfMap(j,i) instanceof Package)
-                    ((Package) map.getOneObjectOfMap(j,i)).destructionOfPackage();
-            }
-        }
-    }
-    //TODO Napisanie do tego testu jednostkowego
 }

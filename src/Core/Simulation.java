@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static java.lang.Math.abs;
 
 public class Simulation implements SimulationMethods {
-    public static Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0;
+    protected static Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfIsolation = 0;
 
     public static void main(String[] args) throws InterruptedException  {
         SimulationMethods.enteringDateForSimulation();
@@ -18,7 +18,7 @@ public class Simulation implements SimulationMethods {
         System.out.println();
 //        ArrayList<pairOfInt> vaccine = new ArrayList<>();
         while(numberOfIterations > 0){
-            SimulationMethods.respawnOfPackages();
+            mapOfSimulation.packageSpawn();
             SimulationMethods.agentControlMethod(mapOfSimulation);
             mapOfSimulation.printMap();
             mapOfSimulation.packageDestruction();

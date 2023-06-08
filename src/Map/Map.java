@@ -139,7 +139,10 @@ public class Map implements MapMethods {
         }
         System.out.println();
     }
-    @Override
+    public void packageSpawn(){
+
+    }
+    @Override   // TODO napisać test jednostkowy dla tej metody
     public void packageDestruction(){
         for (int i = 0; i < this.getSize(); i++){
             for (int j = 0; j < this.getSize(); j++){
@@ -151,7 +154,7 @@ public class Map implements MapMethods {
 
     }
 
-    @Override
+    @Override   //TODO napisać do tej metody test
     public void settingValueOfMoveIterationToFalse() {
         for (int i = 0; i < this.getSize(); i++){
             for (int j =0; j < this.getSize(); j++){
