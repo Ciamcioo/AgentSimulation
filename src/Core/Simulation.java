@@ -3,23 +3,23 @@ import Map.Map;
 
 import static java.lang.Math.abs;
 
-public class Simulation  {
+public class Simulation {
 
-    public static void main(String[] args) throws InterruptedException  {
+    public static void main(String[] args) throws InterruptedException {
         DataOfSimulation dataOfSimulation = new DataOfSimulation();
         Map mapOfSimulation = new Map(dataOfSimulation.getSize(), dataOfSimulation.getNumberOfHealthyAgents(), dataOfSimulation.getNumberOfSickAgents());
 
         mapOfSimulation.printMap();
         System.out.println();
 
-        while(dataOfSimulation.getNumberOfIterations() > 0){
+        while (dataOfSimulation.getNumberOfIterations() > 0) {
             mapOfSimulation.packageSpawn();
             // TODO packageSpawn jeszcze nie jest napisana trzeba dogadać czy będziemy zachowywali pakiety z poprzednich iteracji czy nie
             mapOfSimulation.agentControlMethod();
             mapOfSimulation.printMap();
             mapOfSimulation.packageDestruction();
             mapOfSimulation.settingValueOfMoveIterationToFalse();
-            dataOfSimulation.setNumberOfIterations(dataOfSimulation.getNumberOfIterations()-1);
+            dataOfSimulation.setNumberOfIterations(dataOfSimulation.getNumberOfIterations() - 1);
             // TODO Aby ograniczyć zmienianie kodu trzeba napisać metode w klasie dataOfSimulation, która będzie przechodziła przez całą mapę i zbierała sobie dane ile jest
             //  obiektów po kolei po później będziemy to wyświetlać
 
@@ -36,5 +36,5 @@ public class Simulation  {
         //  je będe dopisywał
 
 
-
+    }
 }

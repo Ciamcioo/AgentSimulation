@@ -6,7 +6,7 @@ public class EmptyField extends ObjectOfMap {
     public EmptyField(int coordinateX,int coordinateY, Map mapPartOf){
         super(coordinateX, coordinateY, mapPartOf);
         this.isEmpty = true;
-        this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
+        if(this.getMapPartOf().getArrayOfObjects() != null) this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
     public void searching(){
         try {
