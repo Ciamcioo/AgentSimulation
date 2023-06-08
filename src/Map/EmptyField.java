@@ -1,7 +1,5 @@
 package Map;
 
-import Core.ObjectOfMap;
-
 public class EmptyField extends ObjectOfMap {
     private boolean isEmpty;
 

@@ -1,73 +1,40 @@
 package Core;
 import Map.Map;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
 import static java.lang.Math.abs;
 
-public class Simulation implements SimulationMethods {
-    protected static Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfIsolation = 0;
+public class Simulation  {
 
     public static void main(String[] args) throws InterruptedException  {
-        SimulationMethods.enteringDateForSimulation();
+        DataOfSimulation dataOfSimulation = new DataOfSimulation();
+        Map mapOfSimulation = new Map(dataOfSimulation.getSize(), dataOfSimulation.getNumberOfHealthyAgents(), dataOfSimulation.getNumberOfSickAgents());
 
-        Map mapOfSimulation = new Map(size, numberOfHealthyAgents, numberOfSickAgents);
         mapOfSimulation.printMap();
         System.out.println();
-//        ArrayList<pairOfInt> vaccine = new ArrayList<>();
-        while(numberOfIterations > 0){
+
+        while(dataOfSimulation.getNumberOfIterations() > 0){
             mapOfSimulation.packageSpawn();
-            SimulationMethods.agentControlMethod(mapOfSimulation);
+            // TODO packageSpawn jeszcze nie jest napisana trzeba dogadać czy będziemy zachowywali pakiety z poprzednich iteracji czy nie
+            mapOfSimulation.agentControlMethod();
             mapOfSimulation.printMap();
             mapOfSimulation.packageDestruction();
             mapOfSimulation.settingValueOfMoveIterationToFalse();
-            numberOfIterations--;
-        }
+            dataOfSimulation.setNumberOfIterations(dataOfSimulation.getNumberOfIterations()-1);
+            // TODO Aby ograniczyć zmienianie kodu trzeba napisać metode w klasie dataOfSimulation, która będzie przechodziła przez całą mapę i zbierała sobie dane ile jest
+            //  obiektów po kolei po później będziemy to wyświetlać
 
-//        while (true) {
-//            for (int i = 0; i < mapOfSimulation.getSize(); i++) {
-//                for (int j = 0; j < mapOfSimulation.getSize(); j++) {
-//                    if (mapOfSimulation.getOneObjectOfMap(j, i) instanceof Agent && !(((Agent) mapOfSimulation.getOneObjectOfMap(j, i)).getIterationMove()))
-//                        ((Agent) mapOfSimulation.getOneObjectOfMap(j, i)).move();
-//                }
-//            }
-//
-//            for (int i = 0; i < mapOfSimulation.getSize(); i++) {
-//                for (int j = 0; j < mapOfSimulation.getSize(); j++) {
-//                    if (mapOfSimulation.getOneObjectOfMap(j, i) instanceof Agent)
-//                        ((Agent) mapOfSimulation.getOneObjectOfMap(j, i)).setIterationMove(false);
-//                }
-//
-//                for (int i = 0; i < mapOfSimulation.getSize(); i++) {
-//                    for (int j = 0; j < mapOfSimulation.getSize(); j++) {
-//                        if (mapOfSimulation.getOneObjectOfMap(j, i) instanceof AgentBeforeIllness && !((AgentBeforeIllness) mapOfSimulation.getOneObjectOfMap(j, i)).getVaccinated() && mapOfSimulation.getOneObjectOfMap(j, i).checkIfNeighbor(mapOfSimulation, SickAgent.class) instanceof SickAgent) {
-//                            ((AgentBeforeIllness) mapOfSimulation.getOneObjectOfMap(j, i)).changingStatusOfAgent();
-//                        }
-//
-//                    }
-//
-//                    vaccine.add(new pairOfInt(abs(new Random().nextInt() % (size - 1)), abs(new Random().nextInt() % (size - 1))));
-//
-//                    for (pairOfInt i : vaccine) {
-//                        if (mapOfSimulation.getOneObjectOfMap(i.getX(), i.getY()) instanceof AgentBeforeIllness) {
-//                            ((AgentBeforeIllness) mapOfSimulation.getOneObjectOfMap(i.getX(), i.getY())).setVaccinated(true);
-//
-//                        }
-//
-//                        //TODO gdy ktoś stanie na szczepionce, to szczepionka znika.
-//                        //TODO wyświetlanie szczepionki
-//
-//
-//                        mapOfSimulation.printMap();
-//
-//                        Thread.sleep(1000); //żeby leciało w pętli i można było oglądać skoki
-//                        //TODO warunek kończący wyświetlanie mapy?
-//                    }
-//                }
-//            }
-//        }
-    }
+            // TODO metoda odpowiedzialna za wyświetlanie danych symulacji, czyli liczba agentow poszczegolnych pól wolnych pól, może liczba ile agentów się zmieniła w tej
+            //  rundzie i takie bajery, ale no wtedy trzeba żeby pojawiły się nowe pola w klasie dataOfSimulation, które będą za to odpowiadać i pododawac je do method zmiany
+            //  statusu obiektu, no i oczywiście dopisać gettery i settery dla tych pół dodać je do intefesjów
+
+            Thread.sleep(1000);
+        }
+        // TODO w każdym interfesie trzeba po krótce opisać co ta metoda robi żeby było ładnie i schludnie, pousuwać zbędne komentarze które gdzieś się pojawiają w tekscie,
+        //  a jak mamy metody które nie są brane z interfesju tylko pojawiają się dopiero w klasie to nad nagłówkiem tej metody tak samo, krótki opis
+
+        // TODO dopisać testy jednostkowe do klas, które ich nie mają. Przejżyjcie te testy i klasy, jeżli jakiaś nie ma testu to daje TODO że dopisać test do klasy i ja powoli
+        //  je będe dopisywał
+
+
 
 }

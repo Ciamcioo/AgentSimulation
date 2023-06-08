@@ -1,7 +1,7 @@
 package Package;
 import AgentClasses.Agent;
 import Map.Map;
-import Core.ObjectOfMap;
+import Map.ObjectOfMap;
 import Map.EmptyField;
 public abstract class Package extends ObjectOfMap implements PackageMethods {
     private  double chanceOfSpawn;

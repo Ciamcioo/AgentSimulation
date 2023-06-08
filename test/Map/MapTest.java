@@ -3,7 +3,6 @@ package Map;
 import AgentClasses.Agent;
 import AgentClasses.AgentBeforeIllness;
 import AgentClasses.SickAgent;
-import Core.ObjectOfMap;
 import Package.Package;
 import Package.VaccineKit;
 import Package.Isolation;

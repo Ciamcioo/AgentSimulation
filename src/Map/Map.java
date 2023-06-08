@@ -4,7 +4,6 @@ import Package.Package;
 import AgentClasses.Agent;
 import AgentClasses.AgentBeforeIllness;
 import AgentClasses.SickAgent;
-import Core.ObjectOfMap;
 
 import java.util.Random;
 
@@ -138,6 +137,15 @@ public class Map implements MapMethods {
             System.out.print(" __");
         }
         System.out.println();
+    }
+     public void agentControlMethod(){
+        //TODO Dopsisanie testu dla tej metody
+        for(int i = 0; i < this.getSize(); i++){
+            for(int j = 0; j < this.getSize(); j++){
+                if(this.getOneObjectOfMap(j,i) instanceof Agent)
+                    this.getOneObjectOfMap(j,i).responseForCallingOfActionOfObject();
+            }
+        }
     }
     public void packageSpawn(){
 

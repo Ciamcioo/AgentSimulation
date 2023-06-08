@@ -1,7 +1,6 @@
 package Map;
 
 import AgentClasses.Agent;
-import Core.ObjectOfMap;
 import Package.Package;
 
 public interface MapMethods {
@@ -24,9 +23,11 @@ public interface MapMethods {
     ObjectOfMap[][] initializationOfSickAgents();
 
     ObjectOfMap[][] initializationOfHealthyAgents();
+    void agentControlMethod();
     void packageSpawn();
     void packageDestruction();
     void settingValueOfMoveIterationToFalse();
+
 
 
 }

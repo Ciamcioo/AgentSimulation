@@ -1,4 +1,4 @@
-package Core;
+package Map;
 
 import AgentClasses.AgentBeforeIllness;
 import AgentClasses.SickAgent;

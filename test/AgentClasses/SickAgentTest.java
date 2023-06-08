@@ -1,6 +1,6 @@
 package AgentClasses;
 
-import Core.ObjectOfMap;
+import Map.ObjectOfMap;
 import org.junit.jupiter.api.Test;
 import Map.Map;
 import Map.EmptyField;

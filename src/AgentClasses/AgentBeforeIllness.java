@@ -1,5 +1,5 @@
 package AgentClasses;
-import Core.ObjectOfMap;
+import Map.ObjectOfMap;
 import Map.Map;
 import Package.VaccineKit;
 

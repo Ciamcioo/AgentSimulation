@@ -1,6 +1,6 @@
 package Package;
 import AgentClasses.SickAgent;
-import Core.ObjectOfMap;
+import Map.ObjectOfMap;
 import Map.Map;
 
 public class Isolation extends Package{

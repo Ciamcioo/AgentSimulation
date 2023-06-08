@@ -1,6 +1,6 @@
 package AgentClasses;
 
-import Core.ObjectOfMap;
+import Map.ObjectOfMap;
 import Map.Map;
 import java.util.Random;
 import Map.EmptyField;

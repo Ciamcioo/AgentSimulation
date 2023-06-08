@@ -1,5 +1,4 @@
-package Core;
-import Map.Map;
+package Map;
 
 public interface ObjectOfMapMethods {
     int getCoordinateX();

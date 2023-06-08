@@ -1,5 +1,5 @@
-package Core;
-import Map.Map;
+package Map;
+
 public abstract class ObjectOfMap implements ObjectOfMapMethods{
 
     private int coordinateX;
