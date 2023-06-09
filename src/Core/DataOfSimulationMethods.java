@@ -1,5 +1,7 @@
 package Core;
 
+import Map.Map;
+
 public interface DataOfSimulationMethods {
     int getSize();
     void setSize(int size);
@@ -17,6 +19,7 @@ public interface DataOfSimulationMethods {
     void setNumberOfIsolation(int numberOfIsolation);
     double getChanceOfSpawnIsolation();
     void setChanceOfSpawnIsolation(double chanceOfSpawnIsolation);
-
+    void updateData(Map map);
+    void displayData(Map map);
 
 }

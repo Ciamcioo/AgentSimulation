@@ -9,7 +9,7 @@ public class SickAgent extends Agent{
     private double chanceOfDeath;
     public SickAgent(int coordinateX, int coordinateY, Map partMapOf){
         super(coordinateX, coordinateY, partMapOf);
-        this.setChanceOfDeath(new Random().nextDouble(1));
+        this.setChanceOfDeath(new Random().nextDouble(0.1));
         this.setDayTillEndOfIllness(new Random().nextInt(21)+1);
         this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
@@ -32,10 +32,14 @@ public class SickAgent extends Agent{
         if(this.dayTillEndOfIllness == 0){
             AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
+            this.getMapPartOf().setSickAgents(this.getMapPartOf().getSickAgents() - 1);
+            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
         }
         else{
             EmptyField newField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newField);
+            this.getMapPartOf().setSickAgents(this.getMapPartOf().getSickAgents() - 1);
+            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
         }
     }
 

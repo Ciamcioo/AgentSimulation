@@ -20,6 +20,9 @@ public class Simulation {
             mapOfSimulation.packageDestruction();
             mapOfSimulation.settingValueOfMoveIterationToFalse();
             dataOfSimulation.setNumberOfIterations(dataOfSimulation.getNumberOfIterations() - 1);
+            dataOfSimulation.updateData(mapOfSimulation);
+            dataOfSimulation.displayData(mapOfSimulation);
+
             // TODO Aby ograniczyć zmienianie kodu trzeba napisać metode w klasie dataOfSimulation, która będzie przechodziła przez całą mapę i zbierała sobie dane ile jest
             //  obiektów po kolei po później będziemy to wyświetlać
 

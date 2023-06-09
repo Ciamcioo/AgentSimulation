@@ -28,6 +28,7 @@ public interface MapMethods {
     void packageDestruction();
     void settingValueOfMoveIterationToFalse();
 
-
+    int getChangedObjects();
+    void setChangedObjects(int changedObjects);
 
 }

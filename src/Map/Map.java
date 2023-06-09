@@ -13,6 +13,7 @@ public class Map implements MapMethods {
     private int healthyAgents;
     private int sickAgents;
     private ObjectOfMap[][] arrayOfObjects;
+    private int changedObjects = 0;
 
     public Map(int size, int numberOfHealthyAgents, int numberOfSickAgents) {
         this.setSize(size);
@@ -21,6 +22,10 @@ public class Map implements MapMethods {
         this.arrayOfObjects = this.emptyMapInitialization();
         this.agentInitializationOnMap();
     }
+
+    public int getChangedObjects() { return changedObjects; }
+    public void setChangedObjects(int changedObjects) { this.changedObjects = changedObjects; }
+
     public int getSize(){
         return this.size;
     }
@@ -32,13 +37,13 @@ public class Map implements MapMethods {
         return this.healthyAgents;
     }
     public void setHealthyAgents(int healthyAgents){
-        this.healthyAgents = (healthyAgents > 0) ? healthyAgents : -3;
+        this.healthyAgents = (healthyAgents >= 0) ? healthyAgents : -3;
     }
     public int getSickAgents(){
         return this.sickAgents;
     }
     public void setSickAgents(int sickAgents){
-        this.sickAgents = sickAgents > 0 ? sickAgents : -2;
+        this.sickAgents = sickAgents >= 0 ? sickAgents : -2;
     }
 
     public ObjectOfMap[][] getArrayOfObjects() {

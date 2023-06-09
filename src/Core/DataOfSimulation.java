@@ -1,5 +1,6 @@
 package Core;
 
+import Map.Map;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,6 +37,19 @@ public class DataOfSimulation implements DataOfSimulationMethods {
             throw new RuntimeException("Something went wrong. Application is closing.", e);
         }
     }
+
+    public void updateData(Map map) {
+        this.numberOfHealthyAgents = map.getHealthyAgents();
+        this.numberOfSickAgents = map.getSickAgents();
+    }
+
+    public void displayData(Map map) {
+        System.out.println("chorzy: " + numberOfSickAgents + " zdrowi: " + numberOfHealthyAgents);
+        System.out.println("wolne pola: " + (map.getSize() * map.getSize() - numberOfSickAgents - numberOfHealthyAgents));
+        System.out.println("zmienone obiekty w rundzie: " + map.getChangedObjects());
+        map.setChangedObjects(0);
+    }
+
     public int getSize(){
         return this.size;
     }
