@@ -2,7 +2,6 @@ package AgentClasses;
 
 import Core.DataOfSimulation;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 import Map.Map;
 // Klasa przeszła testy

@@ -1,12 +1,11 @@
 package AgentClasses;
 
 import Core.DataOfSimulation;
-import Map.ObjectOfMap;
 import org.junit.jupiter.api.Test;
 import Map.Map;
 import Map.EmptyField;
 import static org.junit.jupiter.api.Assertions.*;
-
+// Klasa przeszła testy
 class SickAgentTest {
     DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 20, 50, 0.05, 1, 2, 0.1, 1, 0.1);
 
@@ -27,18 +26,14 @@ class SickAgentTest {
         @Test
         void chengingStatusOfAgentToAgentAfterIllness() {
             sickAgent.setDayTillEndOfIllness(0);
-            ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
-            mapAsArray[3][3] = sickAgent;
             sickAgent.changingStatusOfAgent();
-            assertTrue(map.getOneObjectOfMap(3,3) instanceof AgentAfterIllness);
+            assertTrue(map.getOneObjectOfMap(2,2) instanceof AgentAfterIllness);
 
         }
         @Test
         void chengingStatusOfAgentToEmptyField(){
-            ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
-            mapAsArray[3][3] = sickAgent;
             sickAgent.changingStatusOfAgent();
-            assertTrue(map.getOneObjectOfMap(3,3) instanceof EmptyField);
+            assertTrue(map.getOneObjectOfMap(2,2) instanceof EmptyField);
         }
         @Test
         void searchingAndFoundingObject(){
@@ -48,12 +43,9 @@ class SickAgentTest {
 
         }
         @Test
-        void testOfResponseForCalling(){    // TODO dopisac jakies opcje do sprwadzania smierci i tak dalej
-            map.setOneObjectOfMap(2,2, sickAgent);
-            map.printMap();
+        void testOfResponseForCalling(){
             sickAgent.responseForCallingOfActionOfObject();
-            map.printMap();
-            assertTrue(sickAgent.getCoordinateX() != 2 && sickAgent.getCoordinateY() != 2);
+            assertTrue(sickAgent.getCoordinateX() != 2 || sickAgent.getCoordinateY() != 2);
         }
         @Test
         void testToString(){

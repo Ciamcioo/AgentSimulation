@@ -21,8 +21,7 @@ public class AgentBeforeIllness extends Agent {
     @Override
     public void changingStatusOfAgent() {
         if(isVaccinated){
-            VaccinatedAgent newAgent = new VaccinatedAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
-            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
+            new VaccinatedAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
         }
         else{
             SickAgent newAgent = new SickAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf(), this.getMapPartOf().getDataOfSimulation().getMinDayTillEndOfIllness(), this.getMapPartOf().getDataOfSimulation().getMaxDayTillEndOfIllness());
@@ -40,6 +39,8 @@ public class AgentBeforeIllness extends Agent {
                 this.setVaccinated(true);
                 this.changingStatusOfAgent();
                 foundObject.getMapPartOf().getDataOfSimulation().setNumberOfVaccineInKit(foundObject.getMapPartOf().getDataOfSimulation().getNumberOfVaccineInKit()-1);
+                if(foundObject.getMapPartOf().getDataOfSimulation().getNumberOfVaccineInKit() == 0)
+                    foundObject.setEmpty();
             }
         }
     }

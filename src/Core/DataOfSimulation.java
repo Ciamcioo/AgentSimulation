@@ -16,6 +16,7 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         this.setNumberOfSickAgents(numberOfSickAgents);
         this.setMinDayTillEndOfIllness(minDayTillEndOfIllness);
         this.setMaxDayTillEndOfIllness(maxDayTillEndOfIllness);
+        this.setChanceOfSickAgentDeath(chanceOfSickAgentDeath);
         this.setNumberOfVaccineKit(numberOfVaccineKits);
         this.setNumberOfVaccineInKit(numberOfVaccineInKit);
         this.setChanceOfSpawnVaccine(chanceOfSpawnVaccine);
@@ -38,7 +39,7 @@ public class DataOfSimulation implements DataOfSimulationMethods {
             this.setNumberOfSickAgents(Integer.parseInt(reader.readLine()));
             System.out.print("Wprowadz liczbe dni jaka minimalnie musi upłynąć by agent chory agent wyzdrowiał: ");
             this.setMinDayTillEndOfIllness(Integer.parseInt(reader.readLine()));
-            System.out.println("Wprowadz liczbe dni jaka maksymalnie musi upłynąć by agent wyzdrowiał: ");
+            System.out.print("Wprowadz liczbe dni jaka maksymalnie musi upłynąć by agent wyzdrowiał: ");
             this.setMaxDayTillEndOfIllness(Integer.parseInt(reader.readLine()));
             System.out.print("Wprowadz wartość z przedziału 0.0 - 1.0, która będzie reprezentować szanse śmierci agenta: ");
             this.setChanceOfSickAgentDeath(Double.parseDouble(reader.readLine()));
@@ -145,7 +146,7 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         return this.numberOfVaccineInKit;
     }
     public void setNumberOfVaccineInKit(int vaccineInKit){
-        if (vaccineInKit > 0 && vaccineInKit <= 5)
+        if (vaccineInKit >= 0 && vaccineInKit <= 5)
             this.numberOfVaccineInKit = vaccineInKit;
         else
             this.numberOfVaccineInKit = 0;

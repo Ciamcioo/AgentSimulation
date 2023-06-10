@@ -19,14 +19,14 @@ public class SickAgent extends Agent{
     }
     // Metoda przypisuje wartość int odpowiadająca ilości dni jaka musi upłynąć by obiekty wyzdrowiał
     public void setDayTillEndOfIllness(int dayTillEndOfIllness){
-        if(dayTillEndOfIllness > 0)
+        if(dayTillEndOfIllness >= 0)
             this.dayTillEndOfIllness = dayTillEndOfIllness ;
     }
     @Override
     public void changingStatusOfAgent(){
         if(this.dayTillEndOfIllness == 0){
-            AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
-            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
+           new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
+//            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
         }
         else{
             EmptyField newField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());

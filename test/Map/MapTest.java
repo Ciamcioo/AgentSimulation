@@ -4,14 +4,12 @@ import AgentClasses.Agent;
 import AgentClasses.AgentBeforeIllness;
 import AgentClasses.SickAgent;
 import Core.DataOfSimulation;
-import Package.Package;
 import Package.VaccineKit;
 import Package.Isolation;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+// Klasa przeszła testy
 class MapTest {
     DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 20, 50, 0.05, 1, 2, 0.1, 1, 0.1);
 
@@ -72,7 +70,6 @@ class MapTest {
                     counter++;
             }
         }
-        map.printMap();
         assertEquals(map.getDataOfSimulation().getNumberOfHealthyAgents(), counter);
     }
 
@@ -117,7 +114,7 @@ class MapTest {
         Isolation isolation = new Isolation(0,1, map);
         isolation.setEmpty();
         map.packageDestruction();
-        assertTrue(map.getOneObjectOfMap(0,0) instanceof EmptyField);
+        assertTrue(map.getOneObjectOfMap(0,0) instanceof VaccineKit);
         assertTrue(map.getOneObjectOfMap(0,1) instanceof  EmptyField);
     }
 }

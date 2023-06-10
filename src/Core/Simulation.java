@@ -6,7 +6,8 @@ import static java.lang.Math.abs;
 public class Simulation  {
 
     public static void main(String[] args) throws InterruptedException {
-        DataOfSimulation dataOfSimulation = new DataOfSimulation();
+//        DataOfSimulation dataOfSimulation = new DataOfSimulation();
+        DataOfSimulation dataOfSimulation = new DataOfSimulation(20, 40, 40, 10, 20, 40, 0.1, 5, 2, 0.1, 2 ,0.1);
         Map mapOfSimulation = new Map(dataOfSimulation);
 
         while (dataOfSimulation.getNumberOfIterations() > 0) {

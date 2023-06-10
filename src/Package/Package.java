@@ -1,5 +1,4 @@
 package Package;
-import AgentClasses.Agent;
 import Map.Map;
 import Map.ObjectOfMap;
 public abstract class Package extends ObjectOfMap implements PackageMethods {
@@ -9,9 +8,11 @@ public abstract class Package extends ObjectOfMap implements PackageMethods {
         super(coordinateX, coordinateY, mapPartOf);
         this.isEmpty = false;
     }
-    public boolean isEmpty() { // Meotda zwraca informacje czy pakiet  jest pusty
+    // Meotda zwraca informacje czy pakiet  jest pusty
+    public boolean isEmpty() {
         return isEmpty;
     }
+    // Metoda przypisuje wartośc prawda gdy pakiet jest pusty
     public void setEmpty(){ // Metoda ustawia wartość pola isEmpty na true
         this.isEmpty = true;
     }
