@@ -81,7 +81,7 @@ public class Map implements MapMethods {
             int coordinateX = new Random().nextInt(this.dataOfSimulation.getSize());
             int coordinateY = new Random().nextInt(this.dataOfSimulation.getSize());
             if (this.getOneObjectOfMap(coordinateX, coordinateY) instanceof EmptyField) {
-                this.arrayOfObjects[coordinateX][coordinateY] = new SickAgent(coordinateX, coordinateY, this);
+                this.arrayOfObjects[coordinateX][coordinateY] = new SickAgent(coordinateX, coordinateY, this, this.getDataOfSimulation().getMinDayTillEndOfIllness(), this.getDataOfSimulation().getMaxDayTillEndOfIllness());
                 i++;
             }
         }

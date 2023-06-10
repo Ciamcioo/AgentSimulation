@@ -25,7 +25,7 @@ public class AgentBeforeIllness extends Agent {
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
         }
         else{
-            SickAgent newAgent = new SickAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
+            SickAgent newAgent = new SickAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf(), this.getMapPartOf().getDataOfSimulation().getMinDayTillEndOfIllness(), this.getMapPartOf().getDataOfSimulation().getMaxDayTillEndOfIllness());
             this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
             this.getMapPartOf().getDataOfSimulation().setNumberOfHealthyAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfHealthyAgents() - 1);
             this.getMapPartOf().getDataOfSimulation().setNumberOfSickAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfSickAgents() + 1);

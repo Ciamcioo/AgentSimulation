@@ -19,6 +19,18 @@ public interface DataOfSimulationMethods {
     int getNumberOfSickAgents();
     // Metoda przypisuje prawidłowa wartość określająca ilość chorych agentów w symulacji
     void setNumberOfSickAgents(int numberOfSickAgents);
+    // Metoda zwraca minimalną ilośc dni trwania choroby agenta
+    int getMinDayTillEndOfIllness();
+    // Metoda przypisuje prawidlową wartość minimalnej ilości dni czasu trwania choroby agenta
+    void setMinDayTillEndOfIllness(int minDayTillEndOfIllness);
+    // Metoda zwraca maksymalna ilosc dni choroby agenta w symulacji
+    int getMaxDayTillEndOfIllness();
+    // Metoda przypisuje prawidlową wartość określająca maksymalną ilość dni czasu trwania choroby agenta w symulacji
+    void setMaxDayTillEndOfIllness(int maxDayTillEndOfIllness);
+    // Metoda zwraca wartość z zakresu 0.0 - 1.0 określająca procentową szanse na śmierć chorego agenta
+    double getChanceOfSickAgentDeath();
+    // Metoda przypisuje prawidłową wartość z zakresu 0.0 - 1.0 okreslającą szanse procentową na śmierć chorego agenta
+    void setChanceOfSickAgentDeath(double chanceOfSickAgentDeath);
     // Metoda zwraca wartosć int określająca ilosć pakietów szczepionki w symulacji
     int getNumberOfVaccineKit();
     // Metoda przypisuje prawidłową wartość określająca ilość pakietów szczepionki w symulacji

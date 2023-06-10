@@ -11,7 +11,6 @@ public class Simulation  {
 
         while (dataOfSimulation.getNumberOfIterations() > 0) {
             mapOfSimulation.packageInitialization();
-            // TODO packageSpawn jeszcze nie jest napisana trzeba dogadać czy będziemy zachowywali pakiety z poprzednich iteracji czy nie
             mapOfSimulation.agentControlMethod();
             mapOfSimulation.printMap();
             mapOfSimulation.packageDestruction();
@@ -25,7 +24,6 @@ public class Simulation  {
         // TODO dopisać testy jednostkowe do klas, które ich nie mają. Przejżyjcie te testy i klasy, jeżli jakiaś nie ma testu to daje TODO że dopisać test do klasy i ja powoli
         //  je będe dopisywał
 
-        // TODO dopisać w konstruktorach odrazu przypisywanie do mapy
         // TODO dopisać lepsze niszczenie obiektu wtedy gdy obiekty jest pusty
 
 

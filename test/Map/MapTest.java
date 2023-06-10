@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MapTest {
-    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 1, 2, 0.1, 1, 0.1);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 20, 50, 0.05, 1, 2, 0.1, 1, 0.1);
+
     Map map = new Map(dataOfSimulation);
 
     @Test
@@ -50,7 +51,7 @@ class MapTest {
 
     @Test
     void checkAfterEmptyMapInitialization() {
-        DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 0, 0, 0, 0, 0.1, 0, 0.1);
+        DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 0, 0,0,0, 0, 0,0, 0.1, 0, 0.1);
         Map newMap = new Map(dataOfSimulation);
         boolean isEverythingEmpty = true;
         for (int i = 0; i < newMap.getDataOfSimulation().getSize(); i++) {

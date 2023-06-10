@@ -8,10 +8,11 @@ import Map.EmptyField;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SickAgentTest {
-    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 1, 2, 0.1, 1, 0.1);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 20, 50, 0.05, 1, 2, 0.1, 1, 0.1);
 
-    Map map = new Map(dataOfSimulation);
-        SickAgent sickAgent = new SickAgent(2, 2, map);
+
+        Map map = new Map(dataOfSimulation);
+        SickAgent sickAgent = new SickAgent(2, 2, map, map.getDataOfSimulation().getMinDayTillEndOfIllness(), map.getDataOfSimulation().getMaxDayTillEndOfIllness());
         AgentBeforeIllness agentBeforeIllness = new AgentBeforeIllness(1, 2, map);
         @Test
         void testForDaysTillEndOfIllness(){
@@ -20,8 +21,8 @@ class SickAgentTest {
         }
         @Test
         void testForChanceOfDeath(){
-            sickAgent.setChanceOfDeath(0.4);
-            assertEquals(0.4, sickAgent.getChanceOfDeath());
+            sickAgent.getMapPartOf().getDataOfSimulation().setChanceOfSickAgentDeath(0.4);
+            assertEquals(0.4, sickAgent.getMapPartOf().getDataOfSimulation().getChanceOfSickAgentDeath());
         }
         @Test
         void chengingStatusOfAgentToAgentAfterIllness() {

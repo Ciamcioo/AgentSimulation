@@ -6,14 +6,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class DataOfSimulation implements DataOfSimulationMethods {
-    private  Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfVaccineInKit = 0, numberOfIsolation = 0;
-    private  Double chanceOfSpawnVaccine = 0., chanceOfSpawnIsolation = 0.;
+    private  Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfVaccineInKit = 0, numberOfIsolation = 0, minDayTillEndOfIllness = 0, maxDayTillEndOfIllness = 0;
+    private  Double chanceOfSpawnVaccine = 0., chanceOfSpawnIsolation = 0., chanceOfSickAgentDeath = 0.;
     // #1 Konstruktor klasy DataOfSimulation
-    public DataOfSimulation(int numberOfIterations, int sizeOfMap, int numberOfHealthyAgents, int numberOfSickAgents, int numberOfVaccineKits, int numberOfVaccineInKit, double chanceOfSpawnVaccine, int numberOfIsolation, double chanceOfSpawnIsolation ){
+    public DataOfSimulation(int numberOfIterations, int sizeOfMap, int numberOfHealthyAgents, int numberOfSickAgents, int minDayTillEndOfIllness, int maxDayTillEndOfIllness, double chanceOfSickAgentDeath, int numberOfVaccineKits, int numberOfVaccineInKit, double chanceOfSpawnVaccine, int numberOfIsolation, double chanceOfSpawnIsolation ){
         this.setNumberOfIterations(numberOfIterations);
         this.setSize(sizeOfMap);
         this.setNumberOfHealthyAgents(numberOfHealthyAgents);
         this.setNumberOfSickAgents(numberOfSickAgents);
+        this.setMinDayTillEndOfIllness(minDayTillEndOfIllness);
+        this.setMaxDayTillEndOfIllness(maxDayTillEndOfIllness);
         this.setNumberOfVaccineKit(numberOfVaccineKits);
         this.setNumberOfVaccineInKit(numberOfVaccineInKit);
         this.setChanceOfSpawnVaccine(chanceOfSpawnVaccine);
@@ -34,6 +36,12 @@ public class DataOfSimulation implements DataOfSimulationMethods {
             this.setNumberOfHealthyAgents(Integer.parseInt(reader.readLine()));
             System.out.print("Wprowadz liczbe chorych agentow na poczatku symulacji: ");
             this.setNumberOfSickAgents(Integer.parseInt(reader.readLine()));
+            System.out.print("Wprowadz liczbe dni jaka minimalnie musi upłynąć by agent chory agent wyzdrowiał: ");
+            this.setMinDayTillEndOfIllness(Integer.parseInt(reader.readLine()));
+            System.out.println("Wprowadz liczbe dni jaka maksymalnie musi upłynąć by agent wyzdrowiał: ");
+            this.setMaxDayTillEndOfIllness(Integer.parseInt(reader.readLine()));
+            System.out.print("Wprowadz wartość z przedziału 0.0 - 1.0, która będzie reprezentować szanse śmierci agenta: ");
+            this.setChanceOfSickAgentDeath(Double.parseDouble(reader.readLine()));
             System.out.print("Wprowadz liczbe pakietow szczepionki, ktore moga pojawic sie w czasie iteracji: ");
             this.setNumberOfVaccineKit(Integer.parseInt(reader.readLine()));
             System.out.print("Wprowadz liczbe pakietow szczepionki w jednym pakiecie (maksymalna wartosc to 5): ");
@@ -87,6 +95,33 @@ public class DataOfSimulation implements DataOfSimulationMethods {
             this.numberOfSickAgents = numberOfSickAgents;
         else
             this.numberOfSickAgents = 0;
+    }
+    //TODO test jednostkowy
+    public int getMinDayTillEndOfIllness(){
+        return this.minDayTillEndOfIllness;
+    }
+    // TODO test jednostkowy
+    public void setMinDayTillEndOfIllness(int minDayTillEndOfIllness){
+        if(minDayTillEndOfIllness > 0)
+            this.minDayTillEndOfIllness = minDayTillEndOfIllness;
+    }
+    // TODO testy jednostkowe
+    public int getMaxDayTillEndOfIllness(){
+        return this.maxDayTillEndOfIllness;
+    }
+    // TODO testy jednostkowe
+    public void setMaxDayTillEndOfIllness(int maxDayTillEndOfIllness){
+        if(maxDayTillEndOfIllness > 0)
+          this.maxDayTillEndOfIllness = maxDayTillEndOfIllness;
+    }
+    // TODO testy jednostkowe
+    public double getChanceOfSickAgentDeath(){
+        return this.chanceOfSickAgentDeath;
+    }
+    // TODO testy jednostkowe
+    public void setChanceOfSickAgentDeath(double chanceOfSickAgentDeath){
+        if(chanceOfSickAgentDeath > 0.0 && chanceOfSickAgentDeath < 1.0)
+            this.chanceOfSickAgentDeath = chanceOfSickAgentDeath;
     }
     public int getNumberOfVaccineKit(){
         return this.numberOfVaccineKits;
