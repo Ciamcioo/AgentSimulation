@@ -1,14 +1,16 @@
 package AgentClasses;
 
+import Core.DataOfSimulation;
 import org.junit.jupiter.api.Test;
-
 import Map.Map;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+// Klasa przeszła testy
 class AgentTest {
-    Map map = new Map(10, 1, 1);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 1, 2, 0.1, 1, 0.1);
+
+    Map map = new Map(dataOfSimulation);
     @Test
     void testForIterationMove(){
         Agent agent = new AgentBeforeIllness(3,3, map);
@@ -21,8 +23,8 @@ class AgentTest {
     @Test
     void moveObjects() {
         map.printMap();
-        for(int i = 0; i < map.getSize(); i++){
-            for(int j =0; j < map.getSize(); j++){
+        for(int i = 0; i < map.getDataOfSimulation().getSize(); i++){
+            for(int j =0; j < map.getDataOfSimulation().getSize(); j++){
                 if(map.getOneObjectOfMap(j,i) instanceof Agent && !(((Agent) map.getOneObjectOfMap(j,i)).getIterationMove()))
                     ((Agent) map.getOneObjectOfMap(j, i)).move();
             }
@@ -33,14 +35,10 @@ class AgentTest {
     void testOfResponseOfCalling(){
         VaccinatedAgent vaccinatedAgent = new VaccinatedAgent(3,3, map);
         AgentAfterIllness agentAfterIllness = new AgentAfterIllness(2,2,map);
-        map.setOneObjectOfMap(2,2, agentAfterIllness);
-        map.setOneObjectOfMap(7,7, vaccinatedAgent);
-        map.printMap();
         vaccinatedAgent.responseForCallingOfActionOfObject();
         agentAfterIllness.responseForCallingOfActionOfObject();
-        map.printMap();
-        assertTrue(agentAfterIllness.getCoordinateX() != 2 && agentAfterIllness.getCoordinateY() != 2);
-        assertTrue(vaccinatedAgent.getCoordinateX() != 7 && vaccinatedAgent.getCoordinateY() != 7);
+        assertTrue(vaccinatedAgent.getCoordinateX() != 3 || vaccinatedAgent.getCoordinateY() != 3);
+        assertTrue(agentAfterIllness.getCoordinateX() != 2 || agentAfterIllness.getCoordinateY() != 2);
 
     }
 }

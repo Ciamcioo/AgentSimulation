@@ -1,12 +1,10 @@
 package Map;
 
 public class EmptyField extends ObjectOfMap {
-    private boolean isEmpty;
-
+    // Konstruktor klasy EmptyField
     public EmptyField(int coordinateX,int coordinateY, Map mapPartOf){
         super(coordinateX, coordinateY, mapPartOf);
-        this.isEmpty = true;
-        if(this.getMapPartOf().getArrayOfObjects() != null) this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
+        this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
     public void searching(){
         try {

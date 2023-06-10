@@ -7,22 +7,27 @@ import java.util.Random;
 public class SickAgent extends Agent{
     private int dayTillEndOfIllness;
     private double chanceOfDeath;
+    // Konstruktor klasy SickAgent
     public SickAgent(int coordinateX, int coordinateY, Map partMapOf){
         super(coordinateX, coordinateY, partMapOf);
         this.setChanceOfDeath(new Random().nextDouble(0.1));
         this.setDayTillEndOfIllness(new Random().nextInt(21)+1);
         this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
+    // Metoda zwraca wartość int, która określa ilość dni obiektu zanim zakończy się jego choroba
     public int getDayTillEndOfIllness(){
         return this.dayTillEndOfIllness;
     }
+    // Metoda przypisuje wartość int odpowiadająca ilości dni jaka musi upłynąć by obiekty wyzdrowiał
     public void setDayTillEndOfIllness(int dayTillEndOfIllness){
         if(dayTillEndOfIllness >= 0)
             this.dayTillEndOfIllness = dayTillEndOfIllness ;
     }
+    // Metoda zwraca wartość double, która określa jaka jest szansa, że obiekty zginie w czasie iteracji
     public double getChanceOfDeath(){ // Zwraca procentową szanse śmierci agenta
         return this.chanceOfDeath;
     }
+    // Metoda przypisuje wartość double odpowiadająca szansie procentowej (zapisanej w postaci liczby double) na to, że obiekt zginie w czasie iteracji
     public void setChanceOfDeath(double chanceOfDeath){
         if(chanceOfDeath > 0 && chanceOfDeath < 1)
          this.chanceOfDeath = chanceOfDeath;
@@ -31,16 +36,14 @@ public class SickAgent extends Agent{
     public void changingStatusOfAgent(){
         if(this.dayTillEndOfIllness == 0){
             AgentAfterIllness newAgent = new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
-            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
-            this.getMapPartOf().setSickAgents(this.getMapPartOf().getSickAgents() - 1);
-            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
+//            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
         }
         else{
             EmptyField newField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
-            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newField);
-            this.getMapPartOf().setSickAgents(this.getMapPartOf().getSickAgents() - 1);
-            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
+//            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newField);
         }
+        this.getMapPartOf().getDataOfSimulation().setNumberOfSickAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfSickAgents() - 1);
+        this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
     }
 
     @Override
@@ -56,7 +59,6 @@ public class SickAgent extends Agent{
             this.changingStatusOfAgent();
         else if (this.getChanceOfDeath() >= new Random().nextDouble(1))
             this.changingStatusOfAgent();
-        // TODO dopisanie testu do tej metody, ale tak samo to tez ja mogę zrobić
     }
     @Override
     public String toString(){ // Reprezentacja agenta w konsoli

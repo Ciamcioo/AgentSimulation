@@ -4,26 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Dopisanie metod odpowiedzialnych za pakiety oraz dodanie do nich testow">
-      <change afterPath="$PROJECT_DIR$/src/Core/DataOfSimulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Core/DataOfSimulationMethods.java" afterDir="false" />
+    <list default="true" id="341a217f-7781-4ffb-b8eb-a022b2b74a42" name="Changes" comment="Dopisanie klasy odpowiadającej za zbieranie danych. Metody, nowe testy itp...">
+      <change afterPath="$PROJECT_DIR$/test/AgentClasses/AgentAfterIllnessTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/AgentClasses/VaccinatedAgentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Map/EmptyFieldTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Package/IsolationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentAfterIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentAfterIllness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentBeforeIllness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentBeforeIllness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/ObjectOfMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/ObjectOfMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/ObjectOfMapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgentClasses/AgentMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/AgentMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgentClasses/SickAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/SickAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgentClasses/VaccinatedAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AgentClasses/VaccinatedAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/DataOfSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DataOfSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/DataOfSimulationMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DataOfSimulationMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/SimulationMethods.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/EmptyField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/EmptyField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/MapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/MapMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/ObjectOfMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/ObjectOfMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/ObjectOfMapMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/ObjectOfMapMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/Isolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Isolation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Package/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/PackageMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/PackageMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Package/VaccineKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Package/VaccineKit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AgentClasses/AgentBeforeIllnessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/AgentBeforeIllnessTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AgentClasses/AgentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/AgentTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AgentClasses/SickAgentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AgentClasses/SickAgentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Core/ObjectOfMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Map/ObjectOfMapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Core/SimulationMethodsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Core/DataOfSimulationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Core/DataOfSimulationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Core/DataOfSimulationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/Map/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Map/MapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Map/ObjectOfMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Map/ObjectOfMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Package/PackageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Package/PackageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Package/VaccineKitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Package/VaccineKitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +46,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -43,11 +55,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -60,7 +72,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2Pt3zQ09Gx19yAG4PxNi2rTp3NS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -72,26 +84,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TODO_SCOPE": "All Places",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Dokumenty-i-Pliki\Programowanie\ProgramowanieJavaProjekt\AgentSimulation\Pandemic\src\Map" />
@@ -103,88 +115,87 @@
       <recent name="Map" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="Core" />
       <recent name="Package" />
-      <recent name="AgendClasses" />
       <recent name="Map" />
-      <recent name="test" />
+      <recent name="AgentClasses" />
+      <recent name="Core" />
+      <recent name="AgendClasses" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataOfSimulationTest">
-    <configuration name="DataOfSimulationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SickAgentTest">
+    <configuration name="AgentBeforeIllnessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Core.*" />
+          <option name="PATTERN" value="AgentClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Core" />
-      <option name="MAIN_CLASS_NAME" value="Core.DataOfSimulationTest" />
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataOfSimulationTest.setChanceOfSpawnIsolation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AgentBeforeIllnessTest.testForResponseOfCallingOut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Map.*" />
+          <option name="PATTERN" value="AgentClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Core" />
-      <option name="MAIN_CLASS_NAME" value="Core.DataOfSimulationTest" />
-      <option name="METHOD_NAME" value="setChanceOfSpawnIsolation" />
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
+      <option name="METHOD_NAME" value="testForResponseOfCallingOut" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataOfSimulationTest.setChanceOfVaccine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AgentBeforeIllnessTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Map.*" />
+          <option name="PATTERN" value="AgentClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Core" />
-      <option name="MAIN_CLASS_NAME" value="Core.DataOfSimulationTest" />
-      <option name="METHOD_NAME" value="setChanceOfVaccine" />
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.AgentBeforeIllnessTest" />
+      <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataOfSimulationTest.setNumberOfIsolation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SickAgentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Map.*" />
+          <option name="PATTERN" value="AgentClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Core" />
-      <option name="MAIN_CLASS_NAME" value="Core.DataOfSimulationTest" />
-      <option name="METHOD_NAME" value="setNumberOfIsolation" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.SickAgentTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataOfSimulationTest.testSetSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SickAgentTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Core.*" />
+          <option name="PATTERN" value="AgentClasses.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Core" />
-      <option name="MAIN_CLASS_NAME" value="Core.DataOfSimulationTest" />
-      <option name="METHOD_NAME" value="testSetSize" />
+      <option name="PACKAGE_NAME" value="AgentClasses" />
+      <option name="MAIN_CLASS_NAME" value="AgentClasses.SickAgentTest" />
+      <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -192,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataOfSimulationTest" />
-        <item itemvalue="JUnit.DataOfSimulationTest.setNumberOfIsolation" />
-        <item itemvalue="JUnit.DataOfSimulationTest.testSetSize" />
-        <item itemvalue="JUnit.DataOfSimulationTest.setChanceOfVaccine" />
-        <item itemvalue="JUnit.DataOfSimulationTest.setChanceOfSpawnIsolation" />
+        <item itemvalue="JUnit.SickAgentTest" />
+        <item itemvalue="JUnit.SickAgentTest.testToString" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest.testToString" />
+        <item itemvalue="JUnit.AgentBeforeIllnessTest.testForResponseOfCallingOut" />
       </list>
     </recent_temporary>
   </component>
@@ -342,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686224905357</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Dopisanie klasy odpowiadającej za zbieranie danych. Metody, nowe testy itp...">
+      <created>1686241671860</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686241671860</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -398,6 +416,7 @@
     <MESSAGE value="Napisanie kilku metod response" />
     <MESSAGE value="Dodanie kolejnych metod do pakietów oraz do maina" />
     <MESSAGE value="Dopisanie metod odpowiedzialnych za pakiety oraz dodanie do nich testow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dopisanie metod odpowiedzialnych za pakiety oraz dodanie do nich testow" />
+    <MESSAGE value="Dopisanie klasy odpowiadającej za zbieranie danych. Metody, nowe testy itp..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dopisanie klasy odpowiadającej za zbieranie danych. Metody, nowe testy itp..." />
   </component>
 </project>

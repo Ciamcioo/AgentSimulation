@@ -3,10 +3,9 @@ package Package;
 import AgentClasses.Agent;
 
 public interface PackageMethods {
-    void beingPickedUp(Agent agentToBeInfluence);
-    double getChanceOfSpawn();
-    void setChanceOfSpawn(double chanceOfSpawn);
+    // Metoda zwracajaca zmiena typu boolean informujaca o tym czy danyc pakiet jest pelny
     boolean isEmpty();
+    // Metoda ustawia wartosc zmiennej na prawda
     void setEmpty();
 
 }

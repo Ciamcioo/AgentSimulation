@@ -5,14 +5,15 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
     private int coordinateX;
     private int coordinateY;
     private Map mapPartOf;
+    // #1 Konstruktor klasy ObjectOfMap
     public ObjectOfMap(Map mapPartOf){
         this.setMapPartOf(mapPartOf);
     }
+    // #2 Konstruktor klasy ObjectOfMap
     public ObjectOfMap(int coordinateX, int coordinateY, Map mapPartOf){
-            this.coordinateX = coordinateX;
-            this.coordinateY = coordinateY;
-            this.mapPartOf = mapPartOf;
-
+            this.setMapPartOf(mapPartOf);
+            this.setCoordinateX(coordinateX);
+            this.setCoordinateY(coordinateY);
     }
 
     public int getCoordinateX(){ // Zwraca współrzedną X obiektu typu ObjectOfMap
@@ -20,14 +21,14 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
     }
 
     public void setCoordinateX(int newCoordinateX){
-        if(newCoordinateX >= 0 && newCoordinateX < this.getMapPartOf().getSize())
+        if(newCoordinateX >= 0 && newCoordinateX < mapPartOf.getDataOfSimulation().getSize())
             this.coordinateX = newCoordinateX;
     }
     public int getCoordinateY(){ // Zwraca współrzedną Y obiektu typu ObjectOfMap
         return this.coordinateY;
     }
     public void setCoordinateY(int newCoordinateY){
-        if(newCoordinateY >= 0 || newCoordinateY < mapPartOf.getSize())
+        if(newCoordinateY >= 0 || newCoordinateY < mapPartOf.getDataOfSimulation().getSize())
             this.coordinateY = newCoordinateY;
     }
     public Map getMapPartOf(){ // Zwraca mapę do której należy obiekty typu ObjectOfMap
@@ -40,7 +41,7 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
 
     public ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType) {
         ObjectOfMap[][] mapArray = map.getArrayOfObjects();
-        int size = map.getSize();
+        int size = map.getDataOfSimulation().getSize();
         int x = this.getCoordinateX();
         int y = this.getCoordinateY();
         for (int dx = -1; dx <= 1; dx++) {

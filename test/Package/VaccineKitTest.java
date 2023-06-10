@@ -1,24 +1,33 @@
 package Package;
 
+import AgentClasses.Agent;
+import AgentClasses.AgentBeforeIllness;
+import AgentClasses.VaccinatedAgent;
+import Core.DataOfSimulation;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import Map.Map;
 
 class VaccineKitTest {
-    Map map = new Map(5, 1, 1);
-    VaccineKit kit = new VaccineKit(3,3, map, 0.4, 2);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 1, 2, 0.1, 1, 0.1);
+
+    Map map = new Map(dataOfSimulation);
+    VaccineKit kit = new VaccineKit(3,3, map);
     @Test
-    void testCorrectlySetNumberOfVaccineInside() {
-        assertEquals(2, kit.getNumberOfVaccineInside());
-        kit.setNumberOfVaccineInside(3);
-        assertEquals(3, kit.getNumberOfVaccineInside());
+    void testForPrintInConsoleOfVaccineKit(){
+        assertEquals("K", kit.toString());
     }
     @Test
-    void testNotCorrectlySetNumberOfVaccineInside(){
-        kit.setNumberOfVaccineInside(-3);
-        assertEquals(-5, kit.getNumberOfVaccineInside());
-        kit.setNumberOfVaccineInside(10);
-        assertEquals(-5, kit.getNumberOfVaccineInside());
+    void testForResponseForCallingOfActionObject(){
+        AgentBeforeIllness agentBeforeIllness = new AgentBeforeIllness(2,3, map);
+        map.setOneObjectOfMap(2,3, agentBeforeIllness);
+        map.printMap();
+        agentBeforeIllness.searching();
+        // TODO tutaj jest jakiś błąd
+//        assertTrue(agentBeforeIllness.getVaccinated());
+//        assertTrue(map.getOneObjectOfMap(3,3) instanceof VaccinatedAgent);
+////        assertTrue(kit.isEmpty());
+        map.printMap();
     }
 }

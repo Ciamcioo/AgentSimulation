@@ -7,6 +7,7 @@ import Map.EmptyField;
 
 public abstract class Agent extends ObjectOfMap implements AgentMethods {
     private boolean iterationMove = false;
+    // Konstruktor klasy Agent
     public Agent(int coordinateX, int coordinateY, Map mapPartOf){
         super(coordinateX, coordinateY, mapPartOf);
     }
@@ -25,7 +26,7 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
             int newX = this.getCoordinateX() + directionOfX[index];
             int newY = this.getCoordinateY() + directionOfY[index];
 
-            if (newX >= 0 && newX < this.getMapPartOf().getSize() && newY >= 0 && newY < this.getMapPartOf().getSize() && this.getMapPartOf().getOneObjectOfMap(newX, newY) instanceof EmptyField)
+            if (newX >= 0 && newX < this.getMapPartOf().getDataOfSimulation().getSize() && newY >= 0 && newY < this.getMapPartOf().getDataOfSimulation().getSize() && this.getMapPartOf().getOneObjectOfMap(newX, newY) instanceof EmptyField)
                 this.getMapPartOf().changePositionOfAgent(this, newX, newY);
 
         }while(!(this.iterationMove));

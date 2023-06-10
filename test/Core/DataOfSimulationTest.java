@@ -1,16 +1,18 @@
 package Core;
 
+import AgentClasses.AgentBeforeIllness;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.crypto.Data;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import Map.Map;
 
 class DataOfSimulationTest {
-    DataOfSimulation dataOfSimulation = new DataOfSimulation(0);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 1, 2, 0.1, 1, 0.1);
+
+    Map map = new Map(dataOfSimulation);
     @Test
     void testSetSize() {
-
         dataOfSimulation.setSize(20);
         assertEquals(20, dataOfSimulation.getSize());
         dataOfSimulation.setSize(-5);
@@ -61,6 +63,18 @@ class DataOfSimulationTest {
         dataOfSimulation.setChanceOfSpawnVaccine(1.5);
         assertEquals(0, dataOfSimulation.getChanceOfSpawnVaccine());
     }
+    @Test
+    void setNumberOfVaccineInOneKit(){
+        dataOfSimulation.setNumberOfVaccineInKit(3);
+        assertEquals(3, dataOfSimulation.getNumberOfVaccineInKit());
+        dataOfSimulation.setNumberOfVaccineInKit(-4);
+        assertEquals(0, dataOfSimulation.getNumberOfVaccineInKit());
+        dataOfSimulation.setNumberOfVaccineInKit(2);
+        assertEquals(2, dataOfSimulation.getNumberOfVaccineInKit());
+        dataOfSimulation.setNumberOfVaccineInKit(6);
+        assertEquals(0, dataOfSimulation.getNumberOfVaccineInKit());
+    }
+
 
     @Test
     void setNumberOfIsolation() {
@@ -85,6 +99,16 @@ class DataOfSimulationTest {
         assertEquals(0.4, dataOfSimulation.getChanceOfSpawnIsolation());
         dataOfSimulation.setChanceOfSpawnIsolation(1.2);
         assertEquals(0, dataOfSimulation.getChanceOfSpawnIsolation());
+    }
+    @Test
+    void testForUpdateData(){
+        AgentBeforeIllness agentBeforeIllness = new AgentBeforeIllness(0,0, map);
+        map.setOneObjectOfMap(0,0, agentBeforeIllness);
+        dataOfSimulation.updateData(map);
+        agentBeforeIllness.setVaccinated(true);
+        agentBeforeIllness.changingStatusOfAgent();
+        dataOfSimulation.updateData(map);
+
     }
 
 

@@ -1,25 +1,27 @@
 package AgentClasses;
 
+import Core.DataOfSimulation;
 import Map.ObjectOfMap;
 import org.junit.jupiter.api.Test;
 import Map.Map;
 import Map.EmptyField;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class SickAgentTest {
-        Map map = new Map(5,1 ,1);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 1, 2, 0.1, 1, 0.1);
+
+    Map map = new Map(dataOfSimulation);
         SickAgent sickAgent = new SickAgent(2, 2, map);
         AgentBeforeIllness agentBeforeIllness = new AgentBeforeIllness(1, 2, map);
-        @Test
-        void testForChanceOfDeath(){
-            sickAgent.setChanceOfDeath(0.4);
-            assertEquals(0.4, sickAgent.getChanceOfDeath());
-        }
         @Test
         void testForDaysTillEndOfIllness(){
             sickAgent.setDayTillEndOfIllness(20);
             assertEquals(20, sickAgent.getDayTillEndOfIllness());
+        }
+        @Test
+        void testForChanceOfDeath(){
+            sickAgent.setChanceOfDeath(0.4);
+            assertEquals(0.4, sickAgent.getChanceOfDeath());
         }
         @Test
         void chengingStatusOfAgentToAgentAfterIllness() {
@@ -51,5 +53,9 @@ class SickAgentTest {
             sickAgent.responseForCallingOfActionOfObject();
             map.printMap();
             assertTrue(sickAgent.getCoordinateX() != 2 && sickAgent.getCoordinateY() != 2);
+        }
+        @Test
+        void testToString(){
+            assertEquals("S", map.getOneObjectOfMap(2,2).toString());
         }
 }

@@ -4,14 +4,24 @@ import Map.Map;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.SQLOutput;
 
 public class DataOfSimulation implements DataOfSimulationMethods {
-    private  Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfIsolation = 0;
+    private  Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfVaccineInKit = 0, numberOfIsolation = 0;
     private  Double chanceOfSpawnVaccine = 0., chanceOfSpawnIsolation = 0.;
-    public DataOfSimulation(int n){
+    // #1 Konstruktor klasy DataOfSimulation
+    public DataOfSimulation(int numberOfIterations, int sizeOfMap, int numberOfHealthyAgents, int numberOfSickAgents, int numberOfVaccineKits, int numberOfVaccineInKit, double chanceOfSpawnVaccine, int numberOfIsolation, double chanceOfSpawnIsolation ){
+        this.setNumberOfIterations(numberOfIterations);
+        this.setSize(sizeOfMap);
+        this.setNumberOfHealthyAgents(numberOfHealthyAgents);
+        this.setNumberOfSickAgents(numberOfSickAgents);
+        this.setNumberOfVaccineKit(numberOfVaccineKits);
+        this.setNumberOfVaccineInKit(numberOfVaccineInKit);
+        this.setChanceOfSpawnVaccine(chanceOfSpawnVaccine);
+        this.setNumberOfIsolation(numberOfIsolation);
+        this.setChanceOfSpawnIsolation(chanceOfSpawnIsolation);
 
     }
+    // #2 Konstruktor klasy DataOfSimulation
     public DataOfSimulation(){
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -26,6 +36,8 @@ public class DataOfSimulation implements DataOfSimulationMethods {
             this.setNumberOfSickAgents(Integer.parseInt(reader.readLine()));
             System.out.print("Wprowadz liczbe pakietow szczepionki, ktore moga pojawic sie w czasie iteracji: ");
             this.setNumberOfVaccineKit(Integer.parseInt(reader.readLine()));
+            System.out.print("Wprowadz liczbe pakietow szczepionki w jednym pakiecie (maksymalna wartosc to 5): ");
+            this.setNumberOfVaccineInKit(Integer.parseInt(reader.readLine()));
             System.out.print("Wprowadz wartosc z przedzialu 0.0 - 1.0, ktora bedzie odpowiadać szansie procentowej pojawienia sie szczepionki: ");
             this.setChanceOfSpawnVaccine(Double.parseDouble(reader.readLine()));
             System.out.print("Wprowadz liczbe pakietow izolacji, ktore moga pojawic sie w czasie iteracji: ");
@@ -38,27 +50,17 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         }
     }
 
-    public void updateData(Map map) {
-        this.numberOfHealthyAgents = map.getHealthyAgents();
-        this.numberOfSickAgents = map.getSickAgents();
-    }
-
-    public void displayData(Map map) {
-        System.out.println("chorzy: " + numberOfSickAgents + " zdrowi: " + numberOfHealthyAgents);
-        System.out.println("wolne pola: " + (map.getSize() * map.getSize() - numberOfSickAgents - numberOfHealthyAgents));
-        System.out.println("zmienone obiekty w rundzie: " + map.getChangedObjects());
-        map.setChangedObjects(0);
-    }
-
     public int getSize(){
         return this.size;
     }
+
     public void setSize(int size){
         if(size > 0)
             this.size = size;
         else
             this.size = 0;
     }
+
     public int getNumberOfIterations(){
         return this.numberOfIterations;
     }
@@ -104,6 +106,15 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         else
             this.chanceOfSpawnVaccine = 0.;
     }
+    public int getNumberOfVaccineInKit(){
+        return this.numberOfVaccineInKit;
+    }
+    public void setNumberOfVaccineInKit(int vaccineInKit){
+        if (vaccineInKit > 0 && vaccineInKit <= 5)
+            this.numberOfVaccineInKit = vaccineInKit;
+        else
+            this.numberOfVaccineInKit = 0;
+    }
     public int getNumberOfIsolation(){
         return this.numberOfIsolation;
     }
@@ -113,6 +124,7 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         else
             this.numberOfIsolation = 0;
     }
+
     public double getChanceOfSpawnIsolation(){
         return this.chanceOfSpawnIsolation;
     }
@@ -121,5 +133,17 @@ public class DataOfSimulation implements DataOfSimulationMethods {
             this.chanceOfSpawnIsolation = chanceOfSpawnIsolation;
         else
             this.chanceOfSpawnIsolation = 0.;
+    }
+    // TODO dopisać test do metody updateData
+    public void updateData(Map map) {
+        this.numberOfHealthyAgents = map.getDataOfSimulation().getNumberOfHealthyAgents();
+        this.numberOfSickAgents = map.getDataOfSimulation().getNumberOfSickAgents();
+    }
+    // TODO dopisać testy do metody displayData
+    public void displayData(Map map) {
+        System.out.println("chorzy: " + numberOfSickAgents + " zdrowi: " + numberOfHealthyAgents);
+        System.out.println("wolne pola: " + (map.getDataOfSimulation().getSize() * map.getDataOfSimulation().getSize() - numberOfSickAgents - numberOfHealthyAgents));
+        System.out.println("zmienone obiekty w rundzie: " + map.getChangedObjects());
+        map.setChangedObjects(0);
     }
 }

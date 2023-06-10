@@ -1,14 +1,18 @@
 package AgentClasses;
 
+import Core.DataOfSimulation;
 import Map.ObjectOfMap;
 import Map.Map;
 import org.junit.jupiter.api.Test;
 import Package.VaccineKit;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+// Klasa przeszła testy
+
 public class AgentBeforeIllnessTest {
-    Map map = new Map(5,1 ,1);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 1, 2, 0.1, 1, 0.1);
+
+    Map map = new Map(dataOfSimulation);
     AgentBeforeIllness agent = new AgentBeforeIllness(3, 3, map);
 
     @Test
@@ -25,7 +29,6 @@ public class AgentBeforeIllnessTest {
         mapAsArray[3][3] = agent;
         agent.changingStatusOfAgent();
         assertTrue(map.getOneObjectOfMap(3,3) instanceof VaccinatedAgent);
-        map.printMap();
     }
     @Test
     public void changingStatusOfAgentToSick(){
@@ -36,26 +39,30 @@ public class AgentBeforeIllnessTest {
     }
     @Test
     public void searchingForVaccination(){
-        VaccineKit kit = new VaccineKit(2,3,map,0.5,2);
+        VaccineKit kit = new VaccineKit(2,3,map);
         map.setOneObjectOfMap(2,3,kit);
         map.setOneObjectOfMap(3,3, agent);
         agent.searching();
         assertTrue(map.getOneObjectOfMap(3,3).checkIfNeighbor(map, VaccineKit.class) instanceof VaccineKit);
         assertTrue(agent.getVaccinated());
-        assertEquals(1, kit.getNumberOfVaccineInside());
+        assertEquals(1, kit.getMapPartOf().getDataOfSimulation().getNumberOfVaccineInKit());
 
     }
     @Test
-    public void testForResponseOfCallingOut(){ // TODO cos z tym testem jest nie tak
+    public void testForResponseOfCallingOut(){
         map.setOneObjectOfMap(3,3, agent);
         puttingVaccineForTestOfResponseCall();
         agent.responseForCallingOfActionOfObject();
-        assertTrue(agent.getCoordinateX() != 3 && agent.getCoordinateY() != 3);
+        assertTrue(agent.getCoordinateX() != 3 || agent.getCoordinateY() != 3);
 
     }
     @Test
     void puttingVaccineForTestOfResponseCall(){
-        VaccineKit kit = new VaccineKit(2,3,map,0.5,2);
+        VaccineKit kit = new VaccineKit(2,3,map);
         map.setOneObjectOfMap(2,3,kit);
+    }
+    @Test
+    void testToString(){
+        assertEquals("B", map.getOneObjectOfMap(3,3).toString());
     }
 }
