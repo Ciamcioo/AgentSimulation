@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 
 public class DataOfSimulation implements DataOfSimulationMethods {
     private  Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfVaccineInKit = 0, numberOfIsolation = 0, minDayTillEndOfIllness = 0, maxDayTillEndOfIllness = 0;
+    private  Integer numberOfVaccinated = 0, numberOfAfterIllness = 0;
     private  Double chanceOfSpawnVaccine = 0., chanceOfSpawnIsolation = 0., chanceOfSickAgentDeath = 0.;
     // #1 Konstruktor klasy DataOfSimulation
     public DataOfSimulation(int numberOfIterations, int sizeOfMap, int numberOfHealthyAgents, int numberOfSickAgents, int minDayTillEndOfIllness, int maxDayTillEndOfIllness, double chanceOfSickAgentDeath, int numberOfVaccineKits, int numberOfVaccineInKit, double chanceOfSpawnVaccine, int numberOfIsolation, double chanceOfSpawnIsolation ){
@@ -79,6 +80,12 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         else
             this.numberOfIterations = 0;
     }
+
+    public int getNumberOfVaccinated() { return numberOfVaccinated; }
+    public void setNumberOfVaccinated(int numberOfVaccinated) { this.numberOfVaccinated = numberOfVaccinated; }
+    public int getNumberOfAfterIllness() { return numberOfAfterIllness; }
+    public void setNumberOfAfterIllness(int numberOfAfterIllness) { this.numberOfAfterIllness = numberOfAfterIllness; }
+
     public int getNumberOfHealthyAgents(){
         return this.numberOfHealthyAgents;
     }
@@ -174,11 +181,18 @@ public class DataOfSimulation implements DataOfSimulationMethods {
     public void updateData(Map map) {
         this.numberOfHealthyAgents = map.getDataOfSimulation().getNumberOfHealthyAgents();
         this.numberOfSickAgents = map.getDataOfSimulation().getNumberOfSickAgents();
+        this.numberOfVaccinated = map.getDataOfSimulation().getNumberOfVaccinated();
+        this.numberOfAfterIllness = map.getDataOfSimulation().getNumberOfAfterIllness();
+        this.numberOfVaccineKits = map.getDataOfSimulation().getNumberOfVaccineKit();
+        this.numberOfIsolation = map.getDataOfSimulation().getNumberOfIsolation();
+
     }
     // TODO dopisać testy do metody displayData
     public void displayData(Map map) {
         System.out.println("chorzy: " + numberOfSickAgents + " zdrowi: " + numberOfHealthyAgents);
-        System.out.println("wolne pola: " + (map.getDataOfSimulation().getSize() * map.getDataOfSimulation().getSize() - numberOfSickAgents - numberOfHealthyAgents));
+        System.out.println("zaszczepieni : " + numberOfVaccinated + " po chorobie: " + numberOfAfterIllness);
+        //System.out.println("szczepionki: " + numberOfVaccineKits + " izolacja: " + numberOfIsolation);
+        //System.out.println("wolne pola: " + (map.getDataOfSimulation().getSize() * map.getDataOfSimulation().getSize() - numberOfSickAgents - numberOfHealthyAgents - numberOfVaccinated - numberOfAfterIllness - numberOfVaccineKits - numberOfIsolation));
         System.out.println("zmienone obiekty w rundzie: " + map.getChangedObjects());
         map.setChangedObjects(0);
     }

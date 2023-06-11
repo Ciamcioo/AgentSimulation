@@ -25,8 +25,8 @@ public class SickAgent extends Agent{
     @Override
     public void changingStatusOfAgent(){
         if(this.dayTillEndOfIllness == 0){
-           new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
-//            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
+            new AgentAfterIllness(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
+            this.getMapPartOf().getDataOfSimulation().setNumberOfAfterIllness(this.getMapPartOf().getDataOfSimulation().getNumberOfAfterIllness()+1);
         }
         else{
             EmptyField newField = new EmptyField(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());

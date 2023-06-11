@@ -9,8 +9,11 @@ public class VaccineKit extends Package{
         this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
     public void responseForCallingOfActionOfObject(){
-        if(this.getMapPartOf().getDataOfSimulation().getNumberOfVaccineInKit() == 0)
+        if(this.getMapPartOf().getDataOfSimulation().getNumberOfVaccineInKit() == 0) {
             this.setEmpty();
+            this.getMapPartOf().getDataOfSimulation().setNumberOfVaccineKit(this.getMapPartOf().getDataOfSimulation().getNumberOfVaccineKit()-1);
+            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
+        }
     }
     @Override
     public String toString(){ // Reprezentacja VaccinKit w konsoli

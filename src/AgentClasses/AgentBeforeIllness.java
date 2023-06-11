@@ -22,7 +22,7 @@ public class AgentBeforeIllness extends Agent {
         if(isVaccinated){
             new VaccinatedAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
             this.getMapPartOf().getDataOfSimulation().setNumberOfHealthyAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfHealthyAgents() - 1);
-            // TODO dopisać że zwiększa się liczba zaszczepionych agentów
+            this.getMapPartOf().getDataOfSimulation().setNumberOfVaccinated(this.getMapPartOf().getDataOfSimulation().getNumberOfVaccinated()+1);
             this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
         }
         else{

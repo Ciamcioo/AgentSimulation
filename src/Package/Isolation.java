@@ -13,6 +13,8 @@ public class Isolation extends Package{
         if(foundObject != null){
             foundObject.changingStatusOfAgent();
             this.setEmpty();
+            foundObject.getMapPartOf().getDataOfSimulation().setNumberOfSickAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfSickAgents() - 1);
+            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
         }
     }
     @Override
