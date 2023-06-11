@@ -1,10 +1,6 @@
 package Map;
 
 import AgentClasses.Agent;
-import Core.DataOfSimulation;
-
-import javax.xml.crypto.Data;
-
 public interface MapMethods {
     // Metoda zwraca mape symulacji w postaci tablicy dwuwymiarowej
     ObjectOfMap[][] getArrayOfObjects();
@@ -38,8 +34,7 @@ public interface MapMethods {
     void changePositionOfAgent(Agent agent,int X,int Y);
     // Metoda odpowiedzialna za wypisywanie struktury mapy w konsoli
     void printMap();
-    // Metoda niszczy pakiety...
-    // TODO dopisać komentarz
+    // Metoda niszczy pakiety te pakiety, które na mapie symulacji zostały oznaczone jako puste
     void packageDestruction();
     // Metoda odpowiedzialna za ustawienia pola obiektu mapy, która informuje o wykonaniu ruchu w tej iteracji na false
     void settingValueOfMoveIterationToFalse();

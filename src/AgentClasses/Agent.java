@@ -31,9 +31,6 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
 
         }while(!(this.iterationMove));
     }
-
-
-
     @Override
     public void changingStatusOfAgent() {
         try {
@@ -49,7 +46,6 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
             throw new RuntimeException(e);
         }
     }
-
     @Override
     public void responseForCallingOfActionOfObject() {
         this.move();

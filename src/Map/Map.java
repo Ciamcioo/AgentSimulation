@@ -20,11 +20,10 @@ public class Map implements MapMethods {
         this.arrayOfObjects = this.emptyMapInitialization();
         this.agentInitializationOnMap();
     }
-    // TODO dopisać testy
     public DataOfSimulation getDataOfSimulation(){
         return this.dataOfSimulation;
     }
-    // TODO dopisać testy
+
     public void setDataOfSimulation(DataOfSimulation dataOfSimulation){
         if(dataOfSimulation != null)
             this.dataOfSimulation = dataOfSimulation;
@@ -45,10 +44,13 @@ public class Map implements MapMethods {
         this.arrayOfObjects[coordinateX][coordinateY] = newAgent;
 
     }
-
     public int getChangedObjects() { return changedObjects; }
-
-    public void setChangedObjects(int changedObjects) { this.changedObjects = changedObjects; }
+    public void setChangedObjects(int changedObjects) {
+        if(changedObjects >= 0)
+            this.changedObjects = changedObjects;
+        else
+            this.changedObjects = 0;
+    }
 
     public void agentInitializationOnMap(){
         this.arrayOfObjects = this.initializationOfHealthyAgents();
@@ -116,7 +118,7 @@ public class Map implements MapMethods {
         //TODO Dopsisanie testu dla tej metody
         for(int i = 0; i < this.dataOfSimulation.getSize(); i++){
             for(int j = 0; j < this.dataOfSimulation.getSize(); j++){
-                if(this.getOneObjectOfMap(j,i) instanceof Agent)
+                if(this.getOneObjectOfMap(j,i) instanceof Agent || this.getOneObjectOfMap(j,i) instanceof Package)
                     this.getOneObjectOfMap(j,i).responseForCallingOfActionOfObject();
             }
         }
@@ -151,7 +153,7 @@ public class Map implements MapMethods {
         }
         System.out.println();
     }
-    @Override   // TODO napisać test jednostkowy dla tej metody
+    @Override
     public void packageDestruction(){
         for (int i = 0; i < this.dataOfSimulation.getSize(); i++){
             for (int j = 0; j < this.dataOfSimulation.getSize(); j++){
@@ -163,7 +165,7 @@ public class Map implements MapMethods {
 
     }
 
-    @Override   //TODO napisać do tej metody test
+    @Override
     public void settingValueOfMoveIterationToFalse() {
         for (int i = 0; i < this.dataOfSimulation.getSize(); i++){
             for (int j =0; j < this.dataOfSimulation.getSize(); j++){

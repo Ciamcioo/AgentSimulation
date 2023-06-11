@@ -53,7 +53,7 @@ public interface DataOfSimulationMethods {
     void setChanceOfSpawnIsolation(double chanceOfSpawnIsolation);
     // Metoda aktualizuje dane dotyczące symulacji
     void updateData(Map map);
-    // Metoda wyświetla dane na etmat symulacji na ekranie
+    // Metoda wyświetla dane na twmat symulacji na ekranie
     void displayData(Map map);
 
 }

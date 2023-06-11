@@ -1,5 +1,4 @@
 package AgentClasses;
-import Map.ObjectOfMap;
 import Map.Map;
 import Package.VaccineKit;
 
@@ -22,10 +21,12 @@ public class AgentBeforeIllness extends Agent {
     public void changingStatusOfAgent() {
         if(isVaccinated){
             new VaccinatedAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf());
+            this.getMapPartOf().getDataOfSimulation().setNumberOfHealthyAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfHealthyAgents() - 1);
+            // TODO dopisać że zwiększa się liczba zaszczepionych agentów
+            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
         }
         else{
-            SickAgent newAgent = new SickAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf(), this.getMapPartOf().getDataOfSimulation().getMinDayTillEndOfIllness(), this.getMapPartOf().getDataOfSimulation().getMaxDayTillEndOfIllness());
-            this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), newAgent);
+            new SickAgent(this.getCoordinateX(), this.getCoordinateY(), this.getMapPartOf(), this.getMapPartOf().getDataOfSimulation().getMinDayTillEndOfIllness(), this.getMapPartOf().getDataOfSimulation().getMaxDayTillEndOfIllness());
             this.getMapPartOf().getDataOfSimulation().setNumberOfHealthyAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfHealthyAgents() - 1);
             this.getMapPartOf().getDataOfSimulation().setNumberOfSickAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfSickAgents() + 1);
             this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);

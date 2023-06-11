@@ -6,12 +6,14 @@ import AgentClasses.SickAgent;
 import Core.DataOfSimulation;
 import Package.VaccineKit;
 import Package.Isolation;
+import Package.Package;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 // Klasa przeszła testy
 class MapTest {
-    DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 20, 50, 0.05, 1, 2, 0.1, 1, 0.1);
+    DataOfSimulation dataOfSimulation = new DataOfSimulation(10, 20, 5, 5, 20, 50, 0.05, 1, 2, 0.1, 1, 0.1);
 
     Map map = new Map(dataOfSimulation);
 
@@ -49,7 +51,7 @@ class MapTest {
 
     @Test
     void checkAfterEmptyMapInitialization() {
-        DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 0, 0,0,0, 0, 0,0, 0.1, 0, 0.1);
+        DataOfSimulation dataOfSimulation = new DataOfSimulation(10, 20, 0, 0, 0, 0, 0, 0, 0, 0.1, 0, 0.1);
         Map newMap = new Map(dataOfSimulation);
         boolean isEverythingEmpty = true;
         for (int i = 0; i < newMap.getDataOfSimulation().getSize(); i++) {
@@ -88,7 +90,31 @@ class MapTest {
 
     @Test
     void testForVaccineKitInitialization() {
-        boolean initializationCompletedCorrectly = false;
+        boolean initializationCompletedCorrectly = true;
+        int counter = 0;
+        for(int i = 0; i < map.getDataOfSimulation().getSize(); i++){
+            for(int j = 0; j < map.getDataOfSimulation().getSize(); j++){
+                if (map.getOneObjectOfMap(j,i) instanceof VaccineKit)
+                    counter++;
+            }
+        }
+        if(counter > map.getDataOfSimulation().getNumberOfVaccineKit())
+            initializationCompletedCorrectly = false;
+        assertTrue(initializationCompletedCorrectly);
+    }
+    @Test
+    void testForIsolationInitialization() {
+        boolean initializationCompletedCorrectly = true;
+        int counter = 0;
+        for(int i = 0; i < map.getDataOfSimulation().getSize(); i++){
+            for(int j = 0; j < map.getDataOfSimulation().getSize(); j++){
+                if (map.getOneObjectOfMap(j,i) instanceof Isolation)
+                    counter++;
+            }
+        }
+        if(counter > map.getDataOfSimulation().getNumberOfIsolation())
+            initializationCompletedCorrectly = false;
+        assertTrue(initializationCompletedCorrectly);
 
     }
 
@@ -108,13 +134,54 @@ class MapTest {
     void printingMap() {
         map.printMap();
     }
+
     @Test
-    void testForPackageDestruction(){
-        VaccineKit kit = new VaccineKit(0,0, map);
-        Isolation isolation = new Isolation(0,1, map);
+    void testForPackageDestruction() {
+        new VaccineKit(0, 0, map);
+        Isolation isolation = new Isolation(0, 1, map);
         isolation.setEmpty();
         map.packageDestruction();
-        assertTrue(map.getOneObjectOfMap(0,0) instanceof VaccineKit);
-        assertTrue(map.getOneObjectOfMap(0,1) instanceof  EmptyField);
+        assertTrue(map.getOneObjectOfMap(0, 0) instanceof VaccineKit);
+        assertTrue(map.getOneObjectOfMap(0, 1) instanceof EmptyField);
+    }
+
+    @Test
+    void testForRespondingForCallOfAction() {    // TODO wymyślić jakiś sposób na ten test
+        int counter = 0;
+        for (int i = 0; i < map.getDataOfSimulation().getSize(); i++) {
+            for (int j = 0; j < map.getDataOfSimulation().getSize(); j++) {
+                if (map.getOneObjectOfMap(j, i) instanceof Agent || map.getOneObjectOfMap(j, i) instanceof Package) {
+                    map.getOneObjectOfMap(j, i).responseForCallingOfActionOfObject();
+                    counter++;
+                }
+            }
+        }
+    }
+
+    @Test
+    void testForSettingValueOfMoveIterationToFalse() {
+        boolean isEverythingFalse = false;
+        for (int i = 0; i < map.getDataOfSimulation().getSize(); i++) {
+            for (int j = 0; j < map.getDataOfSimulation().getSize(); j++)
+                if (map.getOneObjectOfMap(j, i) instanceof Agent) {
+                    if (((Agent) map.getOneObjectOfMap(j, i)).getIterationMove())
+                        isEverythingFalse = true;
+                }
+        }
+        assertFalse(isEverythingFalse);
+    }
+
+    @Test
+    void testForSettingDataOfSimulation() {
+        DataOfSimulation newDataOfSimulation = new DataOfSimulation(10, 10, 4, 4, 2, 10, 0.1, 1, 1, 0.1, 1, 0.1);
+        map.setDataOfSimulation(newDataOfSimulation);
+        assertEquals(newDataOfSimulation, map.getDataOfSimulation());
+    }
+    @Test
+    void testForSettingChangedObjects(){
+        map.setChangedObjects(5);
+        assertEquals(5, map.getChangedObjects());
+        map.setChangedObjects(-10);
+        assertEquals(0, map.getChangedObjects());
     }
 }

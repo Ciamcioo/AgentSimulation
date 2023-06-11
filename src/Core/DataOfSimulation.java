@@ -97,32 +97,32 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         else
             this.numberOfSickAgents = 0;
     }
-    //TODO test jednostkowy
     public int getMinDayTillEndOfIllness(){
         return this.minDayTillEndOfIllness;
     }
-    // TODO test jednostkowy
     public void setMinDayTillEndOfIllness(int minDayTillEndOfIllness){
         if(minDayTillEndOfIllness > 0)
             this.minDayTillEndOfIllness = minDayTillEndOfIllness;
+        else
+            this.minDayTillEndOfIllness = 1;
     }
-    // TODO testy jednostkowe
     public int getMaxDayTillEndOfIllness(){
         return this.maxDayTillEndOfIllness;
     }
-    // TODO testy jednostkowe
     public void setMaxDayTillEndOfIllness(int maxDayTillEndOfIllness){
         if(maxDayTillEndOfIllness > 0)
           this.maxDayTillEndOfIllness = maxDayTillEndOfIllness;
+        else
+          this.maxDayTillEndOfIllness = 1;
     }
-    // TODO testy jednostkowe
     public double getChanceOfSickAgentDeath(){
         return this.chanceOfSickAgentDeath;
     }
-    // TODO testy jednostkowe
     public void setChanceOfSickAgentDeath(double chanceOfSickAgentDeath){
         if(chanceOfSickAgentDeath > 0.0 && chanceOfSickAgentDeath < 1.0)
             this.chanceOfSickAgentDeath = chanceOfSickAgentDeath;
+        else
+            this.chanceOfSickAgentDeath = 0.0;
     }
     public int getNumberOfVaccineKit(){
         return this.numberOfVaccineKits;
