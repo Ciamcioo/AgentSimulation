@@ -1,13 +1,16 @@
 package Core;
 
 import Map.Map;
+import Map.ObjectOfMap;
+import Package.VaccineKit;
+import Package.Isolation;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class DataOfSimulation implements DataOfSimulationMethods {
     private  Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfVaccineInKit = 0, numberOfIsolation = 0, minDayTillEndOfIllness = 0, maxDayTillEndOfIllness = 0;
-    private  Integer numberOfVaccinated = 0, numberOfAfterIllness = 0;
+    private  Integer numberOfVaccinated = 0, numberOfAfterIllness = 0, numOfVaccineKits = 0, numOfIsolation = 0;
     private  Double chanceOfSpawnVaccine = 0., chanceOfSpawnIsolation = 0., chanceOfSickAgentDeath = 0.;
     // #1 Konstruktor klasy DataOfSimulation
     public DataOfSimulation(int numberOfIterations, int sizeOfMap, int numberOfHealthyAgents, int numberOfSickAgents, int minDayTillEndOfIllness, int maxDayTillEndOfIllness, double chanceOfSickAgentDeath, int numberOfVaccineKits, int numberOfVaccineInKit, double chanceOfSpawnVaccine, int numberOfIsolation, double chanceOfSpawnIsolation ){
@@ -183,17 +186,25 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         this.numberOfSickAgents = map.getDataOfSimulation().getNumberOfSickAgents();
         this.numberOfVaccinated = map.getDataOfSimulation().getNumberOfVaccinated();
         this.numberOfAfterIllness = map.getDataOfSimulation().getNumberOfAfterIllness();
-        this.numberOfVaccineKits = map.getDataOfSimulation().getNumberOfVaccineKit();
-        this.numberOfIsolation = map.getDataOfSimulation().getNumberOfIsolation();
 
+        ObjectOfMap[][] array = map.getArrayOfObjects();
+        for (int i = 0; i < map.getDataOfSimulation().getSize(); i++) {
+            for (int j = 0; j < map.getDataOfSimulation().getSize(); j++) {
+                // używam nowych zmiennych żeby nie psuć działania metod co wykorzystują numberOfIsolation
+                if (array[j][i].getClass() == VaccineKit.class) { numOfVaccineKits++; }
+                if (array[j][i].getClass() == Isolation.class) { numOfIsolation++; }
+            }
+        }
     }
     // TODO dopisać testy do metody displayData
     public void displayData(Map map) {
         System.out.println("chorzy: " + numberOfSickAgents + " zdrowi: " + numberOfHealthyAgents);
         System.out.println("zaszczepieni : " + numberOfVaccinated + " po chorobie: " + numberOfAfterIllness);
-        //System.out.println("szczepionki: " + numberOfVaccineKits + " izolacja: " + numberOfIsolation);
-        //System.out.println("wolne pola: " + (map.getDataOfSimulation().getSize() * map.getDataOfSimulation().getSize() - numberOfSickAgents - numberOfHealthyAgents - numberOfVaccinated - numberOfAfterIllness - numberOfVaccineKits - numberOfIsolation));
+        System.out.println("szczepionki: " + numOfVaccineKits + " izolacja: " + numOfIsolation);
+        System.out.println("wolne pola: " + (map.getDataOfSimulation().getSize() * map.getDataOfSimulation().getSize() - numberOfSickAgents - numberOfHealthyAgents - numberOfVaccinated - numberOfAfterIllness - numOfVaccineKits - numOfIsolation));
         System.out.println("zmienone obiekty w rundzie: " + map.getChangedObjects());
         map.setChangedObjects(0);
+        numOfVaccineKits = 0;
+        numOfIsolation = 0;
     }
 }

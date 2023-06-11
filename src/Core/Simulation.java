@@ -10,8 +10,8 @@ public class Simulation  {
         while (dataOfSimulation.getNumberOfIterations() > 0) {
             mapOfSimulation.packageInitialization();
             mapOfSimulation.agentControlMethod();
-            mapOfSimulation.printMap();
             mapOfSimulation.packageDestruction();
+            mapOfSimulation.printMap();
             mapOfSimulation.settingValueOfMoveIterationToFalse();
             dataOfSimulation.setNumberOfIterations(dataOfSimulation.getNumberOfIterations() - 1);
             dataOfSimulation.updateData(mapOfSimulation);
