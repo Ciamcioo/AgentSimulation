@@ -1,7 +1,6 @@
 package AgentClasses;
 
 import Core.DataOfSimulation;
-import Map.ObjectOfMap;
 import Map.Map;
 import org.junit.jupiter.api.Test;
 import Package.VaccineKit;
@@ -25,16 +24,14 @@ public class AgentBeforeIllnessTest {
     @Test
     public void changingStatusOfAgentToVaccinated(){
         agent.setVaccinated(true);
-        ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
-        mapAsArray[3][3] = agent;
         agent.changingStatusOfAgent();
+        assertEquals(1, map.getDataOfSimulation().getNumberOfVaccinated());
         assertTrue(map.getOneObjectOfMap(3,3) instanceof VaccinatedAgent);
     }
     @Test
     public void changingStatusOfAgentToSick(){
-        ObjectOfMap[][] mapAsArray = map.getArrayOfObjects();
-        mapAsArray[3][3] = agent;
         agent.changingStatusOfAgent();
+        assertEquals(6, map.getDataOfSimulation().getNumberOfSickAgents());
         assertTrue(map.getOneObjectOfMap(3,3) instanceof SickAgent);
     }
     @Test

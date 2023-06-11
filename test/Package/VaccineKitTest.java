@@ -23,5 +23,7 @@ class VaccineKitTest {
         assertTrue(agentBeforeIllness.getVaccinated());
         assertTrue(map.getOneObjectOfMap(2,3) instanceof VaccinatedAgent);
         assertTrue(kit.isEmpty());
+        assertEquals(1, map.getChangedObjects());
+
     }
 }

@@ -115,7 +115,6 @@ public class Map implements MapMethods {
     }
 
     public void agentControlMethod(){
-        //TODO Dopsisanie testu dla tej metody
         for(int i = 0; i < this.dataOfSimulation.getSize(); i++){
             for(int j = 0; j < this.dataOfSimulation.getSize(); j++){
                 if(this.getOneObjectOfMap(j,i) instanceof Agent || this.getOneObjectOfMap(j,i) instanceof Package)

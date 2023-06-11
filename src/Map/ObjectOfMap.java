@@ -5,11 +5,8 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
     private int coordinateX;
     private int coordinateY;
     private Map mapPartOf;
-    // #1 Konstruktor klasy ObjectOfMap
-    public ObjectOfMap(Map mapPartOf){
-        this.setMapPartOf(mapPartOf);
-    }
-    // #2 Konstruktor klasy ObjectOfMap
+
+    // Konstruktor klasy ObjectOfMap
     public ObjectOfMap(int coordinateX, int coordinateY, Map mapPartOf){
             this.setMapPartOf(mapPartOf);
             this.setCoordinateX(coordinateX);

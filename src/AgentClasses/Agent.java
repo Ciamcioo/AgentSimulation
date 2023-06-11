@@ -18,19 +18,6 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
         this.iterationMove = didMoved;
     }
 
-    public void move() {
-        int[] directionOfX = {-1,-1,-1,0,0,1,1,1};
-        int[] directionOfY = {-1,0,1,-1,1,-1,0,1};
-        do {
-            int index = new Random().nextInt(8);
-            int newX = this.getCoordinateX() + directionOfX[index];
-            int newY = this.getCoordinateY() + directionOfY[index];
-
-            if (newX >= 0 && newX < this.getMapPartOf().getDataOfSimulation().getSize() && newY >= 0 && newY < this.getMapPartOf().getDataOfSimulation().getSize() && this.getMapPartOf().getOneObjectOfMap(newX, newY) instanceof EmptyField)
-                this.getMapPartOf().changePositionOfAgent(this, newX, newY);
-
-        }while(!(this.iterationMove));
-    }
     @Override
     public void changingStatusOfAgent() {
         try {
@@ -49,5 +36,18 @@ public abstract class Agent extends ObjectOfMap implements AgentMethods {
     @Override
     public void responseForCallingOfActionOfObject() {
         this.move();
+    }
+    public void move() {
+        int[] directionOfX = {-1,-1,-1,0,0,1,1,1};
+        int[] directionOfY = {-1,0,1,-1,1,-1,0,1};
+        do {
+            int index = new Random().nextInt(8);
+            int newX = this.getCoordinateX() + directionOfX[index];
+            int newY = this.getCoordinateY() + directionOfY[index];
+
+            if (newX >= 0 && newX < this.getMapPartOf().getDataOfSimulation().getSize() && newY >= 0 && newY < this.getMapPartOf().getDataOfSimulation().getSize() && this.getMapPartOf().getOneObjectOfMap(newX, newY) instanceof EmptyField)
+                this.getMapPartOf().changePositionOfAgent(this, newX, newY);
+
+        }while(!(this.iterationMove));
     }
 }

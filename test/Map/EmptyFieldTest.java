@@ -11,7 +11,7 @@ class EmptyFieldTest {
     Map map = new Map(dataOfSimulation);
     @Test
     void testToString() {
-        EmptyField field = new EmptyField(0,0,map);
+        new EmptyField(0,0,map);
         assertEquals(" ", map.getOneObjectOfMap(0,0).toString());
     }
 }

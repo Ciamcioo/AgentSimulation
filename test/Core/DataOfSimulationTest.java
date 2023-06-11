@@ -3,8 +3,8 @@ package Core;
 import AgentClasses.AgentBeforeIllness;
 import AgentClasses.VaccinatedAgent;
 import org.junit.jupiter.api.Test;
-
-
+import Package.VaccineKit;
+import Package.Isolation;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -27,6 +27,20 @@ class DataOfSimulationTest {
         assertEquals(5, dataOfSimulation.getNumberOfIterations());
         dataOfSimulation.setNumberOfIterations(-3);
         assertEquals(0, dataOfSimulation.getNumberOfIterations());
+    }
+    @Test
+    void setNumberOfVaccinated(){
+        dataOfSimulation.setNumberOfVaccinated(4);
+        assertEquals(4, dataOfSimulation.getNumberOfVaccinated());
+        dataOfSimulation.setNumberOfVaccinated(-1);
+        assertEquals(0, dataOfSimulation.getNumberOfVaccinated());
+    }
+    @Test
+    void setNumberOfAfterIllness(){
+        dataOfSimulation.setNumberOfAfterIllness(5);
+        assertEquals(5, dataOfSimulation.getNumberOfAfterIllness());
+        dataOfSimulation.setNumberOfAfterIllness(-9);
+        assertEquals(0, dataOfSimulation.getNumberOfAfterIllness());
     }
     @Test
     void setNumberOfHealthyAgents() {
@@ -131,18 +145,26 @@ class DataOfSimulationTest {
     }
     @Test
     void testForUpdateData(){
+        dataOfSimulation.updateData(map);
         assertEquals(5, map.getDataOfSimulation().getNumberOfHealthyAgents());
         for (int i = 0; i < dataOfSimulation.getSize(); i++){
-            for (int j = 0; j < dataOfSimulation.getSize(); j++)
-                if (map.getOneObjectOfMap(j,i) instanceof AgentBeforeIllness){
-                    ((AgentBeforeIllness) map.getOneObjectOfMap(j,i)).setVaccinated(true);
-                    ((AgentBeforeIllness) map.getOneObjectOfMap(j,i)).changingStatusOfAgent();
-                    assertTrue(map.getOneObjectOfMap(j,i) instanceof VaccinatedAgent);
+            for (int j = 0; j < dataOfSimulation.getSize(); j++) {
+                if (map.getOneObjectOfMap(j, i) instanceof AgentBeforeIllness) {
+                    ((AgentBeforeIllness) map.getOneObjectOfMap(j, i)).setVaccinated(true);
+                    ((AgentBeforeIllness) map.getOneObjectOfMap(j, i)).changingStatusOfAgent();
+                    assertTrue(map.getOneObjectOfMap(j, i) instanceof VaccinatedAgent);
+
                 }
+            }
+
         }
         dataOfSimulation.updateData(map);
-        assertEquals(4, dataOfSimulation.getNumberOfHealthyAgents());
-
+        assertEquals(0, dataOfSimulation.getNumberOfHealthyAgents());
+        assertEquals(5, dataOfSimulation.getNumberOfVaccinated());
+    }
+    @Test
+    void testForDisplayData(){
+            dataOfSimulation.displayData(map);
     }
 
 

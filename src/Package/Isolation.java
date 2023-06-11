@@ -14,7 +14,7 @@ public class Isolation extends Package{
             foundObject.changingStatusOfAgent();
             this.setEmpty();
             foundObject.getMapPartOf().getDataOfSimulation().setNumberOfSickAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfSickAgents() - 1);
-            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
+//            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1); tutaj nie jestem pewien bo w klasie sickAgent jest już dodawania że obiekt został zmieniony więc tutaj chyba nie ma potrzeby
         }
     }
     @Override

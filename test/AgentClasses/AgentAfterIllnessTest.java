@@ -11,7 +11,7 @@ class AgentAfterIllnessTest {
     Map map = new Map(dataOfSimulation);
     @Test
     void testToString() {
-        AgentAfterIllness agent = new AgentAfterIllness(0,0,map);
+        new AgentAfterIllness(0,0,map);
         assertEquals("A",map.getOneObjectOfMap(0,0).toString());
     }
 }

@@ -27,12 +27,14 @@ class SickAgentTest {
         void chengingStatusOfAgentToAgentAfterIllness() {
             sickAgent.setDayTillEndOfIllness(0);
             sickAgent.changingStatusOfAgent();
+            assertEquals(1, map.getDataOfSimulation().getNumberOfAfterIllness());
             assertTrue(map.getOneObjectOfMap(2,2) instanceof AgentAfterIllness);
 
         }
         @Test
         void chengingStatusOfAgentToEmptyField(){
             sickAgent.changingStatusOfAgent();
+            assertEquals(5, map.getDataOfSimulation().getNumberOfSickAgents() + 1);
             assertTrue(map.getOneObjectOfMap(2,2) instanceof EmptyField);
         }
         @Test

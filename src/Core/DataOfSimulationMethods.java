@@ -11,6 +11,14 @@ public interface DataOfSimulationMethods {
     int getNumberOfIterations();
     // Metoda przypisuje prawidłową wartość określająca ilość iteracji jaka ma zostać wyskonana przez symulacje
     void setNumberOfIterations(int numberOfIterations);
+    // Metoda zwraca wartośc int określająca ilość zaszczepionych  agentów w symlulacji
+    int getNumberOfVaccinated();
+    // Metoda przypisuje prawidłową wartość int określająca ilość zaszczepionych agentów w symulacji
+    void setNumberOfVaccinated(int numberOfVaccinated);
+    // Metoda zwraca wartość int określająca ilość agentów po chorobie w symulacji
+    int getNumberOfAfterIllness();
+    // Metoda przypisuje prawidłową wartość int określająca ilość agentów po chorobie w symulacji
+    void setNumberOfAfterIllness(int numberOfAfterIllness);
     // Metoda zwraca wartośc int określająca ilość zdrowych agentów w symlulacji
     int getNumberOfHealthyAgents();
     // Metoda przypisuje prawidłową wartość określającą ilość zdrowych agentów w symulacji
@@ -55,5 +63,4 @@ public interface DataOfSimulationMethods {
     void updateData(Map map);
     // Metoda wyświetla dane na twmat symulacji na ekranie
     void displayData(Map map);
-
 }

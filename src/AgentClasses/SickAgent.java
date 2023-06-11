@@ -5,7 +5,7 @@ import Map.EmptyField;
 import java.util.Random;
 
 public class SickAgent extends Agent{
-    private int minDayTillEndOfIllness, maxDayTillEndOfIllness, dayTillEndOfIllness;
+    private int  dayTillEndOfIllness;
 
     // Konstruktor klasy SickAgent
     public SickAgent(int coordinateX, int coordinateY, Map partMapOf,int minDayTillEndOfIllness, int maxDayTillEndOfIllness){

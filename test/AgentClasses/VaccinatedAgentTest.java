@@ -12,7 +12,7 @@ class VaccinatedAgentTest {
     Map map = new Map(dataOfSimulation);
     @Test
     void testToString() {
-        VaccinatedAgent agent = new VaccinatedAgent(0,0,map);
+        new VaccinatedAgent(0,0,map);
         assertEquals("V",map.getOneObjectOfMap(0,0).toString());
     }
 }

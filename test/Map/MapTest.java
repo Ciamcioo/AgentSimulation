@@ -6,7 +6,6 @@ import AgentClasses.SickAgent;
 import Core.DataOfSimulation;
 import Package.VaccineKit;
 import Package.Isolation;
-import Package.Package;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -146,16 +145,17 @@ class MapTest {
     }
 
     @Test
-    void testForRespondingForCallOfAction() {    // TODO wymyślić jakiś sposób na ten test
+    void testForRespondingForCallOfAction() {
         int counter = 0;
         for (int i = 0; i < map.getDataOfSimulation().getSize(); i++) {
             for (int j = 0; j < map.getDataOfSimulation().getSize(); j++) {
-                if (map.getOneObjectOfMap(j, i) instanceof Agent || map.getOneObjectOfMap(j, i) instanceof Package) {
+                if ((map.getOneObjectOfMap(j, i) instanceof Agent && !((Agent) map.getOneObjectOfMap(j, i)).getIterationMove()) || map.getOneObjectOfMap(j, i) instanceof VaccineKit || map.getOneObjectOfMap(j,i) instanceof Isolation) {
                     map.getOneObjectOfMap(j, i).responseForCallingOfActionOfObject();
                     counter++;
                 }
             }
         }
+        assertTrue(counter <= dataOfSimulation.getNumberOfHealthyAgents() + dataOfSimulation.getNumberOfSickAgents() + dataOfSimulation.getNumberOfVaccinated() + dataOfSimulation.getNumberOfAfterIllness() + dataOfSimulation.getNumberOfVaccineKit() + dataOfSimulation.getNumberOfIsolation());
     }
 
     @Test
