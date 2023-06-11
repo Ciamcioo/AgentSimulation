@@ -3,11 +3,8 @@ package Core;
 import AgentClasses.AgentBeforeIllness;
 import AgentClasses.VaccinatedAgent;
 import org.junit.jupiter.api.Test;
-import Package.VaccineKit;
-import Package.Isolation;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import Map.Map;
 // Klasa przeszła testy
 class DataOfSimulationTest {

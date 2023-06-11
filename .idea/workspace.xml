@@ -109,21 +109,8 @@
       <recent name="AgendClasses" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MapTest.testForRespondingForCallOfAction">
-    <configuration name="Simulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Core.Simulation" />
-      <module name="Pandemic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Core.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataOfSimulationTest.testForDisplayData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DataOfSimulationTest">
+    <configuration name="DataOfSimulationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
@@ -133,45 +120,27 @@
       </extension>
       <option name="PACKAGE_NAME" value="Core" />
       <option name="MAIN_CLASS_NAME" value="Core.DataOfSimulationTest" />
-      <option name="METHOD_NAME" value="testForDisplayData" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataOfSimulationTest.testForUpdateData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IsolationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Core.*" />
+          <option name="PATTERN" value="Package.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Core" />
-      <option name="MAIN_CLASS_NAME" value="Core.DataOfSimulationTest" />
-      <option name="METHOD_NAME" value="testForUpdateData" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="Package" />
+      <option name="MAIN_CLASS_NAME" value="Package.IsolationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapTest.testForRespondingForCallOfAction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pandemic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Map.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Map" />
-      <option name="MAIN_CLASS_NAME" value="Map.MapTest" />
-      <option name="METHOD_NAME" value="testForRespondingForCallOfAction" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MapTest.testForVaccineKitInitialization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ObjectOfMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pandemic" />
       <extension name="coverage">
         <pattern>
@@ -180,20 +149,49 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Map" />
-      <option name="MAIN_CLASS_NAME" value="Map.MapTest" />
-      <option name="METHOD_NAME" value="testForVaccineKitInitialization" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="Map.ObjectOfMapTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PackageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pandemic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Package" />
+      <option name="MAIN_CLASS_NAME" value="Package.PackageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VaccineKitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pandemic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Package" />
+      <option name="MAIN_CLASS_NAME" value="Package.VaccineKitTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MapTest.testForRespondingForCallOfAction" />
-        <item itemvalue="JUnit.MapTest.testForVaccineKitInitialization" />
-        <item itemvalue="Application.Simulation" />
-        <item itemvalue="JUnit.DataOfSimulationTest.testForDisplayData" />
-        <item itemvalue="JUnit.DataOfSimulationTest.testForUpdateData" />
+        <item itemvalue="JUnit.DataOfSimulationTest" />
+        <item itemvalue="JUnit.VaccineKitTest" />
+        <item itemvalue="JUnit.PackageTest" />
+        <item itemvalue="JUnit.IsolationTest" />
+        <item itemvalue="JUnit.ObjectOfMapTest" />
       </list>
     </recent_temporary>
   </component>
