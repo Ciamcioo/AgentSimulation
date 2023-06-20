@@ -1,15 +1,27 @@
 package AgentClasses;
 import Map.Map;
-public class AgentAfterIllness extends Agent{
-    // Konstruktor klasy AgentAfterIllness
-    public AgentAfterIllness(int coordinateX, int coordinateY, Map mapPartOf){
+
+/**
+ * Klasa agenta po chorobie
+ */
+public class AgentAfterIllness extends Agent {
+    /**
+     * Konstruktor klasy <code>AgentAfterIllness</code>
+     * @param coordinateX współrzędna X
+     * @param coordinateY współrzędna Y
+     * @param mapPartOf mapa na której znajduje się agent
+     */
+    public AgentAfterIllness(int coordinateX, int coordinateY, Map mapPartOf) {
         super(coordinateX, coordinateY, mapPartOf);
         this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
+
+    /**
+     * Reprezentacja agenta w konsoli
+     * @return litera odpowiadająca agentowi po chorobie (A)
+     */
     @Override
-    public String toString(){ // Reprezentacja agenta w konsoli
+    public String toString() {
         return "A";
     }
-
-
 }

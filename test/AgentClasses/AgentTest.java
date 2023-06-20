@@ -7,12 +7,19 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 // Klasa przeszła testy
+/**
+ * Test klasy <code>Agent</code>
+ */
 class AgentTest {
     DataOfSimulation dataOfSimulation = new DataOfSimulation(10 ,20, 5, 5, 20, 50, 0.05, 1, 2, 0.1, 1, 0.1);
 
     Map map = new Map(dataOfSimulation);
+
+    /**
+     * Test <code>iterationMove</code>
+     */
     @Test
-    void testForIterationMove(){
+    void testForIterationMove() {
         Agent agent = new AgentBeforeIllness(3,3, map);
         agent.setIterationMove(true);
         assertTrue(agent.getIterationMove());
@@ -20,19 +27,27 @@ class AgentTest {
         assertFalse(agent.getIterationMove());
 
     }
+
+    /**
+     * Test <code>moveObjects</code>
+     */
     @Test
     void moveObjects() {
         map.printMap();
-        for(int i = 0; i < map.getDataOfSimulation().getSize(); i++){
-            for(int j =0; j < map.getDataOfSimulation().getSize(); j++){
-                if(map.getOneObjectOfMap(j,i) instanceof Agent && !(((Agent) map.getOneObjectOfMap(j,i)).getIterationMove()))
+        for (int i = 0; i < map.getDataOfSimulation().getSize(); i++) {
+            for (int j =0; j < map.getDataOfSimulation().getSize(); j++) {
+                if (map.getOneObjectOfMap(j,i) instanceof Agent && !(((Agent) map.getOneObjectOfMap(j,i)).getIterationMove()))
                     ((Agent) map.getOneObjectOfMap(j, i)).move();
             }
         }
         map.printMap();
     }
+
+    /**
+     * Test wywołania akcji
+     */
     @Test
-    void testOfResponseOfCalling(){
+    void testOfResponseOfCalling() {
         VaccinatedAgent vaccinatedAgent = new VaccinatedAgent(3,3, map);
         AgentAfterIllness agentAfterIllness = new AgentAfterIllness(2,2,map);
         vaccinatedAgent.responseForCallingOfActionOfObject();

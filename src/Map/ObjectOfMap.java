@@ -1,38 +1,49 @@
 package Map;
 
+/**
+ * Abstrakcyjna klasa obiektu mapy
+ */
 public abstract class ObjectOfMap implements ObjectOfMapMethods{
 
     private int coordinateX;
     private int coordinateY;
     private Map mapPartOf;
 
-    // Konstruktor klasy ObjectOfMap
-    public ObjectOfMap(int coordinateX, int coordinateY, Map mapPartOf){
-            this.setMapPartOf(mapPartOf);
-            this.setCoordinateX(coordinateX);
-            this.setCoordinateY(coordinateY);
+    /**
+     * Konstruktor klasy <code>ObjectOfMap</code>
+     * @param coordinateX współrzędna X obiektu
+     * @param coordinateY współrzędna Y obiektu
+     * @param mapPartOf mapa na której znajduje się obiekt
+     */
+    public ObjectOfMap(int coordinateX, int coordinateY, Map mapPartOf) {
+        this.setMapPartOf(mapPartOf);
+        this.setCoordinateX(coordinateX);
+        this.setCoordinateY(coordinateY);
     }
 
-    public int getCoordinateX(){ // Zwraca współrzedną X obiektu typu ObjectOfMap
+    public int getCoordinateX() {
         return this.coordinateX;
     }
 
-    public void setCoordinateX(int newCoordinateX){
+    public void setCoordinateX(int newCoordinateX) {
         if(newCoordinateX >= 0 && newCoordinateX < mapPartOf.getDataOfSimulation().getSize())
             this.coordinateX = newCoordinateX;
     }
-    public int getCoordinateY(){ // Zwraca współrzedną Y obiektu typu ObjectOfMap
+
+    public int getCoordinateY() {
         return this.coordinateY;
     }
-    public void setCoordinateY(int newCoordinateY){
+
+    public void setCoordinateY(int newCoordinateY) {
         if(newCoordinateY >= 0 || newCoordinateY < mapPartOf.getDataOfSimulation().getSize())
             this.coordinateY = newCoordinateY;
     }
-    public Map getMapPartOf(){ // Zwraca mapę do której należy obiekty typu ObjectOfMap
+
+    public Map getMapPartOf(){
         return this.mapPartOf;
     }
 
-    public void setMapPartOf(Map map){ // Ustawia mapę do której należy obiekty typu ObjectOfMap
+    public void setMapPartOf(Map map) {
         this.mapPartOf = map;
     }
 
@@ -53,5 +64,5 @@ public abstract class ObjectOfMap implements ObjectOfMapMethods{
             }
         }
     return null;
-}
+    }
 }

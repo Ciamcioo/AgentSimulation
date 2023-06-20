@@ -8,11 +8,29 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Klasa danych symulacji
+ */
 public class DataOfSimulation implements DataOfSimulationMethods {
-    private  Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfVaccineInKit = 0, numberOfIsolation = 0, minDayTillEndOfIllness = 0, maxDayTillEndOfIllness = 0, numberOfVaccinated = 0, numberOfAfterIllness = 0, numOfVaccineKits = 0, numOfIsolation = 0;
-    private  Double chanceOfSpawnVaccine = 0., chanceOfSpawnIsolation = 0., chanceOfSickAgentDeath = 0.;
-    // #1 Konstruktor klasy DataOfSimulation
-    public DataOfSimulation(int numberOfIterations, int sizeOfMap, int numberOfHealthyAgents, int numberOfSickAgents, int minDayTillEndOfIllness, int maxDayTillEndOfIllness, double chanceOfSickAgentDeath, int numberOfVaccineKits, int numberOfVaccineInKit, double chanceOfSpawnVaccine, int numberOfIsolation, double chanceOfSpawnIsolation ){
+    private Integer size = 0, numberOfIterations = 0, numberOfHealthyAgents = 0,numberOfSickAgents = 0, numberOfVaccineKits = 0, numberOfVaccineInKit = 0, numberOfIsolation = 0, minDayTillEndOfIllness = 0, maxDayTillEndOfIllness = 0, numberOfVaccinated = 0, numberOfAfterIllness = 0, numOfVaccineKits = 0, numOfIsolation = 0;
+    private Double chanceOfSpawnVaccine = 0., chanceOfSpawnIsolation = 0., chanceOfSickAgentDeath = 0.;
+
+    /**
+     * #1 Konstruktor klasy DataOfSimulation
+     * @param numberOfIterations liczba iteracji symulacji
+     * @param sizeOfMap rozmiar mapy
+     * @param numberOfHealthyAgents liczba zdrowych
+     * @param numberOfSickAgents liczba chorych
+     * @param minDayTillEndOfIllness minimum dni choroby
+     * @param maxDayTillEndOfIllness maximum dni choroby
+     * @param chanceOfSickAgentDeath szansa na śmierć chorego
+     * @param numberOfVaccineKits liczba pakietów szczepionek
+     * @param numberOfVaccineInKit liczba szczepionek w pakiecie szczepionek
+     * @param chanceOfSpawnVaccine szansa na pojawienie się szczepionek
+     * @param numberOfIsolation liczba izolacji
+     * @param chanceOfSpawnIsolation szansa na pojawienie się izolacji
+     */
+    public DataOfSimulation(int numberOfIterations, int sizeOfMap, int numberOfHealthyAgents, int numberOfSickAgents, int minDayTillEndOfIllness, int maxDayTillEndOfIllness, double chanceOfSickAgentDeath, int numberOfVaccineKits, int numberOfVaccineInKit, double chanceOfSpawnVaccine, int numberOfIsolation, double chanceOfSpawnIsolation) {
         this.setNumberOfIterations(numberOfIterations);
         this.setSize(sizeOfMap);
         this.setNumberOfHealthyAgents(numberOfHealthyAgents);
@@ -27,8 +45,11 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         this.setChanceOfSpawnIsolation(chanceOfSpawnIsolation);
 
     }
-    // #2 Konstruktor klasy DataOfSimulation
-    public DataOfSimulation(){
+
+    /**
+     * #2 Konstruktor klasy DataOfSimulation
+     */
+    public DataOfSimulation() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Wprowadz liczbe iteracji systemu: ");
@@ -62,133 +83,156 @@ public class DataOfSimulation implements DataOfSimulationMethods {
         }
     }
 
-    public int getSize(){
+    public int getSize() {
         return this.size;
     }
 
-    public void setSize(int size){
-        if(size > 0)
+    public void setSize(int size) {
+        if (size > 0)
             this.size = size;
         else
             this.size = 0;
     }
 
-    public int getNumberOfIterations(){
+    public int getNumberOfIterations() {
         return this.numberOfIterations;
     }
-    public void setNumberOfIterations(int numberOfIterations){
-        if(numberOfIterations >= 0)
+
+    public void setNumberOfIterations(int numberOfIterations) {
+        if (numberOfIterations >= 0)
             this.numberOfIterations = numberOfIterations;
         else
             this.numberOfIterations = 0;
     }
 
     public int getNumberOfVaccinated() { return numberOfVaccinated; }
+
     public void setNumberOfVaccinated(int numberOfVaccinated) {
-        if(numberOfVaccinated > 0)
+        if (numberOfVaccinated > 0)
             this.numberOfVaccinated = numberOfVaccinated;
         else
             this.numberOfVaccinated = 0;
     }
+
     public int getNumberOfAfterIllness() { return numberOfAfterIllness; }
+
     public void setNumberOfAfterIllness(int numberOfAfterIllness) {
-        if(numberOfAfterIllness > 0)
+        if (numberOfAfterIllness > 0)
             this.numberOfAfterIllness = numberOfAfterIllness;
         else
             this.numberOfAfterIllness = 0;
     }
 
-    public int getNumberOfHealthyAgents(){
+    public int getNumberOfHealthyAgents() {
         return this.numberOfHealthyAgents;
     }
-    public void setNumberOfHealthyAgents(int numberOfHealthyAgents){
-        if(numberOfHealthyAgents > 0)
+
+    public void setNumberOfHealthyAgents(int numberOfHealthyAgents) {
+        if (numberOfHealthyAgents > 0)
             this.numberOfHealthyAgents = numberOfHealthyAgents;
         else
             this.numberOfHealthyAgents = 0;
     }
-    public int getNumberOfSickAgents(){
+
+    public int getNumberOfSickAgents() {
         return this.numberOfSickAgents;
     }
-    public void setNumberOfSickAgents(int numberOfSickAgents){
-        if(numberOfSickAgents > 0)
+
+    public void setNumberOfSickAgents(int numberOfSickAgents) {
+        if (numberOfSickAgents > 0)
             this.numberOfSickAgents = numberOfSickAgents;
         else
             this.numberOfSickAgents = 0;
     }
-    public int getMinDayTillEndOfIllness(){
+
+    public int getMinDayTillEndOfIllness() {
         return this.minDayTillEndOfIllness;
     }
-    public void setMinDayTillEndOfIllness(int minDayTillEndOfIllness){
-        if(minDayTillEndOfIllness > 0)
+
+    public void setMinDayTillEndOfIllness(int minDayTillEndOfIllness) {
+        if (minDayTillEndOfIllness > 0)
             this.minDayTillEndOfIllness = minDayTillEndOfIllness;
         else
             this.minDayTillEndOfIllness = 1;
     }
-    public int getMaxDayTillEndOfIllness(){
+
+    public int getMaxDayTillEndOfIllness() {
         return this.maxDayTillEndOfIllness;
     }
-    public void setMaxDayTillEndOfIllness(int maxDayTillEndOfIllness){
-        if(maxDayTillEndOfIllness > 0)
+
+    public void setMaxDayTillEndOfIllness(int maxDayTillEndOfIllness) {
+        if (maxDayTillEndOfIllness > 0)
           this.maxDayTillEndOfIllness = maxDayTillEndOfIllness;
         else
           this.maxDayTillEndOfIllness = 1;
     }
-    public double getChanceOfSickAgentDeath(){
+
+    public double getChanceOfSickAgentDeath() {
         return this.chanceOfSickAgentDeath;
     }
-    public void setChanceOfSickAgentDeath(double chanceOfSickAgentDeath){
-        if(chanceOfSickAgentDeath > 0.0 && chanceOfSickAgentDeath < 1.0)
+
+    public void setChanceOfSickAgentDeath(double chanceOfSickAgentDeath) {
+        if (chanceOfSickAgentDeath > 0.0 && chanceOfSickAgentDeath < 1.0)
             this.chanceOfSickAgentDeath = chanceOfSickAgentDeath;
         else
             this.chanceOfSickAgentDeath = 0.0;
     }
-    public int getNumberOfVaccineKit(){
+
+    public int getNumberOfVaccineKit() {
         return this.numberOfVaccineKits;
     }
-    public void setNumberOfVaccineKit(int numberOfVaccineKit){
-        if(numberOfVaccineKit >=0 && numberOfVaccineKit <= Math.floor(getNumberOfHealthyAgents()/4.))
+
+    public void setNumberOfVaccineKit(int numberOfVaccineKit) {
+        if (numberOfVaccineKit >=0 && numberOfVaccineKit <= Math.floor(getNumberOfHealthyAgents()/4.))
             this.numberOfVaccineKits = numberOfVaccineKit;
         else
             this.numberOfVaccineKits = 0;
     }
-    public double getChanceOfSpawnVaccine(){
+
+    public double getChanceOfSpawnVaccine() {
         return this.chanceOfSpawnVaccine;
     }
-    public void setChanceOfSpawnVaccine(double chanceOfSpawnVaccine){
-        if(chanceOfSpawnVaccine >= 0. && chanceOfSpawnVaccine <= 1.)
+
+    public void setChanceOfSpawnVaccine(double chanceOfSpawnVaccine) {
+        if (chanceOfSpawnVaccine >= 0. && chanceOfSpawnVaccine <= 1.)
             this.chanceOfSpawnVaccine = chanceOfSpawnVaccine;
         else
             this.chanceOfSpawnVaccine = 0.;
     }
-    public int getNumberOfVaccineInKit(){
+
+    public int getNumberOfVaccineInKit() {
         return this.numberOfVaccineInKit;
     }
-    public void setNumberOfVaccineInKit(int vaccineInKit){
+
+    public void setNumberOfVaccineInKit(int vaccineInKit) {
         if (vaccineInKit >= 0 && vaccineInKit <= 5)
             this.numberOfVaccineInKit = vaccineInKit;
         else
             this.numberOfVaccineInKit = 0;
     }
-    public int getNumberOfIsolation(){
+
+    public int getNumberOfIsolation() {
         return this.numberOfIsolation;
     }
-    public void setNumberOfIsolation(int numberOfIsolation){
-        if(numberOfIsolation >= 0 && numberOfIsolation <= Math.floor(getNumberOfSickAgents()/4.))
+
+    public void setNumberOfIsolation(int numberOfIsolation) {
+        if (numberOfIsolation >= 0 && numberOfIsolation <= Math.floor(getNumberOfSickAgents()/4.))
             this.numberOfIsolation = numberOfIsolation;
         else
             this.numberOfIsolation = 0;
     }
 
-    public double getChanceOfSpawnIsolation(){
+    public double getChanceOfSpawnIsolation() {
         return this.chanceOfSpawnIsolation;
     }
-    public void setChanceOfSpawnIsolation(double chanceOfSpawnIsolation){
-        if(chanceOfSpawnIsolation >=0. && chanceOfSpawnIsolation <= 1.)
+
+    public void setChanceOfSpawnIsolation(double chanceOfSpawnIsolation) {
+        if (chanceOfSpawnIsolation >=0. && chanceOfSpawnIsolation <= 1.)
             this.chanceOfSpawnIsolation = chanceOfSpawnIsolation;
         else
             this.chanceOfSpawnIsolation = 0.;
     }
+
     public void updateData(Map map) {
         this.numberOfHealthyAgents = map.getDataOfSimulation().getNumberOfHealthyAgents();
         this.numberOfSickAgents = map.getDataOfSimulation().getNumberOfSickAgents();
@@ -203,6 +247,7 @@ public class DataOfSimulation implements DataOfSimulationMethods {
             }
         }
     }
+
     public void displayData(Map map) {
         System.out.println();
         System.out.println("---------------------------------------------");

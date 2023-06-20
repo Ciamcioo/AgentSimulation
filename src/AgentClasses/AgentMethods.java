@@ -1,14 +1,29 @@
 package AgentClasses;
 
+/**
+ * Interfejs metod agenta
+ */
 public interface AgentMethods {
-    // Metoda zwarcająca wartość boolean stwierdzająca czy obiekt poruszył się w tej iteracji
+    /**
+     * Metoda zwracająca informację czy agent się poruszył w danej iteracji
+     * @return <code>true</code> jeżeli agent się poruszył
+     */
     boolean getIterationMove();
-    // Metoda ustawiająca wartość boolean stwierdzająca czy obiekt poruszył się w tej iteracji
-    void  setIterationMove(boolean didMoved);
-    // Metoda odpowiadająca za zmianę statusu agenta w odpowiednich warunkach
-    void changingStatusOfAgent();
-    // Metoda odpowiadajaca za ruch agenta w jednym z osmiu kierunków jeżeli jest to możliwe
-    void move();
 
+    /**
+     * Ustawia informację o poruszeniu agenta w iteracji
+     * @param didMoved informacja o poruszeniu agenta w iteracji <code>true</code>/<code>false</code>
+     */
+    void  setIterationMove(boolean didMoved);
+
+    /**
+     * Zmienia status agenta w odpowiednich warunkach
+     */
+    void changingStatusOfAgent();
+
+    /**
+     * Porusza agentem w jeden z ośmiu kierunków jeżeli to możliwe
+     */
+    void move();
 }
 

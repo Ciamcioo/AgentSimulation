@@ -1,10 +1,18 @@
 package Package;
 
-
+/**
+ * Interfejs metod pakietów
+ */
 public interface PackageMethods {
-    // Metoda zwracajaca zmiena typu boolean informujaca o tym czy danyc pakiet jest pelny
+    /**
+     * Zwraca zmienną typu boolean informującą o tym czy dany pakiet jest pusty
+     * @return <code>true</code> jeżeli pusty
+     */
     boolean isEmpty();
-    // Metoda ustawia wartosc zmiennej na prawda
+
+    /**
+     * Przypisuje wartość <code>true</code> gdy pakiet jest pusty
+     */
     void setEmpty();
 
 }

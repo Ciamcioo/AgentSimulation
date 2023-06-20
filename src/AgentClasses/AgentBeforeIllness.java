@@ -2,21 +2,41 @@ package AgentClasses;
 import Map.Map;
 import Package.VaccineKit;
 
+/**
+ * Klasa przed chorobą
+ */
 public class AgentBeforeIllness extends Agent {
     private boolean isVaccinated = false;
-    // Konstruktor klasy AgentBeforeIllness
+    /**
+     * Konstruktor klasy AgentBeforeIllness
+     * @param coordinateX współrzędna X
+     * @param coordinateY współrzędna Y
+     * @param partMapOf mapa na której znajduje się agent
+     */
     public AgentBeforeIllness(int coordinateX, int coordinateY, Map partMapOf){
         super(coordinateX, coordinateY, partMapOf);
         this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
-    // Metoda zwraca wartość boolean odpowiadającą informacji czy obiektu typu AgentBeforeIllness jest zaszczepiony
+
+    /**
+     * Zwraca wartość boolean odpowiadającą informacji czy obiektu typu AgentBeforeIllness jest zaszczepiony
+     * @return <code>true</code> jeżeli zaszczepiony
+     */
     public boolean getVaccinated(){
         return this.isVaccinated;
     }
-    // Metoda przypisuje wartość boolean odpowiadającą informacji jaka zostanie przekazana w argumencie funkcji, czy obiekt jest zaszczepiony lub nie
+
+    /**
+     * Przypisuje wartość boolean przekazaną w argumencie, czy obiekt jest zaszczepiony
+     * @param isVaccinated informacja czy obiekt jest zaszczepiony
+     */
     public void setVaccinated(boolean isVaccinated){
         this.isVaccinated = isVaccinated;
     }
+
+    /**
+     * Zmienia status agenta. Jeżeli zaszczepiony, tworzy nowego agenta <code>VaccinatedAgent</code>. Jeżeli niezaszczepiony, tworzy <code>SickAgent</code>.
+     */
     @Override
     public void changingStatusOfAgent() {
         if(isVaccinated){
@@ -32,6 +52,11 @@ public class AgentBeforeIllness extends Agent {
             this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1);
         }
     }
+
+    /**
+     * Szuka pakietu szczepionki <code>VaccineKit</code> metodą {@link Agent#checkIfNeighbor(Map, Class)}. Jeżeli znajdzie, zmienia status agenta na zaszczepiony
+     * ({@link AgentBeforeIllness#setVaccinated(boolean)}, {@link AgentBeforeIllness#changingStatusOfAgent()}) i zmniejsza ilość szczepionek w pakiecie szczepionki.
+     */
     @Override
     public void searching(){
         VaccineKit foundObject = (VaccineKit) this.checkIfNeighbor(this.getMapPartOf(), VaccineKit.class);
@@ -45,13 +70,22 @@ public class AgentBeforeIllness extends Agent {
             }
         }
     }
+
+    /**
+     * Wywołuje akcje obiektu. Porusza obiekt ({@link AgentBeforeIllness#move()}) i przeszukuje pola wokół ({@link AgentBeforeIllness#searching()})
+     */
     @Override
     public void responseForCallingOfActionOfObject(){
         this.move();
         this.searching();
     }
+
+    /**
+     * Reprezentacja agenta w konsoli
+     * @return litera odpowiadająca agentowi przed chorobą (B)
+     */
     @Override
-    public String toString(){  // Reprezentacja agenta w konsoli
+    public String toString(){
         return "B";
     }
 }

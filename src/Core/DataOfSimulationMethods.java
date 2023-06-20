@@ -2,65 +2,158 @@ package Core;
 
 import Map.Map;
 
+/**
+ * Interfejs metod danych symulacji
+ */
 public interface DataOfSimulationMethods {
-    // Metoda zwraca wartość int określając wielkość mapy symulacji
+    /**
+     * Zwraca wartość int określającą wielkość mapy symulacji
+     * @return rozmiar
+     */
     int getSize();
-    // Metoda przypisuje poprawną wartość int do zmiennej typu size będącą zmienna obiektu typu DataOfSimulation
+    /**
+     * Przypisuje poprawną wartość int do zmiennej <code>size</code> będącą zmienną obiektu typu <code>DataOfSimulation</code>
+     * @param size rozmiar
+     */
     void setSize(int size);
-    // Metoda zwraca wartośc int określająca ilość iteracji jaką ma wykonać symulacja
+    /**
+     * Zwraca wartość int określającą liczbę iteracji jaką ma wykonać symulacja
+     * @return liczba iteracji
+     */
     int getNumberOfIterations();
-    // Metoda przypisuje prawidłową wartość określająca ilość iteracji jaka ma zostać wyskonana przez symulacje
+    /**
+     * Przypisuje prawidłową wartość określającą liczbę iteracji jaka ma zostać wykonana przez symulację
+     * @param numberOfIterations liczba iteracji
+     */
     void setNumberOfIterations(int numberOfIterations);
-    // Metoda zwraca wartośc int określająca ilość zaszczepionych  agentów w symlulacji
+    /**
+     * Zwraca wartość int określającą liczbę zaszczepionych agentów w symulacji
+     * @return liczba zaszczepionych
+     */
     int getNumberOfVaccinated();
-    // Metoda przypisuje prawidłową wartość int określająca ilość zaszczepionych agentów w symulacji
+    /**
+     * Przypisuje prawidłową wartość int określającą liczbę zaszczepionych agentów w symulacji
+     * @param numberOfVaccinated liczba zaszczepionych
+     */
     void setNumberOfVaccinated(int numberOfVaccinated);
-    // Metoda zwraca wartość int określająca ilość agentów po chorobie w symulacji
+    /**
+     * Zwraca wartość int określającą liczbę agentów po chorobie w symulacji
+     * @return liczba agentów po chorobie
+     */
     int getNumberOfAfterIllness();
-    // Metoda przypisuje prawidłową wartość int określająca ilość agentów po chorobie w symulacji
+    /**
+     * Przypisuje prawidłową wartość int określającą liczbę agentów po chorobie w symulacji
+     * @param numberOfAfterIllness liczba agentów po chorobie
+     */
     void setNumberOfAfterIllness(int numberOfAfterIllness);
-    // Metoda zwraca wartośc int określająca ilość zdrowych agentów w symlulacji
+    /**
+     * Zwraca wartość int określającą liczbę zdrowych agentów w symulacji
+     * @return liczba zdrowych
+     */
     int getNumberOfHealthyAgents();
-    // Metoda przypisuje prawidłową wartość określającą ilość zdrowych agentów w symulacji
+    /**
+     * Przypisuje prawidłową wartość określającą liczbę zdrowych agentów w symulacji
+     * @param numberOfHealthyAgents liczba zdrowych
+     */
     void setNumberOfHealthyAgents(int numberOfHealthyAgents);
-    // Metoda zwraca wartośc int określająca ilość chorych agentów w symulacji
+    /**
+     * Zwraca wartość int określającą ilość chorych agentów w symulacji
+     * @return liczba chorych
+     */
     int getNumberOfSickAgents();
-    // Metoda przypisuje prawidłowa wartość określająca ilość chorych agentów w symulacji
+    /**
+     * Przypisuje prawidłową wartość określającą liczbę chorych agentów w symulacji
+     * @param numberOfSickAgents liczba chorych
+     */
     void setNumberOfSickAgents(int numberOfSickAgents);
-    // Metoda zwraca minimalną ilośc dni trwania choroby agenta
+    /**
+     * Zwraca minimalną liczbę dni trwania choroby agenta
+     * @return minimum dni choroby
+     */
     int getMinDayTillEndOfIllness();
-    // Metoda przypisuje prawidlową wartość minimalnej ilości dni czasu trwania choroby agenta
+    /**
+     * Przypisuje prawidłową wartość minimalnej liczby dni czasu trwania choroby agenta
+     * @param minDayTillEndOfIllness minimum dni choroby
+     */
     void setMinDayTillEndOfIllness(int minDayTillEndOfIllness);
-    // Metoda zwraca maksymalna ilosc dni choroby agenta w symulacji
+    /**
+     * Zwraca maksymalną liczbę dni choroby agenta w symulacji
+     * @return maximum dni choroby
+     */
     int getMaxDayTillEndOfIllness();
-    // Metoda przypisuje prawidlową wartość określająca maksymalną ilość dni czasu trwania choroby agenta w symulacji
+    /**
+     * Przypisuje prawidłową wartość określającą maksymalną liczbę dni czasu trwania choroby agenta w symulacji
+     * @param maxDayTillEndOfIllness maximum dni choroby
+     */
     void setMaxDayTillEndOfIllness(int maxDayTillEndOfIllness);
-    // Metoda zwraca wartość z zakresu 0.0 - 1.0 określająca procentową szanse na śmierć chorego agenta
+    /**
+     * Zwraca wartość z zakresu 0.0 - 1.0 określającą procentową szansę na śmierć chorego agenta
+     * @return szansa na śmierć chorego
+     */
     double getChanceOfSickAgentDeath();
-    // Metoda przypisuje prawidłową wartość z zakresu 0.0 - 1.0 okreslającą szanse procentową na śmierć chorego agenta
+    /**
+     * Przypisuje prawidłową wartość z zakresu 0.0 - 1.0 określającą szansę procentową na śmierć chorego agenta
+     * @param chanceOfSickAgentDeath szansa na śmierć chorego
+     */
     void setChanceOfSickAgentDeath(double chanceOfSickAgentDeath);
-    // Metoda zwraca wartosć int określająca ilosć pakietów szczepionki w symulacji
+    /**
+     * Zwraca wartość int określającą liczbę pakietów szczepionki w symulacji
+     * @return liczba pakietów szczepionek
+     */
     int getNumberOfVaccineKit();
-    // Metoda przypisuje prawidłową wartość określająca ilość pakietów szczepionki w symulacji
+    /**
+     * Przypisuje prawidłową wartość określająca liczbę pakietów szczepionki w symulacji
+     * @param numberOfVaccineKit liczba pakietów szczepionek
+     */
     void setNumberOfVaccineKit(int numberOfVaccineKit);
-    // Metoda zwraca szanse pojawienia się pakietu szczepionki w symulacji w postaci liczby double
+    /**
+     * Zwraca szanse pojawienia się pakietu szczepionki w symulacji w postaci liczby double
+     * @return szansa na pojawienie się szczepionki
+     */
     double getChanceOfSpawnVaccine();
-    // Metoda przypisuje prawidłową wartość okreslająca szanse pojawienia się pakietu szczepionki w symulacji w postaci liczyb double
+    /**
+     * Przypisuje prawidłową wartość określającą szanse pojawienia się pakietu szczepionki w symulacji w postaci liczby double
+     * @param chanceOfSpawnVaccine szansa na pojawienie się szczepionki
+     */
     void setChanceOfSpawnVaccine(double chanceOfSpawnVaccine);
-    // Metoda zwraca ilość ładónków szczepionki w jednym pakiecie pojawiającym się na mapie symulajci
+    /**
+     * Zwraca ilość ładunków szczepionki w jednym pakiecie pojawiającym się na mapie symulacji
+     * @return liczba szczepionek w pakiecie
+     */
     int getNumberOfVaccineInKit();
-    // Metoda przypisuje prawidłową wartosc ilości ładunków możliwych znajdujących się w jednym pakiecie szczepionki (od 1 do 5 ładunków)
-    void setNumberOfVaccineInKit(int numberOfVaccineInKit);
-    // Metoda zwraca wartość int określająca ilość pakietów izolacji w symulacji
+    /**
+     * Przypisuje prawidłową wartość liczby ładunków możliwych znajdujących się w jednym pakiecie szczepionki (od 1 do 5 ładunków)
+     * @param vaccineInKit liczba szczepionek w pakiecie
+     */
+    void setNumberOfVaccineInKit(int vaccineInKit);
+    /**
+     * Zwraca wartość int określającą liczbę pakietów izolacji w symulacji
+     * @return liczba izolacji
+     */
     int getNumberOfIsolation();
-    // Metoda przypisuje prawidłową wartość odpowiadająca iloości pakietów izolacji w symulacji
+    /**
+     * Przypisuje prawidłową wartość odpowiadającą liczbie pakietów izolacji w symulacji
+     * @param numberOfIsolation liczba izolacji
+     */
     void setNumberOfIsolation(int numberOfIsolation);
-    // Metoda zwraca szanse pojawienia się pakietu izolacji w symulacji w postaci liczyb double
+    /**
+     * Zwraca szanse pojawienia się pakietu izolacji w symulacji w postaci liczyb double
+     * @return szansa na pojawienie się symulacji
+     */
     double getChanceOfSpawnIsolation();
-    // Metoda przypisuje szanse pojawienia się pakietu izolacji w symulacji w postaci liczby double
+    /**
+     * Przypisuje szanse pojawienia się pakietu izolacji w symulacji w postaci liczby double
+     * @param chanceOfSpawnIsolation szansa na pojawienie się symulacji
+     */
     void setChanceOfSpawnIsolation(double chanceOfSpawnIsolation);
-    // Metoda aktualizuje dane dotyczące symulacji
+    /**
+     * Aktualizuje dane symulacji (ilości poszczególnych obiektów na mapie)
+     * @param map mapa symulacji
+     */
     void updateData(Map map);
-    // Metoda wyświetla dane na twmat symulacji na ekranie
+    /**
+     * Wyświetla dane symulacji (ilości poszczególnych obiektów na mapie)
+     * @param map mapa symulacji
+     */
     void displayData(Map map);
 }

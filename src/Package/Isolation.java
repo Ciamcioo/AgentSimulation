@@ -2,21 +2,37 @@ package Package;
 import AgentClasses.SickAgent;
 import Map.Map;
 
-public class Isolation extends Package{
-    // Konstruktor klasy Isoaltion
-    public Isolation(int coordinateX,int coordinateY, Map mapPartOf){
+/**
+ * Klasa izolacji
+ */
+public class Isolation extends Package {
+    /**
+     * Konstruktor klasy <code>Isolation</code>
+     * @param coordinateX współrzędna X izolacji
+     * @param coordinateY współrzędna Y izolacji
+     * @param mapPartOf mapa na której znajduje się izolacja
+     */
+    public Isolation(int coordinateX,int coordinateY, Map mapPartOf) {
         super(coordinateX, coordinateY, mapPartOf);
         this.getMapPartOf().setOneObjectOfMap(this.getCoordinateX(), this.getCoordinateY(), this);
     }
-    public void responseForCallingOfActionOfObject(){
+
+    /**
+     * Wywołuje akcje obiektu. Jeżeli znajdzie wokół chorego, zmienia pole tego chorego na puste.
+     */
+    public void responseForCallingOfActionOfObject() {
         SickAgent foundObject = (SickAgent) this.checkIfNeighbor(this.getMapPartOf(), SickAgent.class);
-        if(foundObject != null){
+        if (foundObject != null) {
             foundObject.changingStatusOfAgent();
             this.setEmpty();
             foundObject.getMapPartOf().getDataOfSimulation().setNumberOfSickAgents(this.getMapPartOf().getDataOfSimulation().getNumberOfSickAgents() - 1);
-//            this.getMapPartOf().setChangedObjects(this.getMapPartOf().getChangedObjects() + 1); tutaj nie jestem pewien bo w klasie sickAgent jest już dodawania że obiekt został zmieniony więc tutaj chyba nie ma potrzeby
         }
     }
+
+    /**
+     * Reprezentacja izolacji w konsoli
+     * @return litera odpowiadająca izolacji (I)
+     */
     @Override
     public String toString(){ // Reprezentacje Isolation w konsoli
         return "I";

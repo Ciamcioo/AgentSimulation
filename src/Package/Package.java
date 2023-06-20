@@ -1,22 +1,43 @@
 package Package;
 import Map.Map;
 import Map.ObjectOfMap;
+
+/**
+ * Abstrakcyjna klasa "pakietu"
+ */
 public abstract class Package extends ObjectOfMap implements PackageMethods {
     private boolean isEmpty;
-    // Konstruktor klasy Package
-    public Package(int coordinateX,int coordinateY, Map mapPartOf){
+
+    /**
+     * Konstruktor klasy <code>Package</code>
+     * @param coordinateX współrzędna X pakietu
+     * @param coordinateY współrzędna Y pakietu
+     * @param mapPartOf mapa na której znajduje się pakiet
+     */
+    public Package(int coordinateX,int coordinateY, Map mapPartOf) {
         super(coordinateX, coordinateY, mapPartOf);
         this.isEmpty = false;
     }
-    // Meotda zwraca informacje czy pakiet  jest pusty
+
+    /**
+     * Zwraca informację czy pakiet jest pusty
+     * @return <code>true</code> jeśli pusty
+     */
     public boolean isEmpty() {
         return isEmpty;
     }
-    // Metoda przypisuje wartośc prawda gdy pakiet jest pusty
+
+    /**
+     * Przypisuje wartość <code>true</code> gdy pakiet jest pusty
+     */
     public void setEmpty(){ // Metoda ustawia wartość pola isEmpty na true
         this.isEmpty = true;
     }
-    public void searching(){
+
+    /**
+     * Szukanie
+     */
+    public void searching() {
         try {
             throw new Exception("Error this object cannot search");
         } catch (Exception e) {

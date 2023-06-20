@@ -1,26 +1,67 @@
 package Map;
 
+/**
+ * Interfejs metod obiektu mapy
+ */
 public interface ObjectOfMapMethods {
-    // Metoda zwraca wartość int odpowiadającą kordyncacie x dla danego obiektu na mapie
+    /**
+     * Zwraca wartość int odpowiadającą współrzędnej X obiektu
+     * @return współrzedna X obiektu
+     */
     int getCoordinateX();
-    // Metoda przypisuje poprawną  wartość int odpowiadająca kordynacie x dla danego obiektu na mapie
-    void setCoordinateX(int newCoordinateX);
-    // Metoda zwraca wartość int odpowiadającą kordynacie y dla danego obiektu na mapie
-    int getCoordinateY();
-    // Metoda przypisuje poprawną wartosć int odpowiadająca kordynacie y dla danego obiektu na mapie
-    void setCoordinateY(int newCoordinateY);
-    // Metoda zwraca mapę do której należy dany obiekty
-    Map getMapPartOf();
-    // Metoda przypisuje obiektowi mapę do której należy
-    void setMapPartOf(Map map);
-    // Metoda zwraca referencje do obiektu typu ObjectOfMap wywołany przez inny obiekty należący do tej samej mapy
-    ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType);
-    // Metoda współdziałająca z metoda checkIfNeighbor, analizuje zwrócone dane przez wyżej wymienioną funkcje i podejmuje odpowiednie działanie
-    void searching();
-    // Metoda zwraca reprezentacje obiektu w konsoli w postaci String-a
-    String toString();
-    // Metoda odpowiedzialna za wyowływanie poszczególnych zachowań dla obiektów określonych typów
-    void responseForCallingOfActionOfObject();
 
+    /**
+     * Przypisuje poprawną wartość int odpowiadającą współrzędnej X obiektu
+     * @param newCoordinateX nowa współrzedna X obiektu
+     */
+    void setCoordinateX(int newCoordinateX);
+
+    /**
+     * Zwraca wartość int odpowiadającą współrzędnej Y obiektu
+     * @return współrzedna Y obiektu
+     */
+    int getCoordinateY();
+
+    /**
+     * Przypisuje poprawną wartość int odpowiadającą współrzędnej Y obiektu
+     * @param newCoordinateY nowa współrzedna X obiektu
+     */
+    void setCoordinateY(int newCoordinateY);
+
+    /**
+     * Zwraca mapę do której należy obiekt
+     * @return mapa do której należy obiekt
+     */
+    Map getMapPartOf();
+
+    /**
+     * Przypisuje obiektowi mapę do której należy
+     * @param map mapa do której należy obiekt
+     */
+    void setMapPartOf(Map map);
+
+    /**
+     * Zwraca referencję do obiektu typu <code>ObjectOfMap</code>, jeżeli obiekt danej w argumencie klasy znajduje się wokół pierwotnego obiektu. W przeciwnym wypadku zwraca <code>null</code>
+     * @param map mapa symulacji
+     * @param neighborType typ szukanego obiektu
+     * @return szukany obiekt
+     */
+    ObjectOfMap checkIfNeighbor(Map map, Class<?> neighborType);
+
+    /**
+     * Metoda współdziałająca z metodą <code>checkIfNeighbor</code>, analizuje zwrócone dane przez wyżej wymienioną funkcję i podejmuje odpowiednie działanie
+     */
+    void searching();
+
+    /**
+     * Zwraca reprezentację obiektu w konsoli w postaci String-a
+     * @return znak reprezentujący dany obiekt
+     */
+    String toString();
+
+    /**
+     * Metoda odpowiedzialna za wywoływanie poszczególnych zachowań dla obiektów określonych typów
+     */
+    void responseForCallingOfActionOfObject();
 
 }
