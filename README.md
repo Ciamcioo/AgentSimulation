@@ -16,11 +16,11 @@ AgentSimulation is an application simulating simple model of predator and prey. 
 
 ## Contributing
 1. Fork the repository
-2. Createk a new branch (`git checkout -b your-branch`)
-3. Make your changes
-4. Commit your changes with appropriate message (`git commit -m "Your-message"`)
-5. Push to new branch (`git push origin your-branch`)
-6. Open pull request
+2. Create a new branch (`git checkout -b your-branch`)
+4. Make your changes
+5. Commit your changes with appropriate message (`git commit -m "Your-message"`)
+6. Push to new branch (`git push origin your-branch`)
+7. Open pull request
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more infomration.
