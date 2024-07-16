@@ -23,6 +23,7 @@ AgentSimulation is an application simulating simple model of predator and prey. 
 6. Open pull request
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more infomration.
 
 ## Contributors
 1. [Kvsiv1](https://github.com/kvsiv1)
